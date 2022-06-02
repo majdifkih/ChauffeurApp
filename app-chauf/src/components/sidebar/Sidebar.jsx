@@ -91,7 +91,7 @@ const Sidebar = ({children}) => {
                    ))
                }
            </div>
-           <main>{children}</main>
+           
         </div>
     );
 };

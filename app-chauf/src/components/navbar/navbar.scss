@@ -1,17 +1,13 @@
 .navbar {
-  display: flex;
+   display: flex;
    font-size: 14px;
    color: #555;
- background: #e6e9eb;
+   background: #e6e9eb;
    .wrapper {
      width: 100%;
      padding: 20px;
      display: flex;
-     
      justify-content: space-between;
- 
-     
- 
      .items {
        display: flex;
        align-items: center;
