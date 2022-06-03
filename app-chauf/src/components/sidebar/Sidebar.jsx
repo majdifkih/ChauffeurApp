@@ -9,66 +9,58 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import GroupIcon from '@mui/icons-material/Group';
 import GpsFixedIcon from '@mui/icons-material/GpsFixed';
 import LogoutIcon from '@mui/icons-material/Logout';
-import {
-    FaTh,
-    FaBars,
-    FaUserAlt,
-    FaRegChartBar,
-    FaCommentAlt,
-    FaShoppingBag,
-    FaThList
-}from "react-icons/fa";
+import {FaBars}from "react-icons/fa";
 import { NavLink } from 'react-router-dom';
 
 
-const Sidebar = ({children}) => {
-    const[isOpen ,setIsOpen] = useState(false);
+const Sidebar = () => {
+    const[isOpen ,setIsOpen] = useState(true);
     const toggle = () => setIsOpen (!isOpen);
     const menuItem=[
         {
-            path:"/",
+            path:"/deliverylist",
             name:"Accueil",
             icon:<HomeIcon className="iconlist"/>
         },
         {
-            path:"/deviceinfo",
+            path:"/deliverylist",
             name:"Fleet and Devices",
             icon:<LocalShippingIcon />
         },
         {
-            path:"/fleet",
+            path:"/deliverylist",
             name:"Fleet Tracking",
             icon:<GpsFixedIcon />
         },
         {
-            path:"/store",
+            path:"/deliverylist",
             name:"Stores",
             icon:<StoreIcon />
         },
         {
-            path:"/inventory",
+            path:"/deliverylist",
             name:"Inventory",
             icon:<InventoryIcon />
         },
         {
-            path:"/storetable",
+            path:"/deliverylist",
             name:"Clients",
             icon:<GroupIcon />
         },
         {
-          path:"/devicelist",
+          path:"/deliverylist",
           name:"Users",
           icon:<AccountCircleIcon />
       },
       {
-        path:"/logout",
+        path:"/deliverylist",
         name:"Log out",
         icon:<LogoutIcon />
     }
     ]
     return (
         <div className="container">
-           <div style={{width: isOpen ? "256px" : "50px"}} className="sidebar">
+           <div style={{width: isOpen ? "256px" : "45px"}} className="sidebar">
                <div className="top_section" style={{paddingTop: isOpen ? "15%" : "53%"}}>
                <div style={{paddingLeft: isOpen ? "75%" : "20%"}} className="bars">
                        <FaBars onClick={toggle}/>

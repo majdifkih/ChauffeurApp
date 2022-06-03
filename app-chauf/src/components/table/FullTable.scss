@@ -1,0 +1,69 @@
+.tabdelivery{
+  
+ 
+  
+  
+    border-radius: 10px;
+    
+    margin-right: 2%;
+    .radio{
+      margin-right: 3%;    }
+  
+    .circle {
+        &.non { 
+          visibility: hidden;
+        }
+        &.oui {
+          
+          visibility: visible;
+          
+        }
+  }
+  
+  .reguliere {
+   
+    border-radius: 4px;
+    font-size: 80%;
+    font-weight: bold;
+    color: white;
+    &.regular { 
+      background: #29CC97;
+      padding: 1% 3% 0% 2%;
+      
+      
+    }
+    &.NonReg {
+      background: #FEC400;
+      padding: 1% 2% 0%;
+    }
+    &.Online { 
+      background: #29CC97;
+      padding: 1% 2% 0%;
+    }
+    &.Offline {
+      background: #FEC400;
+      padding: 1% 2% 0%;
+    }
+    
+  }
+  img{
+    padding-right: 2%;
+  }
+  .line{
+    display: flex;
+    justify-content: flex-end;
+    gap: 5%;
+  .icons{
+    display: flex;
+    gap: 3%;
+    &.non { 
+      visibility: hidden;
+    }
+    &.oui {
+      
+      visibility: visible;
+      
+    }
+  }
+}
+  }
