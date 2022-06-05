@@ -2,6 +2,7 @@
 .deliverymain{
   display: flex;
   gap: 18%;
+
 .delivery{
   display: flex;
   flex-direction: column;
@@ -54,6 +55,16 @@
 
 }
 }
-
+@media (max-width:650px) {
+  .side{
+    position: fixed;
+     left: -270px;
+    width: 270px;
+  }
+  .delivery{
+    width: 100%;
+margin-left: 33%;
+display: inline-block;
+  }
   
-
+}

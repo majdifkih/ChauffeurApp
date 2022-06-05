@@ -14,21 +14,21 @@ function createData(name,position, status) {
 }
 
 const rows = [
-  createData('IVECO','11.33','NonReg'),
-  createData('TOYOTA','12.43','regular'),
-  createData('VOLVO','11.32','regular'),
-  createData('OM','11.54','regular'),
-  createData('SCANIA','14.33','NonReg'),
-  createData('RENAULT','11.55','NonReg'),
-  createData('NISSAN','10.76','regular'),
-  createData('MISUBISHI','12.452','regular'),
-  createData('MERCEDES','12.333','regular'),
-  createData('RENAULT','12.445','NonReg'),
-  createData('VOLVO','11.995','NonReg'),
-  createData('MERCEDES','13.564','regular'),
-  createData('NISSAN','11.2466','regular'),
-  createData('IVECO','11.743','regular'),
-  createData('IVECO','15.455','NonReg'),
+  createData('Baraka','Mahdia','Incomplete'),
+  createData('Hanout','Rcharcha','Done'),
+  createData('Carrefour','Ksour Essef','Done'),
+  createData('Mahida shop','Maloulech','Done'),
+  createData('Aotriya','Souasi','Incomplete'),
+  createData('Hanout lhoma','Monastir','Incomplete'),
+  createData('Magasin','Sousse','Done'),
+  createData('Store','Sfax','Done'),
+  createData('Drugstore','Rajich','Done'),
+  createData('Magasin','Mahdia','Incomplete'),
+  createData('Mahida drugstore','Monastir','Incomplete'),
+  createData('Store','Rajich','Done'),
+  createData('Mahida shop','Sousse','Done'),
+  createData('Hanout','Mahdia','Done'),
+  createData('Aotriya','Mahdia','Incomplete'),
 ];
  function DeliveryListe() {
    
