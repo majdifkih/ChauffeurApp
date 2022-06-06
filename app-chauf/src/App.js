@@ -1,7 +1,8 @@
 //  import Sidebar from "./components/sidebar/Sidebar"
 import { HashRouter, Routes, Route } from "react-router-dom";
+import DeliveryListe from "./pages/Delivery/Deliveryliste";
 //  import Navbar from "./components/navbar/Navbar";
-import DeliveryListe from "./pages/Deliveryliste";
+import InventoryListe from "./pages/Inventory/Inventory";
 
 function App() {
 
@@ -12,7 +13,8 @@ function App() {
         <Navbar/>  */}
         <Routes>
           <Route path="/">
-           <Route path="" element={<DeliveryListe/>}/>
+           <Route path="deliverylist" element={<DeliveryListe/>}/>
+           <Route path="inventory" element={<InventoryListe/>}/>
             </Route>
         </Routes>
       </HashRouter>

@@ -1,0 +1,49 @@
+.popup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+   
+
+    display: flex;
+    justify-content: center;
+    margin-left:8% ;
+    align-items: center;
+
+.popup-inner{
+    
+    -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+          box-shadow: 2px 4px 10px 1px rgba(61, 60, 60, 0.47);
+    padding: 3%;
+    width: 100%;
+    max-width: 240px;
+    background-color: #FFF;
+    border: 2px solid rgb(187, 190, 187);
+
+.buttonpop{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10%;
+    
+    .close-btn {
+        font-weight: bold;
+        padding: 4%;
+        border-radius: 5px;
+        border: 1px solid rgb(200, 200, 200);
+       
+    }
+    .btnlog{
+        color:#FF7A7A;
+        border: 1px solid #FF7A7A ;
+        font-weight: bold;
+        padding: 4%;
+        border-radius: 5px;
+      }
+    
+    
+}
+}
+
+
+}

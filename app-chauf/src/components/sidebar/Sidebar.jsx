@@ -28,7 +28,7 @@ const Sidebar = () => {
             icon:<LocalShippingIcon />
         },
         {
-            path:"/deliverylist",
+            path:"/inventory",
             name:"Fleet Tracking",
             icon:<GpsFixedIcon />
         },

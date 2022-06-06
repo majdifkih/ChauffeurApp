@@ -1,0 +1,140 @@
+
+.inventorymain{
+    display: flex;
+    gap: 28%;
+  .inventory{
+    display: flex;
+    flex-direction: column;
+    flex: 3;
+      
+        
+  .headinventory{
+    display: flex;
+    gap: 40%;
+    padding-bottom: 1%;
+  .titleinventory{
+    display: flex;
+    gap: 10%;
+    font-weight:bold;
+    color: black;
+    font-size: 122%;
+      input[type=Search]{
+        height:30px;
+        border: 1px solid rgb(188, 188, 188);
+        padding-right: 30%;
+        border-radius: 5px;
+        background: #c3cad2;
+      }
+      
+        
+        .input-icone{
+          display: flex;
+          position:relative; }
+        .input-icone i{
+          position:absolute; 
+          left: 108%; 
+          padding:4px 8px; 
+          color:#838481; }
+    
+        input[type=Search]:hover {
+        background: #f2f2f2; }
+      
+     .material-icons{
+       
+       font-size: 120%;
+     }
+      }
+      .buttoninvetory{
+        display: flex;
+        gap: 30%;
+        margin-left: 7%;
+        .del{
+          display: flex;
+          gap: 3%;
+          cursor: pointer;
+          font-size: 100%;
+          color: #fff;
+          padding: 6% 22% 6% 22%;
+          background: #FF7A7A;
+          border-radius: 5px;
+          border: none;
+          align-items: center;
+        }
+        .addinvetory{
+          display: flex;
+          gap: 5%;
+          cursor: pointer;
+          font-size: 100%;
+          color: #fff;
+          padding: 6% 10% 6% 10%;
+          background: #3d2db9;
+          border-radius: 5px;
+          border: none;
+          align-items: center;
+          .iconfleet{
+            padding-bottom: 10%;
+          }
+          
+        
+        }
+     .popinvet{
+       z-index: 1;
+     }
+    }
+    }
+  
+  .tabinventory{
+    
+   
+    
+    
+    border-radius: 10px;
+    
+    margin-right: 2%;
+    
+  .radio{
+        margin-right:3%;    }
+  
+  .statuss {
+     
+    border-radius: 4px;
+    font-size: 80%;
+    font-weight: bold;
+    color: white;
+    &.GOOD { 
+      background: #29CC97;
+      padding: 1% 4% 0%;
+      height: 2%;
+    }
+    &.LOW {
+      
+      background: #FEC400;
+      
+      padding: 1% 6% 0%;
+      height: 2%;
+    }
+    
+  }
+  
+  .tabEnd{
+    display: flex;
+    gap: 20%;
+    justify-content: flex-end;
+  .icons{
+    display: flex;
+    gap: 10%;
+    .material-icons{
+      cursor: pointer;
+    }
+   
+  }
+  }
+  }
+  }
+  
+  }
+  
+   
+    
+  
+  
