@@ -23,9 +23,9 @@ import FirstPageIcon from '@mui/icons-material/FirstPage';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import LastPageIcon from '@mui/icons-material/LastPage';
-import Addinvetory from './add.png';
 import Popup from "../../components/Popup/Popup";
 import AddIcon from '@mui/icons-material/Add';
+import PopupAdd from "../../components/Popup/PopupAdd";
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
     backgroundColor: theme.palette.common.white,
@@ -145,7 +145,8 @@ const rows = [
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
   };
-
+  
+  const [addPopupinventory, setAddPopupinventory] = useState(false);
   const [buttonPopup, setButtonPopup] = useState(false);
   return (
 
@@ -164,7 +165,9 @@ const rows = [
 
 
 <button className="del" onClick={() => setButtonPopup(true)} ><DeleteIcon fontSize="small"/>Delete <div>selected</div></button>
-<Popup trigger={buttonPopup} setTrigger={setButtonPopup}/>
+
+<Popup trigger={buttonPopup} setTrigger={setButtonPopup} className="popdel"/>
+
 </div>
 </div>
 
@@ -221,7 +224,10 @@ const rows = [
     </TableContainer>
   </div>
   
-  <button className="addinvetory" ><AddIcon/></button>
+  <button className="addinvetory" onClick={() => setAddPopupinventory(true)}><AddIcon/></button>
+  <div className="popinvet">
+<PopupAdd trigger={addPopupinventory} setTrigger={setAddPopupinventory}/>
+</div>
   <div className="devis">
     <div className="deviscont">Sub Total:7.000 DT </div>
     <div className="deviscont">TVA:9% </div>
