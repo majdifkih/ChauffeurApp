@@ -170,7 +170,7 @@ const handleChangeRowsPerPage = (event) => {
                 
               <StyledTableCell  align="left" ><input type="radio" name="fleet" className="radio"/><label for="store">Stores</label></StyledTableCell>
               <StyledTableCell  className="circle" >Positions</StyledTableCell>
-              <StyledTableCell  align="right">Status</StyledTableCell>
+              <StyledTableCell align="center" className="stat">Status</StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>

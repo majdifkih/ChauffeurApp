@@ -20,49 +20,49 @@ const Sidebar = () => {
         {
             path:"/deliverylist",
             name:"Accueil",
-            icon:<HomeIcon className="iconlist"/>
+            icon:<HomeIcon className="iconlist" sx={{ fontSize: 50 }}/>
         },
         {
             path:"/deliverylist",
             name:"Fleet and Devices",
-            icon:<LocalShippingIcon />
+            icon:<LocalShippingIcon sx={{ fontSize: 50 }}/>
         },
         {
             path:"/inventory",
             name:"Fleet Tracking",
-            icon:<GpsFixedIcon />
+            icon:<GpsFixedIcon sx={{ fontSize: 50 }}/>
         },
         {
             path:"/deliverylist",
             name:"Stores",
-            icon:<StoreIcon />
+            icon:<StoreIcon sx={{ fontSize: 50 }}/>
         },
         {
             path:"/deliverylist",
             name:"Inventory",
-            icon:<InventoryIcon />
+            icon:<InventoryIcon sx={{ fontSize: 50 }}/>
         },
         {
             path:"/deliverylist",
             name:"Clients",
-            icon:<GroupIcon />
+            icon:<GroupIcon sx={{ fontSize: 50 }}/>
         },
         {
           path:"/deliverylist",
           name:"Users",
-          icon:<AccountCircleIcon />
+          icon:<AccountCircleIcon sx={{ fontSize: 50 }}/>
       },
       {
         path:"/deliverylist",
         name:"Log out",
-        icon:<LogoutIcon />
+        icon:<LogoutIcon sx={{ fontSize: 50 }}/>
     }
     ]
     return (
         <div className="container">
-           <div style={{width: isOpen ? "256px" : "45px"}} className="sidebar">
+           <div style={{width: isOpen ? "300px" : "80px"}} className="sidebar">
                <div className="top_section" style={{paddingTop: isOpen ? "15%" : "53%"}}>
-               <div style={{paddingLeft: isOpen ? "75%" : "20%"}} className="bars">
+               <div style={{paddingLeft: isOpen ? "75%" : "15%"}} className="bars">
                        <FaBars onClick={toggle}/>
                    </div>
                    <div style={{display: isOpen ? "block" : "none"}} className="logo"><img

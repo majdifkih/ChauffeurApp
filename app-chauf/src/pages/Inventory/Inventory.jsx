@@ -25,7 +25,7 @@ import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import LastPageIcon from '@mui/icons-material/LastPage';
 import Addinvetory from './add.png';
 import Popup from "../../components/Popup/Popup";
-
+import AddIcon from '@mui/icons-material/Add';
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
     backgroundColor: theme.palette.common.white,
@@ -108,30 +108,30 @@ TablePaginationActions.propTypes = {
   page: PropTypes.number.isRequired,
   rowsPerPage: PropTypes.number.isRequired,
 };
-function createData(name, Barcode, Quantity, Price, Id, Category, status) {
-  return { name, Barcode, Quantity, Price, Id, Category, status };
+function createData(name, Quantity, Price, Total) {
+  return { name, Quantity, Price, Total};
 }
 
 const rows = [
-  createData('Chocotom','12313313','111','4.000DT','123454','Biscuit','LOW'),
-  createData('SAFIA eau','123321833','386','4.000DT','123234','Eau','GOOD'),
-  createData('Saida biscuit','893298','696','4.000DT','1124255','Biscuit','LOW'),
-  createData('Maestro','213435711','672','4.000DT','1154644','Chocolat','GOOD'),
-  createData('Saida','2564225','226','4.000DT','1154373','Chocolat','LOW'),
-  createData('Crostina','25672','172','4.000DT','116742','Biscuit','GOOD'),
-  createData('Ice cream','1445763454','147','4.000DT','11742','Chocolat','LOW'),
-  createData('Fidji','1568934','391','4.000DT','115362','Chocolat','GOOD'),
-  createData('Cupcake','6323563','973','4.000DT','114662','Biscuit','LOW'),
-  createData('Chocolat','131563','537','4.000DT','11632','Chocolat','GOOD'),
-  createData('Coca cola','535633','876','4.000DT','1124536','Eau','LOW'),
-  createData('Fanta','65322','314','4.000DT','112462','Eau','GOOD'),
-  createData('Apla','563432','555','4.000DT','1153673','Eau','LOW'),
-  createData('kaki','143434','222','4.000DT','113572','Biscuit','GOOD'),
-  createData('Gaucho ','12342545','231','4.000DT','112265','Biscuit','LOW'),
+  createData('Chocotom','111','4.000DT','1.500'),
+  createData('SAFIA eau','386','4.000DT','3.650'),
+  createData('Saida biscuit','696','4.000DT','7.500'),
+  createData('Maestro','672','4.000DT','4000'),
+  createData('Saida','226','4.000DT','4.100'),
+  createData('Crostina','172','4.000DT','2.700'),
+  createData('Ice cream','147','4.000DT','1.800'),
+  createData('Fidji','391','4.000DT','800'),
+  createData('Cupcake','973','4.000DT','900'),
+  createData('Chocolat','537','4.000DT','700'),
+  createData('Coca cola','876','4.000DT','2000'),
+  createData('Fanta','314','4.000DT','1.100'),
+  createData('Apla','555','4.000DT','5.500'),
+  createData('kaki','222','4.000DT','4.500'),
+  createData('Gaucho ','231','4.000DT','2.500'),
 ];
  function InventoryListe() {
   const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(5);
+  const [rowsPerPage, setRowsPerPage] = React.useState(3);
 
   // Avoid a layout jump when reaching the last page with empty rows.
   const emptyRows =
@@ -156,12 +156,12 @@ const rows = [
 
 <div className="headinventory">
       <div className="titleinventory">
-      Inventory
+      Store
       <div class="input-icone"><input type="Search" placeholder="Search..." className="rech"/>
       <i><SearchIcon/></i></div>
 </div>
 <div className="buttoninvetory">
-<button className="addinvetory" ><img src={Addinvetory} width="20" height="20"/>Add</button>
+
 
 <button className="del" onClick={() => setButtonPopup(true)} ><DeleteIcon fontSize="small"/>Delete <div>selected</div></button>
 <Popup trigger={buttonPopup} setTrigger={setButtonPopup}/>
@@ -174,13 +174,10 @@ const rows = [
         <TableHead>
           <TableRow className="row" >
               
-            <StyledTableCell   ><input type="radio" name="fleet"/><label for="store">Name</label></StyledTableCell>
-            <StyledTableCell  >Barcode</StyledTableCell>
-            <StyledTableCell  >Quantity</StyledTableCell>
-            <StyledTableCell  >Price</StyledTableCell>
-            <StyledTableCell >Id</StyledTableCell>
-            <StyledTableCell  >Category</StyledTableCell>
-            <StyledTableCell  align="right">Status?</StyledTableCell>
+            <StyledTableCell   ><input type="radio" name="fleet"/><label for="store">Product</label></StyledTableCell>
+            <StyledTableCell className="quantity" >Quantity</StyledTableCell>
+            <StyledTableCell className="price"  >Price</StyledTableCell>
+            <StyledTableCell  className="total">Total</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -189,22 +186,13 @@ const rows = [
             : rows
           ).map((row) => (
             <StyledTableRow className="row" key={row.name}>
-              <StyledTableCell width={"15%"} height={"5%"} component="th" scope="row"><input type="radio" name="fleet" className="radio"/><label for="name">{row.name}</label>
+              <StyledTableCell  width={"20%"} height={"5%"} component="th" scope="row"><input type="radio" name="fleet" className="radio"/><label for="name">{row.name}</label>
                 
               </StyledTableCell>
-              <StyledTableCell className="barcode" >{row.Barcode}</StyledTableCell>
-              <StyledTableCell className="quantity" >{row.Quantity}</StyledTableCell>
+              <StyledTableCell className="quantity" ><input type="number" className="quantityinput"/></StyledTableCell>
               <StyledTableCell className="price" >{row.Price}</StyledTableCell>
-              <StyledTableCell className="id" >{row.Id}</StyledTableCell>
-              <StyledTableCell className="category" >{row.Category}</StyledTableCell>
-              <StyledTableCell  className="tabEnd" >
-                <div className="icons">
-                <i className="material-icons" >border_color</i>
-               
-                <i class="material-icons">info_outline</i>
-                </div>
+              <StyledTableCell className="total" >{row.Total}</StyledTableCell>
               
-              <div className={`statuss ${row.status}`}>{row.status}</div></StyledTableCell>
             </StyledTableRow>
           ))}
           
@@ -212,7 +200,7 @@ const rows = [
         <TableFooter >
           <TableRow>
             <TablePagination
-              rowsPerPageOptions={[5, 10, 25, { label: 'All', value: -1 }]}
+              rowsPerPageOptions={[3, 5, 10, { label: 'All', value: -1 }]}
               colSpan={7}
               count={rows.length}
               rowsPerPage={rowsPerPage}
@@ -232,6 +220,14 @@ const rows = [
       </Table>
     </TableContainer>
   </div>
+  
+  <button className="addinvetory" ><AddIcon/></button>
+  <div className="devis">
+    <div className="deviscont">Sub Total:7.000 DT </div>
+    <div className="deviscont">TVA:9% </div>
+    <div className="deviscont">Total 7.630 DT</div>
+  </div>
+  <button className="confirmerinvetory" >Confirmer</button>
   </div>
   </div>
   

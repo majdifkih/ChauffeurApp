@@ -1,7 +1,7 @@
 
 .inventorymain{
     display: flex;
-    gap: 28%;
+    gap: 34%;
   .inventory{
     display: flex;
     flex-direction: column;
@@ -10,7 +10,7 @@
         
   .headinventory{
     display: flex;
-    gap: 40%;
+    gap: 37%;
     padding-bottom: 1%;
   .titleinventory{
     display: flex;
@@ -44,43 +44,24 @@
        font-size: 120%;
      }
       }
-      .buttoninvetory{
-        display: flex;
-        gap: 30%;
-        margin-left: 7%;
+      
+       
         .del{
           display: flex;
           gap: 3%;
           cursor: pointer;
           font-size: 100%;
           color: #fff;
-          padding: 6% 22% 6% 22%;
+         
+          padding: 6% 20% 6% 20%;
           background: #FF7A7A;
           border-radius: 5px;
           border: none;
           align-items: center;
+         
         }
-        .addinvetory{
-          display: flex;
-          gap: 5%;
-          cursor: pointer;
-          font-size: 100%;
-          color: #fff;
-          padding: 6% 10% 6% 10%;
-          background: #3d2db9;
-          border-radius: 5px;
-          border: none;
-          align-items: center;
-          .iconfleet{
-            padding-bottom: 10%;
-          }
-          
         
-        }
-     .popinvet{
-       z-index: 1;
-     }
-    }
+   
     }
   
   .tabinventory{
@@ -95,41 +76,69 @@
   .radio{
         margin-right:3%;    }
   
-  .statuss {
-     
-    border-radius: 4px;
-    font-size: 80%;
-    font-weight: bold;
-    color: white;
-    &.GOOD { 
-      background: #29CC97;
-      padding: 1% 4% 0%;
-      height: 2%;
+  
+  
+  .quantity{
+    padding-left: 10%;
+    .quantityinput{
+      width: 15%;
+      border: 1px solid black;
     }
-    &.LOW {
-      
-      background: #FEC400;
-      
-      padding: 1% 6% 0%;
-      height: 2%;
-    }
-    
+  }
+ 
   }
   
-  .tabEnd{
-    display: flex;
-    gap: 20%;
-    justify-content: flex-end;
-  .icons{
-    display: flex;
-    gap: 10%;
-    .material-icons{
-      cursor: pointer;
-    }
-   
+  .addinvetory{
+    margin-top: 2%;
+    margin-left:30% ;
+    cursor: pointer;
+    width: 44%;
+    height: 10%;
+    font-size: 100%;
+    color: #fff;
+    padding: 2% 2% 2% 2%;
+    background: #747979;
+    border-radius: 5px;
+    border: none;
+    align-items: center;
   }
-  }
-  }
+.popinvet{
+ z-index: 1;
+}
+.devis{
+  
+  display: flex;
+  flex-direction: column;
+  gap: 2%;
+  border: 1px solid black;
+  background-color: #fff;
+  width: 25%;
+  margin-top: 2%;
+  margin-left:70% ;
+  padding: 2% 0% 2% 2%;
+.deviscont{
+  font-weight: bold;
+}
+}
+.confirmerinvetory{
+  margin-top: 40%;
+    margin-left:20% ;
+    cursor: pointer;
+    width: 65%;
+    height: 10%;
+    font-size: 100%;
+    color: #fff;
+    padding: 2% 2% 2% 2%;
+    background: #037D87;
+    border-radius: 5px;
+    border: none;
+    align-items: center;
+    
+    
+  
+ 
+
+}
   }
   
   }

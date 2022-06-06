@@ -28,8 +28,8 @@
 }
 .bars{
   display: flex;
-  font-size: 25px;
- padding-left: 55%;
+  font-size: 45px;
+
  
 }
 }
@@ -37,10 +37,16 @@
   display: flex;
   color: #fff;
   padding: 12px 15px;
-  gap: 10px;
+  gap: 20px;
   transition: all 0.5s;
   text-decoration: none;
-  padding-top: 4%;
+  padding-top: 5%;
+  .icon{
+    
+  }
+  .link_text{
+    font-size: 150%;
+  }
 
 .link:hover{
   color: #fff;
