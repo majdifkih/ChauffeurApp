@@ -26,6 +26,8 @@ import LastPageIcon from '@mui/icons-material/LastPage';
 import Popup from "../../components/Popup/Popup";
 import AddIcon from '@mui/icons-material/Add';
 import PopupAdd from "../../components/Popup/PopupAdd";
+import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
+
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
     backgroundColor: theme.palette.common.white,
@@ -148,6 +150,7 @@ const rows = [
   
   const [addPopupinventory, setAddPopupinventory] = useState(false);
   const [buttonPopup, setButtonPopup] = useState(false);
+  const [factproduct, setfactproduct] = useState("");
   return (
 
   <div className="inventorymain">
@@ -157,20 +160,37 @@ const rows = [
 
 <div className="headinventory">
       <div className="titleinventory">
-      Store
+      Invoice
       <div class="input-icone"><input type="Search" placeholder="Search..." className="rech"/>
       <i><SearchIcon/></i></div>
 </div>
 <div className="buttoninvetory">
 
 
-<button className="del" onClick={() => setButtonPopup(true)} ><DeleteIcon fontSize="small"/>Delete <div>selected</div></button>
+
+
+</div>
+
+</div>
+
+<div className="headincoive">
+  <div className="chosestore">
+<div className="labelstore">Store</div>
+<div className="selectstore">
+<HelpOutlineOutlinedIcon className="iconselect" fontSize="small"/>
+<select id="select" className="select" onChange={(event)=> {
+      setfactproduct(event.target.value);
+    }} >
+                <option selected>Choose status</option>
+                <option>Reguler</option>
+                <option>NonReg</option>
+                </select>
+                </div>
+                </div>
+                <button className="del" onClick={() => setButtonPopup(true)} ><DeleteIcon fontSize="small"/>Delete <div>selected</div></button>
 
 <Popup trigger={buttonPopup} setTrigger={setButtonPopup} className="popdel"/>
-
-</div>
-</div>
-
+                </div>
   <div className="tabinventory">
   <TableContainer component={Paper}>
       <Table sx={{ minWidth: "100%" }} aria-label="customized table">
@@ -178,9 +198,10 @@ const rows = [
           <TableRow className="row" >
               
             <StyledTableCell   ><input type="radio" name="fleet"/><label for="store">Product</label></StyledTableCell>
-            <StyledTableCell className="quantity" >Quantity</StyledTableCell>
-            <StyledTableCell className="price"  >Price</StyledTableCell>
-            <StyledTableCell  className="total">Total</StyledTableCell>
+            <StyledTableCell className="cell" >Quantity</StyledTableCell>
+            <StyledTableCell className="cell"  >Price</StyledTableCell>
+            <StyledTableCell  className="cell">Total</StyledTableCell>
+       
           </TableRow>
         </TableHead>
         <TableBody>
@@ -189,13 +210,20 @@ const rows = [
             : rows
           ).map((row) => (
             <StyledTableRow className="row" key={row.name}>
-              <StyledTableCell  width={"20%"} height={"5%"} component="th" scope="row"><input type="radio" name="fleet" className="radio"/><label for="name">{row.name}</label>
-                
+              <StyledTableCell  width={"20%"} height={"5%"} component="th" scope="row" className="cellproduct"><input type="radio" name="fleet" className="radio"/><div className="formicon"><HelpOutlineOutlinedIcon className="iconselect" fontSize="small"/><div className="formselect"><select id="select" className="select" onChange={(event)=> {
+      setfactproduct(event.target.value);
+    }} >
+                <option selected>Choose status</option>
+                <option>Reguler</option>
+                <option>NonReg</option>
+                </select>
+                </div>
+                </div>
               </StyledTableCell>
-              <StyledTableCell className="quantity" ><input type="number" className="quantityinput"/></StyledTableCell>
-              <StyledTableCell className="price" >{row.Price}</StyledTableCell>
-              <StyledTableCell className="total" >{row.Total}</StyledTableCell>
-              
+              <StyledTableCell className="cell" ><input type="number" className="cellinput"/></StyledTableCell>
+              <StyledTableCell className="cell" ><input type="number" className="cellinput"/></StyledTableCell>
+              <StyledTableCell className="cell" ><input type="number" className="cellinput"/></StyledTableCell>
+              <StyledTableCell  ><DeleteIcon/></StyledTableCell>
             </StyledTableRow>
           ))}
           
@@ -224,10 +252,7 @@ const rows = [
     </TableContainer>
   </div>
   
-  <button className="addinvetory" onClick={() => setAddPopupinventory(true)}><AddIcon/></button>
-  <div className="popinvet">
-<PopupAdd trigger={addPopupinventory} setTrigger={setAddPopupinventory}/>
-</div>
+
   <div className="devis">
     <div className="deviscont">Sub Total:7.000 DT </div>
     <div className="deviscont">TVA:9% </div>

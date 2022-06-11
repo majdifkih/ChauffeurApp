@@ -46,25 +46,55 @@
       }
       
        
-        .del{
-          display: flex;
-          gap: 3%;
-          cursor: pointer;
-          font-size: 100%;
-          color: #fff;
-         
-          padding: 6% 20% 6% 20%;
-          background: #FF7A7A;
-          border-radius: 5px;
-          border: none;
-          align-items: center;
-         
-        }
-        
-        .popdel{
-          z-index: 222;
-        }
    
+    }
+    
+    .headincoive{
+      position: relative;
+      display: flex;
+      margin: 0% 0% 2% 0%;
+      gap: 47%;
+      padding-top: 2%;
+      .chosestore{
+        display: flex;
+        gap: 10%;
+        .labelstore{
+          font-size: 100%;
+          font-weight: bold;
+        }
+        .select{
+          padding: 5% 5% 5% 25%;
+          background-color: #bfc6c6;
+          border: none;
+          border-radius: 5px;
+        }
+        .iconselect{
+          position: absolute;
+          color: #535454;
+          padding: 1% 0% 0% 1%;
+  
+          }
+      }
+      .del{
+        display: flex;
+        gap: 3%;
+        cursor: pointer;
+        font-size: 100%;
+        color: #fff;
+       
+        padding: 1% 3% 1% 5%;
+        background: #FF7A7A;
+        border-radius: 5px;
+        border: none;
+        align-items: center;
+       
+      }
+      
+      .popdel{
+        z-index: 222;
+      }
+      
+    
     }
   
   .tabinventory{
@@ -75,16 +105,36 @@
     border-radius: 10px;
     
     margin-right: 2%;
+    .cellproduct{
+      display: flex;
+      gap:  20%;
+    .formicon{
+      position: relative;
+      
+ 
+      
+      .iconselect{
+          position:absolute;
+          color: #535454;
+          padding: 1% 0% 0% 2%;
+          
+      }
+      .select{
+        padding:2% 2% 2% 20%;
+      }
     
+  }
+}
+
   .radio{
         margin-right:3%;    }
   
   
   
-  .quantity{
+  .cell{
     padding-left: 10%;
-    .quantityinput{
-      width: 15%;
+    .cellinput{
+      width: 70%;
       border: 1px solid black;
     }
   }
@@ -116,7 +166,7 @@
   border: 1px solid black;
   background-color: #fff;
   width: 25%;
-  margin-top: 2%;
+  margin-top: 5%;
   margin-left:70% ;
   padding: 2% 0% 2% 2%;
 .deviscont{
@@ -124,7 +174,7 @@
 }
 }
 .confirmerinvetory{
-  margin-top: 40%;
+  margin-top: 20%;
     margin-left:20% ;
     cursor: pointer;
     width: 65%;

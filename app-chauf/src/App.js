@@ -1,5 +1,5 @@
 //  import Sidebar from "./components/sidebar/Sidebar"
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import DeliveryListe from "./pages/Delivery/Deliveryliste";
 //  import Navbar from "./components/navbar/Navbar";
 import InventoryListe from "./pages/Inventory/Inventory";
@@ -8,7 +8,7 @@ function App() {
 
   return (
     
-      <HashRouter>
+      <BrowserRouter>
          {/* <Sidebar/>
         <Navbar/>  */}
         <Routes>
@@ -17,7 +17,7 @@ function App() {
            <Route path="inventory" element={<InventoryListe/>}/>
             </Route>
         </Routes>
-      </HashRouter>
+      </BrowserRouter>
    
   );
 }
