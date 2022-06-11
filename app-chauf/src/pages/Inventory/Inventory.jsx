@@ -181,7 +181,7 @@ const rows = [
 <select id="select" className="select" onChange={(event)=> {
       setfactproduct(event.target.value);
     }} >
-                <option selected>Choose status</option>
+                <option selected>Choose Store</option>
                 <option>Reguler</option>
                 <option>NonReg</option>
                 </select>
@@ -210,16 +210,7 @@ const rows = [
             : rows
           ).map((row) => (
             <StyledTableRow className="row" key={row.name}>
-              <StyledTableCell  width={"20%"} height={"5%"} component="th" scope="row" className="cellproduct"><input type="radio" name="fleet" className="radio"/><div className="formicon"><HelpOutlineOutlinedIcon className="iconselect" fontSize="small"/><div className="formselect"><select id="select" className="select" onChange={(event)=> {
-      setfactproduct(event.target.value);
-    }} >
-                <option selected>Choose status</option>
-                <option>Reguler</option>
-                <option>NonReg</option>
-                </select>
-                </div>
-                </div>
-              </StyledTableCell>
+              <StyledTableCell  width={"20%"} height={"5%"} component="th" scope="row" className="cellproduct"><input type="radio" name="fleet" className="radio"/>{row.name}</StyledTableCell>
               <StyledTableCell className="cell" ><input type="number" className="cellinput"/></StyledTableCell>
               <StyledTableCell className="cell" ><input type="number" className="cellinput"/></StyledTableCell>
               <StyledTableCell className="cell" ><input type="number" className="cellinput"/></StyledTableCell>
@@ -252,7 +243,10 @@ const rows = [
     </TableContainer>
   </div>
   
-
+  <button className="addinvetory" onClick={() => setAddPopupinventory(true)}><AddIcon/></button>
+  <div className="popinvet">
+<PopupAdd trigger={addPopupinventory} setTrigger={setAddPopupinventory}/>
+</div>
   <div className="devis">
     <div className="deviscont">Sub Total:7.000 DT </div>
     <div className="deviscont">TVA:9% </div>

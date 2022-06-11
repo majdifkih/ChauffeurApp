@@ -67,6 +67,9 @@
           background-color: #bfc6c6;
           border: none;
           border-radius: 5px;
+          .optionstore{
+            font-size: 60%;
+          }
         }
         .iconselect{
           position: absolute;
@@ -105,26 +108,7 @@
     border-radius: 10px;
     
     margin-right: 2%;
-    .cellproduct{
-      display: flex;
-      gap:  20%;
-    .formicon{
-      position: relative;
-      
- 
-      
-      .iconselect{
-          position:absolute;
-          color: #535454;
-          padding: 1% 0% 0% 2%;
-          
-      }
-      .select{
-        padding:2% 2% 2% 20%;
-      }
-    
-  }
-}
+   
 
   .radio{
         margin-right:3%;    }
