@@ -27,6 +27,7 @@ import Popup from "../../components/Popup/Popup";
 import AddIcon from '@mui/icons-material/Add';
 import PopupAdd from "../../components/Popup/PopupAdd";
 import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
+import StorefrontIcon from '@mui/icons-material/Storefront';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -177,7 +178,7 @@ const rows = [
   <div className="chosestore">
 <div className="labelstore">Store</div>
 <div className="selectstore">
-<HelpOutlineOutlinedIcon className="iconselect" fontSize="small"/>
+<StorefrontIcon className="iconselect" fontSize="small"/>
 <select id="select" className="select" onChange={(event)=> {
       setfactproduct(event.target.value);
     }} >

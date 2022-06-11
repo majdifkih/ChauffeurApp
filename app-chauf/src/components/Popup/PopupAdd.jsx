@@ -1,22 +1,31 @@
 import React from "react";
 import "./PopupAdd.scss";
 import AttachMoneyOutlinedIcon from '@mui/icons-material/AttachMoneyOutlined';
-import StorefrontIcon from '@mui/icons-material/Storefront';
 import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 import PointOfSaleIcon from '@mui/icons-material/PointOfSale';
 import ProductionQuantityLimitsOutlinedIcon from '@mui/icons-material/ProductionQuantityLimitsOutlined';
+import InventoryIcon from '@mui/icons-material/Inventory';
 function PopupAdd(props){
+    const[factproduct,setfactproduct]=React.useState(false);
     return (props.trigger) ? (
         <div className="popupclient">
             <div className="popup-innerclient">
-            <h3> Add New Client</h3>
+            <h3>Add command</h3>
                 <div className="formulerclient">
                 <div className="formleft">
                 <div className="form">
-            <label for="nameclient"/>Store Name 
-            <div className="formicon">
-            <StorefrontIcon className="iconclient" fontSize="small"/> <div className="formclient"><input type="text" placeholder="Enter Store" /></div>
-            </div>
+            
+            <label for="nameclient"/>Product 
+            <div className="formselect"><InventoryIcon className="iconproduct" fontSize="small"/><select id="select" className="select" onChange={(event)=> {
+      setfactproduct(event.target.value);
+    }} >
+                <option selected>Choose Product</option>
+                <option>Reguler</option>
+                <option>NonReg</option>
+                </select>
+                
+                </div>
+            
             </div>
             <div className="form">
             <label for="nameclient"/>Quantity

@@ -48,8 +48,22 @@
       .iconclient{
           position:absolute;
           color: #535454;
-          padding-top: 3%;
+          padding: 2% 0% 0% 2%;
       }
+  }
+  .formselect{
+    position: relative;
+    display: flex;
+    .iconproduct{
+        position:absolute;
+        color: #535454;
+        padding: 3% 0% 0% 2%;
+    }
+    .select{
+       padding: 2% 0% 2% 17%;
+       width: 100%;
+       border-radius: 5px;
+    }
   }
 }
   
@@ -78,7 +92,7 @@
         .iconclient{
             position:absolute;
             color: #535454;
-            padding-top: 3%;
+            padding: 2% 0% 0% 2%;
         }
     }
 }
