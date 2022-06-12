@@ -1,4 +1,4 @@
-import "./Inventory.scss";
+import "./Facture.scss";
 import * as React from 'react';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
@@ -132,7 +132,7 @@ const rows = [
   createData('kaki','222','4.000DT','4.500'),
   createData('Gaucho ','231','4.000DT','2.500'),
 ];
- function InventoryListe() {
+ function FactureListe() {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(3);
 
@@ -149,18 +149,18 @@ const rows = [
     setPage(0);
   };
   
-  const [addPopupinventory, setAddPopupinventory] = useState(false);
+  const [addPopupfacture, setAddPopupfacture] = useState(false);
   const [buttonPopup, setButtonPopup] = useState(false);
   const [factproduct, setfactproduct] = useState("");
   return (
 
-  <div className="inventorymain">
+  <div className="facturemain">
     <div className="side"><Sidebar/></div>
-    <div className="inventory">
+    <div className="facture">
     <Navbar/>
 
-<div className="headinventory">
-      <div className="titleinventory">
+<div className="headfacture">
+      <div className="titlefacture">
       Invoice
       <div class="input-icone"><input type="Search" placeholder="Search..." className="rech"/>
       <i><SearchIcon/></i></div>
@@ -192,7 +192,7 @@ const rows = [
 
 <Popup trigger={buttonPopup} setTrigger={setButtonPopup} className="popdel"/>
                 </div>
-  <div className="tabinventory">
+  <div className="tabfacture">
   <TableContainer component={Paper}>
       <Table sx={{ minWidth: "100%" }} aria-label="customized table">
         <TableHead>
@@ -244,9 +244,9 @@ const rows = [
     </TableContainer>
   </div>
   
-  <button className="addinvetory" onClick={() => setAddPopupinventory(true)}><AddIcon/></button>
+  <button className="addinvetory" onClick={() => setAddPopupfacture(true)}><AddIcon/></button>
   <div className="popinvet">
-<PopupAdd trigger={addPopupinventory} setTrigger={setAddPopupinventory}/>
+<PopupAdd trigger={addPopupfacture} setTrigger={setAddPopupfacture}/>
 </div>
   <div className="devis">
     <div className="deviscont">Sub Total:7.000 DT </div>
@@ -259,4 +259,4 @@ const rows = [
   
   );
 }
-export default InventoryListe
+export default FactureListe

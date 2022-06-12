@@ -20,8 +20,11 @@ const AddStore = ( ) => {
         <AddBusinessIcon />
         <div className="input">
         <label className="label"/>Store Name
-       <AddCircleIcon className="iconinput"/> <input type="text" placeholder="Store Name" className="inputstore"/>
+        <div className="champ">
+       <AddCircleIcon className="iconinput"/><div className="forma"> <input type="text" placeholder="Store Name" className="inputstore"/></div>
        </div>
+       </div>
+
        <div className="input">
         <label className="label"/>Positon
        <AddCircleIcon className="iconinput"/> <button  className="btnstore"> Get Current Position</button>

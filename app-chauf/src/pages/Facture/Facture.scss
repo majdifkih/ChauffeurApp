@@ -1,18 +1,18 @@
 
-.inventorymain{
+.facturemain{
     display: flex;
     gap: 34%;
-  .inventory{
+  .facture{
     display: flex;
     flex-direction: column;
     flex: 3;
       
         
-  .headinventory{
+  .headfacture{
     display: flex;
     gap: 37%;
     padding-bottom: 1%;
-  .titleinventory{
+  .titlefacture{
     display: flex;
     gap: 10%;
     font-weight:bold;
@@ -100,7 +100,7 @@
     
     }
   
-  .tabinventory{
+  .tabfacture{
     
    
     

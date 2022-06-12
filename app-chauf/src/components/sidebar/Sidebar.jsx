@@ -2,13 +2,17 @@ import React, { useState } from 'react';
 import './sidebar.scss'
 import log from './qlog1.jpg'
 import HomeIcon from '@mui/icons-material/Home';
-import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import StoreIcon from '@mui/icons-material/Store';
-import InventoryIcon from '@mui/icons-material/Inventory';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import GroupIcon from '@mui/icons-material/Group';
 import GpsFixedIcon from '@mui/icons-material/GpsFixed';
 import LogoutIcon from '@mui/icons-material/Logout';
+import AddBusinessIcon from '@mui/icons-material/AddBusiness';
+import LocalShippingIcon from '@mui/icons-material/LocalShipping';
+import InventoryIcon from '@mui/icons-material/Inventory';
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import CropFreeIcon from '@mui/icons-material/CropFree';
+import RestoreIcon from '@mui/icons-material/Restore';
 import {FaBars}from "react-icons/fa";
 import { NavLink } from 'react-router-dom';
 
@@ -20,42 +24,42 @@ const Sidebar = () => {
         {
             path:"/",
             name:"Home",
-            icon:<HomeIcon className="iconlist" sx={{ fontSize: 50 }}/>
+            icon:<HomeIcon className="iconlist" sx={{ fontSize: 45 }}/>
+        },
+        {
+            path:"/addstore",
+            name:"Add Store",
+            icon:<AddBusinessIcon sx={{ fontSize: 45 }}/>
         },
         {
             path:"/deliverylist",
-            name:"Fleet and Devices",
-            icon:<LocalShippingIcon sx={{ fontSize: 50 }}/>
+            name:"Purschase Orders",
+            icon:<LocalShippingIcon sx={{ fontSize: 45 }}/>
         },
         {
-            path:"/inventory",
-            name:"Fleet Tracking",
-            icon:<GpsFixedIcon sx={{ fontSize: 50 }}/>
-        },
-        {
-            path:"/deliverylist",
-            name:"Stores",
-            icon:<StoreIcon sx={{ fontSize: 50 }}/>
-        },
-        {
-            path:"/deliverylist",
+            path:"/facture",
             name:"Inventory",
-            icon:<InventoryIcon sx={{ fontSize: 50 }}/>
+            icon:<InventoryIcon sx={{ fontSize: 45 }}/>
         },
         {
             path:"/deliverylist",
-            name:"Clients",
-            icon:<GroupIcon sx={{ fontSize: 50 }}/>
+            name:"Add Order",
+            icon:<AddCircleOutlineIcon sx={{ fontSize: 45 }}/>
+        },
+        {
+            path:"/deliverylist",
+            name:"Invoice History",
+            icon:<RestoreIcon sx={{ fontSize: 45 }}/>
         },
         {
           path:"/deliverylist",
-          name:"Users",
-          icon:<AccountCircleIcon sx={{ fontSize: 50 }}/>
+          name:"Scan Code",
+          icon:<CropFreeIcon sx={{ fontSize: 45 }}/>
       },
       {
         path:"/deliverylist",
         name:"Log out",
-        icon:<LogoutIcon sx={{ fontSize: 50 }}/>
+        icon:<LogoutIcon sx={{ fontSize: 45 }}/>
     }
     ]
     return (
