@@ -1,4 +1,4 @@
-import "./Facture.scss";
+import "./History.scss";
 import * as React from 'react';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
@@ -28,6 +28,7 @@ import AddIcon from '@mui/icons-material/Add';
 import PopupAdd from "../../components/Popup/PopupAdd";
 import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 import StorefrontIcon from '@mui/icons-material/Storefront';
+import { Link } from "react-router-dom";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -111,30 +112,30 @@ TablePaginationActions.propTypes = {
   page: PropTypes.number.isRequired,
   rowsPerPage: PropTypes.number.isRequired,
 };
-function createData(name, Quantity, Price, Total) {
-  return { name, Quantity, Price, Total};
+function createData(name, date, total, status) {
+  return { name, date, total, status};
 }
 
 const rows = [
-  createData('Chocotom','111','4.000DT','1.500'),
-  createData('SAFIA eau','386','4.000DT','3.650'),
-  createData('Saida biscuit','696','4.000DT','7.500'),
-  createData('Maestro','672','4.000DT','4000'),
-  createData('Saida','226','4.000DT','4.100'),
-  createData('Crostina','172','4.000DT','2.700'),
-  createData('Ice cream','147','4.000DT','1.800'),
-  createData('Fidji','391','4.000DT','800'),
-  createData('Cupcake','973','4.000DT','900'),
-  createData('Chocolat','537','4.000DT','700'),
-  createData('Coca cola','876','4.000DT','2000'),
-  createData('Fanta','314','4.000DT','1.100'),
-  createData('Apla','555','4.000DT','5.500'),
-  createData('kaki','222','4.000DT','4.500'),
-  createData('Gaucho ','231','4.000DT','2.500'),
+  createData('Chocotom','22/01/2022','1.500','done'),
+  createData('SAFIA eau','22/01/2022',' 3.650','undone'),
+  createData('Saida biscuit','22/01/2022',' 7.500 ','done'),
+  createData('Maestro','22/01/2022',' 4000','undone'),
+  createData('Saida','22/01/2022',' 4.100','done'),
+  createData('Crostina','22/01/2022',' 2.700','undone'),
+  createData('Ice cream','22/01/2022',' 1.800','done'),
+  createData('Fidji','22/01/2022',' 800','undone'),
+  createData('Cupcake','22/01/2022',' 900','done'),
+  createData('Chocolat','22/01/2022','700',' undone'),
+  createData('Coca cola','22/01/2022','2000',' done'),
+  createData('Fanta','22/01/2022','1.100',' undone'),
+  createData('Apla','22/01/2022','5.500',' done'),
+  createData('kaki','22/01/2022','4.500 ','undone'),
+  createData('Gaucho ','22/01/2022','2.500',' done'),
 ];
- function FactureListe() {
+ function HistoryListe() {
   const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(3);
+  const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
   // Avoid a layout jump when reaching the last page with empty rows.
   const emptyRows =
@@ -149,23 +150,25 @@ const rows = [
     setPage(0);
   };
   
-  const [addPopupfacture, setAddPopupfacture] = useState(false);
+  const [addPopuphistory, setAddPopuphistory] = useState(false);
   const [buttonPopup, setButtonPopup] = useState(false);
   const [factproduct, setfactproduct] = useState("");
   return (
 
-  <div className="facturemain">
+  <div className="historymain">
     <div className="side"><Sidebar/></div>
-    <div className="facture">
+    <div className="history">
     <Navbar/>
 
-<div className="headfacture">
-      <div className="titlefacture">
-      Invoice
+<div className="headhistory">
+      <div className="titlehistory">
+      <div className="headhist">
+          <Link to="/" style={{textDecoration:"none",color:"#8a8888"}}> Home</Link> <div>-</div> <div>Invoice</div> <div>History</div>
+        </div> 
       <div class="input-icone"><input type="Search" placeholder="Search..." className="rech"/>
       <i><SearchIcon/></i></div>
 </div>
-<div className="buttonfacture">
+<div className="buttonhistory">
 
 
 
@@ -174,34 +177,16 @@ const rows = [
 
 </div>
 
-<div className="headincoive">
-  <div className="chosestore">
-<div className="labelstore">Store</div>
-<div className="selectstore">
-<StorefrontIcon className="iconselect" fontSize="small"/>
-<select id="select" className="select" onChange={(event)=> {
-      setfactproduct(event.target.value);
-    }} >
-                <option selected>Choose Store</option>
-                <option>Reguler</option>
-                <option>NonReg</option>
-                </select>
-                </div>
-                </div>
-                <button className="del" onClick={() => setButtonPopup(true)} ><DeleteIcon fontSize="small"/>Delete <div>selected</div></button>
-
-<Popup trigger={buttonPopup} setTrigger={setButtonPopup} className="popdel"/>
-                </div>
-  <div className="tabfacture">
+  <div className="tabhistory">
   <TableContainer component={Paper}>
       <Table sx={{ minWidth: "100%" }} aria-label="customized table">
         <TableHead>
           <TableRow className="row" >
               
-            <StyledTableCell   ><input type="radio" name="fleet"/><label for="store">Product</label></StyledTableCell>
-            <StyledTableCell className="cell" >Quantity</StyledTableCell>
-            <StyledTableCell className="cell"  >Price</StyledTableCell>
-            <StyledTableCell  className="cell">Total</StyledTableCell>
+            <StyledTableCell   ><input type="radio" name="fleet"/>Store</StyledTableCell>
+            <StyledTableCell className="cell" >Date</StyledTableCell>
+            <StyledTableCell className="cell"  >Total</StyledTableCell>
+            <StyledTableCell  className="cell">Status</StyledTableCell>
        
           </TableRow>
         </TableHead>
@@ -212,10 +197,10 @@ const rows = [
           ).map((row) => (
             <StyledTableRow className="row" key={row.name}>
               <StyledTableCell  width={"20%"} height={"5%"} component="th" scope="row" className="cellproduct"><input type="radio" name="fleet" className="radio"/>{row.name}</StyledTableCell>
-              <StyledTableCell className="cell" ><input type="number" className="cellinput"/></StyledTableCell>
-              <StyledTableCell className="cell" ><input type="number" className="cellinput"/></StyledTableCell>
-              <StyledTableCell className="cell" ><input type="number" className="cellinput"/></StyledTableCell>
-              <StyledTableCell  ><DeleteIcon/></StyledTableCell>
+              <StyledTableCell className="cell" >{row.date}</StyledTableCell>
+              <StyledTableCell className="cell" >{row.total}</StyledTableCell>
+              <StyledTableCell className={`status ${row.status}`} >{row.status}</StyledTableCell>
+             
             </StyledTableRow>
           ))}
           
@@ -223,7 +208,7 @@ const rows = [
         <TableFooter >
           <TableRow>
             <TablePagination
-              rowsPerPageOptions={[3, 5, 10, { label: 'All', value: -1 }]}
+              rowsPerPageOptions={[5, 10, 25, { label: 'All', value: -1 }]}
               colSpan={7}
               count={rows.length}
               rowsPerPage={rowsPerPage}
@@ -243,20 +228,10 @@ const rows = [
       </Table>
     </TableContainer>
   </div>
-  
-  <button className="addfacture" onClick={() => setAddPopupfacture(true)}><AddIcon/></button>
-  <div className="popinvet">
-<PopupAdd trigger={addPopupfacture} setTrigger={setAddPopupfacture}/>
-</div>
-  <div className="devis">
-    <div className="deviscont">Sub Total:7.000 DT </div>
-    <div className="deviscont">TVA:9% </div>
-    <div className="deviscont">Total 7.630 DT</div>
-  </div>
-  <button className="confirmerfacture" >Confirmer</button>
+
   </div>
   </div>
   
   );
 }
-export default FactureListe
+export default HistoryListe

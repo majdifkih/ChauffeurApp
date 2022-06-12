@@ -42,12 +42,12 @@ const Sidebar = () => {
             icon:<InventoryIcon sx={{ fontSize: 45 }}/>
         },
         {
-            path:"/deliverylist",
+            path:"/facture",
             name:"Add Order",
             icon:<AddCircleOutlineIcon sx={{ fontSize: 45 }}/>
         },
         {
-            path:"/deliverylist",
+            path:"/history",
             name:"Invoice History",
             icon:<RestoreIcon sx={{ fontSize: 45 }}/>
         },
