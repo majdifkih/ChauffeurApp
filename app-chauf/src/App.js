@@ -4,6 +4,7 @@ import DeliveryListe from "./pages/Delivery/Deliveryliste";
 import Home from "./pages/Home/Home";
 //  import Navbar from "./components/navbar/Navbar";
 import InventoryListe from "./pages/Inventory/Inventory";
+import AddStore from "./pages/Store/AddStore";
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/">
           <Route path="" element={<Home/>}/>
+          <Route path="addstore" element={<AddStore/>}/>
            <Route path="deliverylist" element={<DeliveryListe/>}/>
            <Route path="inventory" element={<InventoryListe/>}/>
             </Route>

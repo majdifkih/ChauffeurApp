@@ -9,6 +9,7 @@ import RestoreIcon from '@mui/icons-material/Restore';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
+import { Link } from "react-router-dom";
 const Home = ( ) => {
 
   return (
@@ -18,16 +19,16 @@ const Home = ( ) => {
         <Navbar/>
       <div className="cards">
      <div className="linecard"> 
-        <div className="cardstore"><AddBusinessIcon  className="iconcard"/><div className="titlecard">Add Store</div></div>
-        <div className="cardvehicule"><LocalShippingIcon className="iconcard"/><div className="titlecard">Purchase Orders</div></div>
+        <Link to="/addstore" style={{ textDecoration: 'none' }}><div className="cardstore"><AddBusinessIcon  className="iconcard"/><div className="titlecard">Add Store</div></div></Link>
+        <Link to="/addstore" style={{ textDecoration: 'none' }}> <div className="cardvehicule"><LocalShippingIcon className="iconcard"/><div className="titlecard">Purchase Orders</div></div></Link>
      </div>
        <div className="linecard">
-       <div className="cardinvetory"><InventoryIcon className="iconcard"/><div className="titlecard">Inventory</div></div>
-        <div className="cardadd"><AddCircleOutlineIcon className="iconcard"/><div className="titlecard">Add Order</div></div>
+       <Link to="/addstore" style={{ textDecoration: 'none' }}><div className="cardinvetory"><InventoryIcon className="iconcard"/><div className="titlecard">Inventory</div></div></Link>
+       <Link to="/addstore" style={{ textDecoration: 'none' }}>  <div className="cardadd"><AddCircleOutlineIcon className="iconcard"/><div className="titlecard">Add Order</div></div></Link>
        </div>
        <div className="linecard">
-       <div className="cardhistory"><RestoreIcon className="iconcard"/><div className="titlecard">Invoice History</div></div>
-        <div className="cardscan"><CropFreeIcon className="iconcard"/><div className="titlecard">Scan Code</div></div>
+       <Link to="/addstore" style={{ textDecoration: 'none' }}>  <div className="cardhistory"><RestoreIcon className="iconcard"/><div className="titlecard">Invoice History</div></div></Link>
+       <Link to="/addstore" style={{ textDecoration: 'none' }}>  <div className="cardscan"><CropFreeIcon className="iconcard"/><div className="titlecard">Scan Code</div></div></Link>
        </div>
     
       </div>
