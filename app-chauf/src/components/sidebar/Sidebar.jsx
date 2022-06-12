@@ -18,8 +18,8 @@ const Sidebar = () => {
     const toggle = () => setIsOpen (!isOpen);
     const menuItem=[
         {
-            path:"/deliverylist",
-            name:"Accueil",
+            path:"/",
+            name:"Home",
             icon:<HomeIcon className="iconlist" sx={{ fontSize: 50 }}/>
         },
         {

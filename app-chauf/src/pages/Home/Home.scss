@@ -1,0 +1,174 @@
+.homemain{
+    display: flex;
+    gap: 10%;
+    .home{
+        display: flex;
+        flex-direction: column;
+        gap: 2%;
+        flex: 3;
+  
+    .cards{
+        display: flex;
+        flex-direction: column;
+
+        .linecard{
+            display: flex;
+             gap: 5%;
+            padding-top: 5%;
+            margin-left: 30%;
+            .cardstore{
+                padding: 5% 13% 5%  13%;
+                border-radius: 5px;
+                background-color: #f5f5f5;
+                border: 1px solid #8a8888;
+                text-align: center;
+                cursor: pointer;
+                &:hover{
+    
+                    color: rgb(81, 81, 248);
+                    outline: 3px solid rgb(81, 81, 248);
+                   
+                  }
+                .iconcard{
+                    font-size: 600%;
+                    padding-bottom: 2%;
+                    color: #8a8888;
+                }
+                .titlecard{
+                    font-size: 1.5em;
+                    font-weight: bold;
+                    padding-bottom: 2%;
+                }
+        
+            }
+            .cardvehicule{
+                padding: 5% 7.8% 5%  7.8%;
+                border-radius: 5px;
+                background-color: #f5f5f5;
+                border: 1px solid #8a8888;
+                text-align: center;
+                cursor: pointer;
+                &:hover{
+    
+                    color: rgb(81, 81, 248);
+                    outline: 3px solid rgb(81, 81, 248);
+                   
+                  }
+                .iconcard{
+                    font-size: 600%;
+                    padding-bottom: 2%;
+                    color: #8a8888;
+                }
+                .titlecard{
+                    font-size: 1.5em;
+                    font-weight: bold;
+                    padding-bottom: 2%;
+                }
+        
+            }
+            .cardinvetory{
+                padding: 5% 13.3% 5%  13.3%;
+                border-radius: 5px;
+                background-color: #f5f5f5;
+                border: 1px solid #8a8888;
+                text-align: center;
+                cursor: pointer;
+                &:hover{
+    
+                    color: rgb(81, 81, 248);
+                    outline: 3px solid rgb(81, 81, 248);
+                   
+                  }
+                .iconcard{
+                    font-size: 600%;
+                    padding-bottom: 2%;
+                    color: #8a8888;
+                }
+                .titlecard{
+                    font-size: 1.5em;
+                    font-weight: bold;
+                    padding-bottom: 2%;
+                }
+            }
+
+            .cardadd{
+                padding: 5% 13% 5%  13%;
+                border-radius: 5px;
+                background-color: #f5f5f5;
+                border: 1px solid #8a8888;
+                text-align: center;
+                cursor: pointer;
+                &:hover{
+    
+                    color: rgb(81, 81, 248);
+                    outline: 3px solid rgb(81, 81, 248);
+                   
+                  }
+                .iconcard{
+                    font-size: 600%;
+                    padding-bottom: 2%;
+                    color: #8a8888;
+                }
+                .titlecard{
+                    font-size: 1.5em;
+                    font-weight: bold;
+                    padding-bottom: 2%;
+                }
+            }
+            .cardhistory{
+                padding: 5% 8.5% 5%  8.5%;
+                border-radius: 5px;
+                background-color: #f5f5f5;
+                border: 1px solid #8a8888;
+                text-align: center;
+                cursor: pointer;
+                &:hover{
+    
+                    color: rgb(81, 81, 248);
+                    outline: 3px solid rgb(81, 81, 248);
+                   
+                  }
+                .iconcard{
+                    font-size: 600%;
+                    padding-bottom: 2%;
+                    color: #8a8888;
+                }
+                .titlecard{
+                    font-size: 1.5em;
+                    font-weight: bold;
+                    padding-bottom: 2%;
+                }
+            }
+            .cardscan{
+                padding: 5% 13% 1%  13%;
+                border-radius: 5px;
+                background-color: #f5f5f5;
+                border: 1px solid #8a8888;
+                text-align: center;
+                cursor: pointer;
+                &:hover{
+    
+                    color: rgb(81, 81, 248);
+                    outline: 3px solid rgb(81, 81, 248);
+                   
+                  }
+                .iconcard{
+                    font-size: 600%;
+                    padding-bottom: 2%;
+                    color: #8a8888;
+                }
+                .titlecard{
+                    font-size: 1.5em;
+                    font-weight: bold;
+                    padding-bottom: 2%;
+                }
+            }
+            
+        }
+    }
+
+
+}
+
+
+}
