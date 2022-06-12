@@ -37,7 +37,7 @@ const Sidebar = () => {
             icon:<LocalShippingIcon sx={{ fontSize: 45 }}/>
         },
         {
-            path:"/facture",
+            path:"/inventory",
             name:"Inventory",
             icon:<InventoryIcon sx={{ fontSize: 45 }}/>
         },

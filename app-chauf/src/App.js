@@ -6,6 +6,7 @@ import Home from "./pages/Home/Home";
 import FactureListe from "./pages/Facture/Facture";
 import AddStore from "./pages/Store/AddStore";
 import HistoryListe from "./pages/Facture/History";
+import InventoryListe from "./pages/Inventory/Inventory";
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
            <Route path="deliverylist" element={<DeliveryListe/>}/>
            <Route path="facture" element={<FactureListe/>}/>
            <Route path="history" element={<HistoryListe/>}/>
+           <Route path="inventory" element={<InventoryListe/>}/>
             </Route>
         </Routes>
       </BrowserRouter>

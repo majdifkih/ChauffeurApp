@@ -1,18 +1,18 @@
 
-.historymain{
+.inventorymain{
     display: flex;
     gap: 34%;
-  .history{
+  .inventory{
     display: flex;
     flex-direction: column;
     flex: 3;
       
         
-  .headhistory{
+  .headinventory{
     display: flex;
     gap: 37%;
     padding-bottom: 1%;
-  .titlehistory{
+  .titleinventory{
     display: flex;
     flex-direction: column;
     font-weight:bold;
@@ -107,7 +107,7 @@
     
     }
   
-  .tabhistory{
+  .tabinventory{
     
    
     
