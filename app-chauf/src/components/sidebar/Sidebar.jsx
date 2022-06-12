@@ -57,7 +57,7 @@ const Sidebar = () => {
           icon:<CropFreeIcon sx={{ fontSize: 45 }}/>
       },
       {
-        path:"/deliverylist",
+        path:"/login",
         name:"Log out",
         icon:<LogoutIcon sx={{ fontSize: 45 }}/>
     }

@@ -56,7 +56,7 @@ const AddStore = ( ) => {
             
       </div>
       <div  className="btn">
-          <button className="btncancel">Cancel</button>
+          <Link to="/" style={{textDecoration:"none"}}><button className="btncancel">Cancel</button></Link>
           <button className="btnadd">Add</button>
         
       </div>
