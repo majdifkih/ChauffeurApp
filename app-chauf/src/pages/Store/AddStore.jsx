@@ -1,12 +1,10 @@
 import "./AddStore.scss";
 import AddBusinessIcon from '@mui/icons-material/AddBusiness';
-import LocalShippingIcon from '@mui/icons-material/LocalShipping';
-import InventoryIcon from '@mui/icons-material/Inventory';
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
-import CallIcon from '@mui/icons-material/Call';
-import CropFreeIcon from '@mui/icons-material/CropFree';
-import RestoreIcon from '@mui/icons-material/Restore';
-import AddCircleIcon from '@mui/icons-material/AddCircle';
+import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import StorefrontIcon from '@mui/icons-material/Storefront';
+import LocalOfferOutlinedIcon from '@mui/icons-material/LocalOfferOutlined';
+import AddLocationIcon from '@mui/icons-material/AddLocation';
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 const AddStore = ( ) => {
@@ -17,31 +15,44 @@ const AddStore = ( ) => {
       <div className="store">
         <Navbar/>
       <div className="inputs">
-        <AddBusinessIcon />
-        <div className="input">
-        <label className="label"/>Store Name
-        <div className="champ">
-       <AddCircleIcon className="iconinput"/><div className="forma"> <input type="text" placeholder="Store Name" className="inputstore"/></div>
-       </div>
-       </div>
+        <AddBusinessIcon sx={{ fontSize: 100 }} className="Iconhead"/>
+        <div className="form">
+            <label for="namea" className="label"/> <div className="label">StoreName</div>
+            <div className="formicon">
+            <StorefrontIcon className="icona" sx={{ fontSize: 40 }}/><div className="forma"><input type="text" placeholder="Enter Store"/></div>
+            </div>
+            </div>
+            <div className="form">
+            <label for="namea" className="label"/><div className="label">Position</div>
+            <div className="formbtn">
+            <AddLocationIcon className="icona" sx={{ fontSize: 40 }}/><button  className="btnstore"> Get Current Position</button>
+            </div>
+            </div>
+            <div className="form">
+            <label for="namea" className="label"/> <div className="label">Contact</div>
+            <div className="formicon">
+            <MailOutlineIcon  className="icona" sx={{ fontSize: 40 }}/><div className="forma"><input type="text" placeholder="Enter Contact"/></div>
+            </div>
+            </div>
+            <div className="form">
+            <label for="namea" /><div className="label">Type</div>
+            <div className="formicon">
+            <LocalOfferOutlinedIcon className="icona" sx={{ fontSize: 40 }}/><div className="forma"><input type="text" placeholder="Enter Type"/></div>
+            </div>
+            </div>
+            <div className="form">
+            <label for="namea" className="label"/> <div className="label">StoreOwner</div>
+            <div className="formicon">
+            <PersonOutlineIcon className="icona" sx={{ fontSize: 40 }}/><div className="forma"><input type="text" placeholder="Enter Owner"/></div>
+            </div>
+            </div>
 
-       <div className="input">
-        <label className="label"/>Positon
-       <AddCircleIcon className="iconinput"/> <button  className="btnstore"> Get Current Position</button>
-       </div>
-       <div className="input">
-        <label className="label"/>Contact
-       <AddCircleIcon className="iconinput"/> <input type="text" placeholder="Contact " className="inputstore"/>
-       </div>
-       <div className="input">
-        <label className="label"/>Type
-       <AddCircleIcon className="iconinput"/> <input type="text" placeholder="Store Type " className="inputstore"/>
-       </div>
-       <div className="input">
-        <label className="label"/>Store Owner
-       <AddCircleIcon className="iconinput"/> <input type="text" placeholder="Store Owner " className="inputstore"/>
-       </div>
 
+            <div  className="btnstore">
+          <button className="btncancel">Cancel</button>
+          <button className="btnadd">Add</button>
+        
+      </div>
       </div>
       
       </div>
