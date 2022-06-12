@@ -7,6 +7,8 @@ import LocalOfferOutlinedIcon from '@mui/icons-material/LocalOfferOutlined';
 import AddLocationIcon from '@mui/icons-material/AddLocation';
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
+import { Link } from "react-router-dom";
+import { color } from "@mui/system";
 const AddStore = ( ) => {
 
   return (
@@ -15,6 +17,9 @@ const AddStore = ( ) => {
       <div className="store">
         <Navbar/>
       <div className="inputs">
+        <div className="headstore">
+          <Link to="/" style={{textDecoration:"none",color:"#8a8888"}}> Home</Link> <div>-</div> <div>Add</div> <div>Store</div>
+        </div>
         <AddBusinessIcon sx={{ fontSize: 100 }} className="Iconhead"/>
         <div className="form">
             <label for="namea" className="label"/> <div className="label">StoreName</div>
@@ -48,13 +53,13 @@ const AddStore = ( ) => {
             </div>
 
 
-            <div  className="btnstore">
+            
+      </div>
+      <div  className="btn">
           <button className="btncancel">Cancel</button>
           <button className="btnadd">Add</button>
         
       </div>
-      </div>
-      
       </div>
 
     </div>

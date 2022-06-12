@@ -11,7 +11,12 @@
             width: 20%;
             padding-top:2% ;
             margin:2% 10% 0% 30%;
-            
+            .headstore{
+                display: flex;
+                font-size: 28px;
+                font-weight: bold;
+                color: #8a8888;
+            }
            .Iconhead{
             margin-left: 140%;
             
@@ -78,5 +83,29 @@
             }
            
         }
+        .btn{
+            display: flex;
+            gap: 10%;
+            margin: 10% 5% 0% 50%;
+             .btncancel{
+                 background-color: #dfdbdb;
+                
+                 border: 1px solid #727171;
+                 font-size: 180%;
+                 color: rgb(86, 79, 79);
+                 padding: 4% 10% 8% 10%;
+                 height: 80%;
+                    border-radius: 5px;
+             }
+             .btnadd{
+                 background-color: #0B7C86;
+                 border: none;
+                 font-size: 160%;
+                 color: #f2e7e7;
+                 padding: 2% 20% 2% 20%;
+                 height: 80%;
+                    border-radius: 5px;
+             }
+            }
     }
 }
