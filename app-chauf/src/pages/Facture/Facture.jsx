@@ -28,6 +28,8 @@ import AddIcon from '@mui/icons-material/Add';
 import PopupAdd from "../../components/Popup/PopupAdd";
 import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 import StorefrontIcon from '@mui/icons-material/Storefront';
+import axios from 'axios';
+import { useEffect } from "react";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -51,107 +53,37 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
    
   },
 }));
-function TablePaginationActions(props) {
-  const theme = useTheme();
-  const { count, page, rowsPerPage, onPageChange } = props;
 
-  const handleFirstPageButtonClick = (event) => {
-    onPageChange(event, 0);
-  };
-
-  const handleBackButtonClick = (event) => {
-    onPageChange(event, page - 1);
-  };
-
-  const handleNextButtonClick = (event) => {
-    onPageChange(event, page + 1);
-  };
-
-  const handleLastPageButtonClick = (event) => {
-    onPageChange(event, Math.max(0, Math.ceil(count / rowsPerPage) - 1));
-  };
-
-  return (
-    <Box sx={{ flexShrink: 0, ml: 2.5 }}>
-      <IconButton
-        onClick={handleFirstPageButtonClick}
-        disabled={page === 0}
-        aria-label="first page"
-      >
-        {theme.direction === 'rtl' ? <LastPageIcon /> : <FirstPageIcon />}
-      </IconButton>
-      <IconButton
-        onClick={handleBackButtonClick}
-        disabled={page === 0}
-        aria-label="previous page"
-      >
-        {theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
-      </IconButton>
-      <IconButton
-        onClick={handleNextButtonClick}
-        disabled={page >= Math.ceil(count / rowsPerPage) - 1}
-        aria-label="next page"
-      >
-        {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
-      </IconButton>
-      <IconButton
-        onClick={handleLastPageButtonClick}
-        disabled={page >= Math.ceil(count / rowsPerPage) - 1}
-        aria-label="last page"
-      >
-        {theme.direction === 'rtl' ? <FirstPageIcon /> : <LastPageIcon />}
-      </IconButton>
-    </Box>
-  );
-}
-
-TablePaginationActions.propTypes = {
-  count: PropTypes.number.isRequired,
-  onPageChange: PropTypes.func.isRequired,
-  page: PropTypes.number.isRequired,
-  rowsPerPage: PropTypes.number.isRequired,
-};
-function createData(name, Quantity, Price, Total) {
-  return { name, Quantity, Price, Total};
-}
-
-const rows = [
-  createData('Chocotom','111','4.000DT','1.500'),
-  createData('SAFIA eau','386','4.000DT','3.650'),
-  createData('Saida biscuit','696','4.000DT','7.500'),
-  createData('Maestro','672','4.000DT','4000'),
-  createData('Saida','226','4.000DT','4.100'),
-  createData('Crostina','172','4.000DT','2.700'),
-  createData('Ice cream','147','4.000DT','1.800'),
-  createData('Fidji','391','4.000DT','800'),
-  createData('Cupcake','973','4.000DT','900'),
-  createData('Chocolat','537','4.000DT','700'),
-  createData('Coca cola','876','4.000DT','2000'),
-  createData('Fanta','314','4.000DT','1.100'),
-  createData('Apla','555','4.000DT','5.500'),
-  createData('kaki','222','4.000DT','4.500'),
-  createData('Gaucho ','231','4.000DT','2.500'),
-];
  function FactureListe() {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(3);
-
-  // Avoid a layout jump when reaching the last page with empty rows.
-  const emptyRows =
-    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
-
-  const handleChangePage = (event, newPage) => {
-    setPage(newPage);
-  };
-
-  const handleChangeRowsPerPage = (event) => {
-    setRowsPerPage(parseInt(event.target.value, 10));
-    setPage(0);
-  };
+  const [rows, setrows] = React.useState([]);
+  const [Pdata,setPdata] = useState([])
+  const [subTotal,setsubTotal] = useState(0)
+  const [total,settotal] = useState(0)
   
+  const getProduct=()=>{
+    axios.get("http://localhost:3001/ProductAPI/products").then(res=>{
+      if(res.data.success){
+        setrows( res.data.existingPosts);
+        
+        console.log(rows)
+      }
+    })
+  } 
+  useEffect(()=>{
+    getProduct() 
+    setsubTotal((items.reduce((a,v) =>  a = a + v.price , 0 ))/1000)
+    settotal(subTotal+subTotal*0.09)
+  }); 
+
+  const [items, setItems] = useState([]);
   const [addPopupfacture, setAddPopupfacture] = useState(false);
   const [buttonPopup, setButtonPopup] = useState(false);
   const [factproduct, setfactproduct] = useState("");
+  
+console.log(items)
+
   return (
 
   <div className="facturemain">
@@ -206,38 +138,21 @@ const rows = [
           </TableRow>
         </TableHead>
         <TableBody>
-          {(rowsPerPage > 0
-            ? rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-            : rows
+          {(items
           ).map((row) => (
             <StyledTableRow className="row" key={row.name}>
               <StyledTableCell  width={"20%"} height={"5%"} component="th" scope="row" className="cellproduct"><input type="radio" name="fleet" className="radio"/>{row.name}</StyledTableCell>
-              <StyledTableCell className="cell" ><input type="number" className="cellinput"/></StyledTableCell>
-              <StyledTableCell className="cell" ><input type="number" className="cellinput"/></StyledTableCell>
-              <StyledTableCell className="cell" ><input type="number" className="cellinput"/></StyledTableCell>
+              <StyledTableCell className="cell" ><input type="number" disabled="disabled" placeholder={row.quantity} className="cellinput"/></StyledTableCell>
+              <StyledTableCell className="cell" ><input type="number"disabled="disabled" className="cellinput"/></StyledTableCell>
+              <StyledTableCell className="cell" ><input type="number" disabled="disabled"className="cellinput" placeholder={row.price}/></StyledTableCell>
               <StyledTableCell  ><DeleteIcon/></StyledTableCell>
             </StyledTableRow>
           ))}
-          
+      
         </TableBody>
         <TableFooter >
           <TableRow>
-            <TablePagination
-              rowsPerPageOptions={[3, 5, 10, { label: 'All', value: -1 }]}
-              colSpan={7}
-              count={rows.length}
-              rowsPerPage={rowsPerPage}
-              page={page}
-              SelectProps={{
-                inputProps: {
-                  'aria-label': 'rows',
-                },
-                native: true,
-              }}
-              onPageChange={handleChangePage}
-              onRowsPerPageChange={handleChangeRowsPerPage}
-              ActionsComponent={TablePaginationActions}
-            />
+           
           </TableRow>
         </TableFooter>
       </Table>
@@ -246,12 +161,12 @@ const rows = [
   
   <button className="addfacture" onClick={() => setAddPopupfacture(true)}><AddIcon/></button>
   <div className="popinvet">
-<PopupAdd trigger={addPopupfacture} setTrigger={setAddPopupfacture}/>
+<PopupAdd trigger={addPopupfacture} setTrigger={setAddPopupfacture} setData={setItems} ro={rows}/>
 </div>
   <div className="devis">
-    <div className="deviscont">Sub Total:7.000 DT </div>
+    <div className="deviscont">Sub Total:{subTotal} DT </div>
     <div className="deviscont">TVA:9% </div>
-    <div className="deviscont">Total 7.630 DT</div>
+    <div className="deviscont">Total {total} DT</div>
   </div>
   <button className="confirmerfacture" >Confirmer</button>
   </div>
