@@ -1,7 +1,10 @@
 
 .facturemain{
     display: flex;
-    gap: 34%;
+    gap: 15%;
+    .side{
+      z-index: 1;
+    }
   .facture{
     display: flex;
     flex-direction: column;

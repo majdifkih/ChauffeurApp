@@ -1,6 +1,9 @@
 .storemain{
     display: flex;
-    gap: 10%;
+    gap: 15%;
+    .side{
+      z-index: 1;
+    }
     .store{
         display: flex;
         flex-direction: column;
@@ -10,7 +13,7 @@
             flex-direction: column;
             width: 20%;
             padding-top:2% ;
-            margin:2% 10% 0% 30%;
+            margin:2% 10% 0% 0%;
             .headstore{
                 display: flex;
                 font-size: 28px;
@@ -85,8 +88,8 @@
         }
         .btn{
             display: flex;
-            gap: 30%;
-            margin: 10% 5% 0% 60%;
+            gap: 20%;
+            margin: 10% 5% 0% 25%;
              .btncancel{
                  background-color: #dfdbdb;
                 
@@ -102,7 +105,7 @@
                  border: none;
                  font-size: 160%;
                  color: #f2e7e7;
-                 padding: 2% 15% 2% 15%;
+                 padding: 2% 10% 2% 10%;
                  height: 80%;
                     border-radius: 5px;
              }

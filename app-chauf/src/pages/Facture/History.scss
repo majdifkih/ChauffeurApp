@@ -1,7 +1,10 @@
 
 .historymain{
     display: flex;
-    gap: 34%;
+    gap: 15%;
+    .side{
+      z-index: 1;
+    }
   .history{
     display: flex;
     flex-direction: column;

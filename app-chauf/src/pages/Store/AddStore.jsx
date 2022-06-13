@@ -13,7 +13,7 @@ const AddStore = ( ) => {
 
   return (
     <div className="storemain">
-      <Sidebar/>
+          <div className="side"><Sidebar/></div>
       <div className="store">
         <Navbar/>
       <div className="inputs">

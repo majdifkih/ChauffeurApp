@@ -1,8 +1,10 @@
 
 .deliverymain{
   display: flex;
-  gap: 34%;
-
+  gap:15%;
+.side{
+  z-index: 1;
+}
 .delivery{
   display: flex;
   flex-direction: column;

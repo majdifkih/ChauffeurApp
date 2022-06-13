@@ -18,7 +18,7 @@ import { NavLink } from 'react-router-dom';
 
 
 const Sidebar = () => {
-    const[isOpen ,setIsOpen] = useState(true);
+    const[isOpen ,setIsOpen] = useState(false);
     const toggle = () => setIsOpen (!isOpen);
     const menuItem=[
         {
