@@ -42,7 +42,7 @@ const Sidebar = () => {
             icon:<InventoryIcon sx={{ fontSize: 45 }}/>
         },
         {
-            path:"/facture",
+            path:"/order",
             name:"Add Order",
             icon:<AddCircleOutlineIcon sx={{ fontSize: 45 }}/>
         },

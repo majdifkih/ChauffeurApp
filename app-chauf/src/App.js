@@ -8,6 +8,7 @@ import AddStore from "./pages/Store/AddStore";
 import HistoryListe from "./pages/Facture/History";
 import InventoryListe from "./pages/Inventory/Inventory";
 import Login from "./pages/Login/Login";
+import OrderListe from "./pages/Order/Order";
 
 
 function App() {
@@ -19,13 +20,14 @@ function App() {
         <Navbar/>  */}
         <Routes>
           <Route path="/">
+          <Route path="login" element={<Login/>}/>
           <Route path="" element={<Home/>}/>
           <Route path="addstore" element={<AddStore/>}/>
            <Route path="deliverylist" element={<DeliveryListe/>}/>
            <Route path="facture" element={<FactureListe/>}/>
            <Route path="history" element={<HistoryListe/>}/>
            <Route path="inventory" element={<InventoryListe/>}/>
-           <Route path="login" element={<Login/>}/>
+           <Route path="order" element={<OrderListe/>}/>
             </Route>
         </Routes>
       </BrowserRouter>

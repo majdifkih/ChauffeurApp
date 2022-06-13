@@ -25,7 +25,7 @@ const Home = ( ) => {
      </div>
        <div className="linecard">
        <Link to="/inventory" style={{ textDecoration: 'none' }}><div className="cardinvetory"><InventoryIcon className="iconcard"/><div className="titlecard">Inventory</div></div></Link>
-       <Link to="/addstore" style={{ textDecoration: 'none' }}>  <div className="cardadd"><AddCircleOutlineIcon className="iconcard"/><div className="titlecard">AddOrder</div></div></Link>
+       <Link to="/order" style={{ textDecoration: 'none' }}>  <div className="cardadd"><AddCircleOutlineIcon className="iconcard"/><div className="titlecard">AddOrder</div></div></Link>
        </div>
        <div className="linecardend">
        <Link to="/history" style={{ textDecoration: 'none' }}>  <div className="cardhistory"><RestoreIcon className="iconcard"/><div className="titlecard">InvoiceHistory </div></div></Link>
