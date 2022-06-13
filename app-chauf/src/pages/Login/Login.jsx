@@ -16,22 +16,22 @@ function Login() {
   
     <img src="%PUBLIC_URL%../../../logo.png" className="logo"/>
  
-  <label for="email">Email Address</label>
+  <label for="email" className="label">Email Address</label>
     <div className="email">
     
       <div class="sec-2">
-      <EmailIcon className="iconlogin" fontSize="small"/>
+      <EmailIcon className="iconlogin" sx={{ fontSize: 40 }}/>
         <input type="email"  placeholder="Username@gmail.com"/>
       </div>
     </div>
-    <label for="password">Password</label>
+    <label for="password" className="label">Password</label>
     <div className="password">
       
       
       <div class="sec-2">
-      <LockIcon className="iconlogin" fontSize="small"/>
+      <LockIcon className="iconlogin" sx={{ fontSize: 40 }}/>
         <input  id ="myInput" type="password" name="password" placeholder="password"/>
-        <VisibilityIcon className="iconlogin" fontSize="small"/>
+        <VisibilityIcon className="iconeye" sx={{ fontSize: 40 }}/>
         
       </div>
     
