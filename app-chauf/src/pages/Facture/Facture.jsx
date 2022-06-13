@@ -136,8 +136,8 @@ console.log(items)
               <StyledTableCell  width={"20%"} height={"5%"} component="th" scope="row" className="cellproduct"><input type="radio" name="fleet" className="radio"/>{row.name}</StyledTableCell>
               <StyledTableCell className="cell" >{row.quantity}</StyledTableCell>
               <StyledTableCell className="cell" >{row.price}</StyledTableCell>
-              <StyledTableCell className="cell" >{row.total}</StyledTableCell>
-              <StyledTableCell  ><DeleteIcon/></StyledTableCell>
+              <StyledTableCell className="cell" >{total}</StyledTableCell>
+              <StyledTableCell className="cell" ><DeleteIcon className="icondel"/></StyledTableCell>
             </StyledTableRow>
           ))}
       

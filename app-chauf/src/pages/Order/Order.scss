@@ -1,7 +1,7 @@
 
 .ordermain{
     display: flex;
-    gap: 15%;
+    gap: 20%;
     .side{
       z-index: 1;
     }
@@ -96,7 +96,7 @@
     
     border-radius: 10px;
     
-    margin-right: 2%;
+    margin-right: 10%;
    
 
   .radio{
@@ -116,7 +116,7 @@
   
   .addorder{
     margin-top: 2%;
-    margin-left:30% ;
+    margin-left:20% ;
     cursor: pointer;
     width: 44%;
     height: 10%;
@@ -140,7 +140,7 @@
   background-color: #fff;
   width: 25%;
   margin-top: 5%;
-  margin-left:70% ;
+  margin-left:60% ;
   padding: 2% 0% 2% 2%;
 .deviscont{
   font-weight: bold;
@@ -148,7 +148,7 @@
 }
 .confirmerorder{
   margin-top: 20%;
-    margin-left:20% ;
+    margin-left:10% ;
     cursor: pointer;
     width: 65%;
     height: 10%;
