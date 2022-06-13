@@ -1,6 +1,9 @@
 .homemain{
     display: flex;
-    gap: 10%;
+    gap: 15%;
+    .side{
+      z-index: 1;
+    }
     .home{
         display: flex;
         flex-direction: column;
@@ -18,7 +21,7 @@
             display: flex;
              gap: 30%;
             padding-top: 5%;
-            margin-left: 30%;
+           
             .cardstore{
                 padding: 20% 145% 20%  80%;
                 border-radius: 5px;
@@ -48,7 +51,7 @@
         
             }
             .cardvehicule{
-                padding: 13% 110% 13%  30%;
+                padding: 20% 160% 20%  75%;
                 border-radius: 5px;
                 background-color: #f5f5f5;
                 border: 1px solid #8a8888;
@@ -101,7 +104,7 @@
 
             .cardadd{
                 padding: 23% 155% 23%  65%;
-                margin-left: 5%;
+                
                 border-radius: 5px;
                 background-color: #f5f5f5;
                 border: 1px solid #8a8888;
@@ -130,7 +133,7 @@
                 display: flex;
              gap: 23%;
             padding-top: 5%;
-            margin-left: 30%;
+            
             .cardhistory{
                 padding: 20% 110% 20%  40%;
                 border-radius: 5px;
@@ -159,6 +162,7 @@
             }
             .cardscan{
                 padding: 28% 150% 28%  70%;
+                margin-left: 5%;
                 border-radius: 5px;
                 background-color: #f5f5f5;
                 border: 1px solid #8a8888;

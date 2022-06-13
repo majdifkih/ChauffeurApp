@@ -1,7 +1,10 @@
 
 .facturemain{
     display: flex;
-    gap: 34%;
+    gap: 15%;
+    .side{
+      z-index: 1;
+    }
   .facture{
     display: flex;
     flex-direction: column;
@@ -14,15 +17,23 @@
     padding-bottom: 1%;
   .titlefacture{
     display: flex;
+    flex-direction: column;
     gap: 10%;
     font-weight:bold;
     color: black;
     font-size: 122%;
+    .headfact{
+      display: flex;
+      font-size: 28px;
+      font-weight: bold;
+      color: #8a8888;
+    }
       input[type=Search]{
         height:30px;
         border: 1px solid rgb(188, 188, 188);
         padding-right: 30%;
         border-radius: 5px;
+        margin-top: 10%;
         background: #c3cad2;
       }
       
@@ -32,8 +43,8 @@
           position:relative; }
         .input-icone i{
           position:absolute; 
-          left: 108%; 
-          padding:4px 8px; 
+          left: 100%; 
+          padding:20px 8px; 
           color:#838481; }
     
         input[type=Search]:hover {

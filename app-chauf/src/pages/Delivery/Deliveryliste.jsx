@@ -22,6 +22,7 @@ import FirstPageIcon from '@mui/icons-material/FirstPage';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import LastPageIcon from '@mui/icons-material/LastPage';
+import { Link } from "react-router-dom";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -155,7 +156,10 @@ const handleChangeRowsPerPage = (event) => {
 
 <div className="headdelivery">
       <div className="titledelivery">
-      deliverys
+      <div className="headdeliv">
+          <Link to="/" style={{textDecoration:"none",color:"#8a8888"}}> Home</Link> <div>-</div> <div>Deliverys</div>
+        </div>
+      
       <div class="input-icone"><input type="Search" placeholder="Search..." className="rech"/>
       <i><SearchIcon/></i></div>
 </div>
@@ -168,7 +172,7 @@ const handleChangeRowsPerPage = (event) => {
           <TableHead>
             <TableRow className="row" >
                 
-              <StyledTableCell  align="left" ><input type="radio" name="fleet" className="radio"/><label for="store">Stores</label></StyledTableCell>
+              <StyledTableCell  align="left" ><label for="store">Stores</label></StyledTableCell>
               <StyledTableCell  className="circle" >Positions</StyledTableCell>
               <StyledTableCell align="center" className="stat">Status</StyledTableCell>
             </TableRow>
@@ -179,12 +183,12 @@ const handleChangeRowsPerPage = (event) => {
               : rows
             ).map((row) => (
               <StyledTableRow className="row" key={row.name}>
-                <StyledTableCell width={"20%"} height={"5%"} component="th" scope="row"><input type="radio" name="fleet"  className="radio" /><label for="name">{row.name}</label>
+                <StyledTableCell width={"20%"} height={"5%"} component="th" scope="row"><label for="name">{row.name}</label>
                   
                 </StyledTableCell>
                 <StyledTableCell className ="circle">{row.position} </StyledTableCell>
                 <StyledTableCell className="line"  >
-                 <div className={`reguliere ${row.status}`}>{row.status}</div><i class="material-icons">info_outline</i></StyledTableCell>
+                 <div className={`reguliere ${row.status}`}>{row.status}</div><Link to="facture"><i class="material-icons">info_outline</i></Link></StyledTableCell>
                  </StyledTableRow>
             ))}
             

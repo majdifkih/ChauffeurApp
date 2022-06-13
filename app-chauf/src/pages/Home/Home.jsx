@@ -14,18 +14,18 @@ const Home = ( ) => {
 
   return (
     <div className="homemain">
-      <Sidebar/>
+          <div className="side"><Sidebar/></div>
       <div className="home">
         <Navbar/>
         <div className="home-center">
       <div className="cards">
      <div className="linecard"> 
         <Link to="/addstore" style={{ textDecoration: 'none' }}><div className="cardstore"><AddBusinessIcon  className="iconcard"/><div className="titlecard">AddStore </div></div></Link>
-        <Link to="/addstore" style={{ textDecoration: 'none' }}> <div className="cardvehicule"><LocalShippingIcon className="iconcard"/><div className="titlecard"><div>Purchase</div><div>Orders</div></div></div></Link>
+        <Link to="/deliverylist" style={{ textDecoration: 'none' }}> <div className="cardvehicule"><LocalShippingIcon className="iconcard"/><div className="titlecard"><div>Deliverys</div></div></div></Link>
      </div>
        <div className="linecard">
        <Link to="/inventory" style={{ textDecoration: 'none' }}><div className="cardinvetory"><InventoryIcon className="iconcard"/><div className="titlecard">Inventory</div></div></Link>
-       <Link to="/addstore" style={{ textDecoration: 'none' }}>  <div className="cardadd"><AddCircleOutlineIcon className="iconcard"/><div className="titlecard">AddOrder</div></div></Link>
+       <Link to="/order" style={{ textDecoration: 'none' }}>  <div className="cardadd"><AddCircleOutlineIcon className="iconcard"/><div className="titlecard">AddOrder</div></div></Link>
        </div>
        <div className="linecardend">
        <Link to="/history" style={{ textDecoration: 'none' }}>  <div className="cardhistory"><RestoreIcon className="iconcard"/><div className="titlecard">InvoiceHistory </div></div></Link>

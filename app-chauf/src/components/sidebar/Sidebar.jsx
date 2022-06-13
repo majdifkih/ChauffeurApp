@@ -18,7 +18,7 @@ import { NavLink } from 'react-router-dom';
 
 
 const Sidebar = () => {
-    const[isOpen ,setIsOpen] = useState(true);
+    const[isOpen ,setIsOpen] = useState(false);
     const toggle = () => setIsOpen (!isOpen);
     const menuItem=[
         {
@@ -33,7 +33,7 @@ const Sidebar = () => {
         },
         {
             path:"/deliverylist",
-            name:"Purschase Orders",
+            name:"Deliverys",
             icon:<LocalShippingIcon sx={{ fontSize: 45 }}/>
         },
         {
@@ -42,7 +42,7 @@ const Sidebar = () => {
             icon:<InventoryIcon sx={{ fontSize: 45 }}/>
         },
         {
-            path:"/facture",
+            path:"/order",
             name:"Add Order",
             icon:<AddCircleOutlineIcon sx={{ fontSize: 45 }}/>
         },
@@ -57,7 +57,7 @@ const Sidebar = () => {
           icon:<CropFreeIcon sx={{ fontSize: 45 }}/>
       },
       {
-        path:"/deliverylist",
+        path:"/login",
         name:"Log out",
         icon:<LogoutIcon sx={{ fontSize: 45 }}/>
     }

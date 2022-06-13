@@ -1,8 +1,10 @@
 
 .deliverymain{
   display: flex;
-  gap: 34%;
-
+  gap:15%;
+.side{
+  z-index: 1;
+}
 .delivery{
   display: flex;
   flex-direction: column;
@@ -16,16 +18,26 @@
   
 .titledelivery{
     display: flex;
+    flex-direction: column;
     gap: 10%;
     font-weight:bold;
     color: black;
     font-size: 122%;
+    
+    .headdeliv{
+      display: flex;
+      font-size: 28px;
+      font-weight: bold;
+      color: #8a8888;
+      
+  }
     input[type=Search]{
       height:30px;
       border: 1px solid rgb(188, 188, 188);
       padding-right: 30%;
       border-radius: 5px;
       background: #c3cad2;
+      margin:10% 0% 10% 0%;
     }
     
       
@@ -34,8 +46,8 @@
         position:relative; }
       .input-icone i{
       position:absolute; 
-      left: 108%; 
-      padding:4px 8px; 
+      left: 90%; 
+      padding:25px 8px; 
       color:#838481; }
   
       input[type=Search]:hover {
@@ -70,12 +82,12 @@
     color: white;
     &.Done { 
       background: #29CC97;
-      padding: 1% 7% 0% 7%;
+      padding: 2% 7% 0% 7%;
       
     }
     &.Incomplete {
       background: #FEC400;
-      padding: 1% 3% 0% 2%;
+      padding: 2% 3% 0% 2%;
     }
     
   }
@@ -86,20 +98,11 @@
     display: flex;
     justify-content: flex-end;
     gap: 5%;
+    .material-icons{
+      
+      color: #838481;
+    }
 }
   }
 }
 }
-// @media (max-width:650px) {
-//   .side{
-//     position: fixed;
-//      left: -270px;
-//     width: 270px;
-//   }
-//   .delivery{
-//     width: 100%;
-// margin-left: 33%;
-// display: inline-block;
-//   }
-  
-// }
