@@ -7,6 +7,7 @@ import FactureListe from "./pages/Facture/Facture";
 import AddStore from "./pages/Store/AddStore";
 import HistoryListe from "./pages/Facture/History";
 import InventoryListe from "./pages/Inventory/Inventory";
+import Login from "./pages/Login/Login";
 
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
            <Route path="facture" element={<FactureListe/>}/>
            <Route path="history" element={<HistoryListe/>}/>
            <Route path="inventory" element={<InventoryListe/>}/>
-           
+           <Route path="login" element={<Login/>}/>
             </Route>
         </Routes>
       </BrowserRouter>
