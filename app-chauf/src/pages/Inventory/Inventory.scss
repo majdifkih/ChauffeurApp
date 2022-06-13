@@ -1,7 +1,10 @@
 
 .inventorymain{
     display: flex;
-    gap: 34%;
+    gap: 15%;
+    .side{
+      z-index: 1;
+    }
   .inventory{
     display: flex;
     flex-direction: column;
