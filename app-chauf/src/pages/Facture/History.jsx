@@ -200,7 +200,7 @@ const rows = [
               <StyledTableCell className="cell" >{row.date}</StyledTableCell>
               <StyledTableCell className="cell" >{row.total}</StyledTableCell>
               <StyledTableCell className={`status ${row.status}`} >{row.status}</StyledTableCell>
-             
+              <StyledTableCell align="center"><Link to="/infofacture"><i class="material-icons" >info_outline</i></Link></StyledTableCell>
             </StyledTableRow>
           ))}
           

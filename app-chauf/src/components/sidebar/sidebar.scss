@@ -36,14 +36,18 @@
 .link{
   display: flex;
   color: #fff;
-  padding: 12px 15px;
+  padding: 20px 15px;
   gap: 20px;
   transition: all 0.5s;
   text-decoration: none;
-  padding-top: 6%;
+ 
+  .icon{
+    padding-left: 10%;
+  }
  
   .link_text{
-    font-size: 150%;
+    font-size: 200%;
+    padding-top: 4%;
   }
 
 .link:hover{

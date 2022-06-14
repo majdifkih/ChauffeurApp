@@ -1,0 +1,137 @@
+
+.infofacturemain{
+    display: flex;
+    gap: 20%;
+  .infofacture{
+    display: flex;
+    flex-direction: column;
+    flex: 3;
+      
+        
+  .headinfofacture{
+    display: flex;
+    gap: 65%;
+    padding-bottom: 1%;
+    .titleinfofacture{
+        display: flex;
+        flex-direction: column;
+        font-weight:bold;
+        color: black;
+        font-size: 122%;
+        .headfactureinfo{
+            display: flex;
+            font-size: 28px;
+            font-weight: bold;
+            color: #8a8888;
+        }
+          input[type=Search]{
+            height:30px;
+            border: 1px solid rgb(188, 188, 188);
+            padding-right: 30%;
+            border-radius: 5px;
+            background: #c3cad2;
+          }
+          
+            
+            .input-icone{
+              display: flex;
+              position:relative; 
+            padding: 10% 0% 10% 0%;}
+            .input-icone i{
+              position:absolute; 
+              left:75%; 
+              padding:4px 8px; 
+              color:#838481; }
+        
+            input[type=Search]:hover {
+            background: #f2f2f2; }
+          
+         .material-icons{
+           
+           font-size: 120%;
+         }
+          }
+       
+      
+        .popdel{
+          z-index: 222;
+        }
+   
+    }
+    
+      .back{
+        display: flex;
+        width: 7%;
+        margin-bottom: 2%;
+        padding: 0.4% 3% 0.4% 2%;
+        align-items: center;
+        border-radius: 5px;
+        color:#fff;
+        border: 1px solid rgb(210, 209, 209);
+        background-color: rgba(224, 78, 10, 0.6);
+        cursor: pointer; 
+      }
+   
+  
+  .tabinfofacture{
+  
+    border-radius: 10px;
+    
+    margin-right: 10%;
+    
+  .radio{
+        margin-right:3%;    }
+  
+  
+  
+  .quantity{
+    padding-left: 10%;
+    .quantityinput{
+      width: 15%;
+      border: 1px solid black;
+    }
+  }
+  
+  }
+  
+  .addinvetory{
+    margin-top: 2%;
+    margin-left:30% ;
+    cursor: pointer;
+    width: 40%;
+    height: 6%;
+    font-size: 100%;
+    color: #fff;
+    padding: 1% 2% 2% 2%;
+    background: #747979;
+    border-radius: 5px;
+    border: none;
+    align-items: center;
+  }
+  .popinvet{
+  z-index: 1;
+  }
+  .devis{
+  
+  display: flex;
+  flex-direction: column;
+  gap: 2%;
+  border: 1px solid black;
+  background-color: #fff;
+  width: 25%;
+  margin-top: 2%;
+  margin-left:60% ;
+  padding: 2% 0% 2% 2%;
+  .deviscont{
+  font-weight: bold;
+  }
+  }
+
+  }
+  
+  }
+  
+   
+    
+  
+  
