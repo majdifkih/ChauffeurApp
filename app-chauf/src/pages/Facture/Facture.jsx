@@ -46,6 +46,8 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 }));
 
  function FactureListe() {
+  const[searchTerm,setSearchTerm]=useState("");
+
   const [page, setPage] = React.useState(0);
   const [rows, setrows] = React.useState([]);
   const [Pdata,setPdata] = useState([])
@@ -86,7 +88,9 @@ console.log(items)
       <div className="headfact">
           <Link to="/" style={{textDecoration:"none",color:"#8a8888"}}> Home</Link> <div>-</div> <div>Invoice</div>
         </div> 
-      <div class="input-icone"><input type="Search" placeholder="Search..." className="rech"/>
+      <div class="input-icone"><input type="Search" placeholder="Search..." className="rech" onChange={(event)=>{
+          setSearchTerm(event.target.value);
+        }}/>
       <i><SearchIcon/></i></div>
 </div>
 <div className="buttonfacture">
@@ -130,14 +134,21 @@ console.log(items)
           </TableRow>
         </TableHead>
         <TableBody>
-          {(items
-          ).map((row) => (
-            <StyledTableRow className="row" key={row.name}>
-              <StyledTableCell  width={"20%"} height={"5%"} component="th" scope="row" className="cellproduct"><input type="radio" name="fleet" className="radio"/>{row.name}</StyledTableCell>
-              <StyledTableCell className="cell" >{row.quantity}</StyledTableCell>
-              <StyledTableCell className="cell" >{row.price}</StyledTableCell>
-              <StyledTableCell className="cell" >{total}</StyledTableCell>
-              <StyledTableCell className="cell" ><DeleteIcon className="icondel"/></StyledTableCell>
+        {(items).filter((val)=>{
+            if (searchTerm =="")
+            {
+              return val
+            }
+            else if(val.productName.toLowerCase().includes(searchTerm.toLowerCase())){
+              return val
+            }
+          }).map((val,key) => (
+            <StyledTableRow className="row" key={key}>
+              <StyledTableCell  width={"20%"} height={"5%"} component="th" scope="row" className="cellproduct"><input type="radio" name="fleet" className="radio"/>{val.name}</StyledTableCell>
+              <StyledTableCell className="cell" ><input type="number" disabled="disabled" placeholder={val.quantity} className="cellinput"/></StyledTableCell>
+              <StyledTableCell className="cell" ><input type="number"disabled="disabled" className="cellinput"/></StyledTableCell>
+              <StyledTableCell className="cell" ><input type="number" disabled="disabled"className="cellinput" placeholder={val.price}/></StyledTableCell>
+              <StyledTableCell  ><DeleteIcon/></StyledTableCell>
             </StyledTableRow>
           ))}
       
