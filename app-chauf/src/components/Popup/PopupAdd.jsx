@@ -17,6 +17,9 @@ function PopupAdd(props){
     const[qproduct,setQproduct]=React.useState(false);
 
     return (props.trigger) ? (
+
+
+        
         <div className="popupclient">{(props.ro).map((row) => (
             <div className="popup-innerclient">
             <h3>Add command</h3> 
@@ -74,3 +77,20 @@ function PopupAdd(props){
     ) : "";
 }
 export default PopupAdd;
+
+
+
+
+    //    JSONDATA.filter((val)=>{
+    //     if(searchTerm ==""){
+    //       return val
+    //     }else if(val.first_name.toLowerCase().includes(searchTerm.toLowerCase())){
+    //       return val
+    //   }
+    //      map((val,key)=>{
+    //     return(
+    //       <div className="user"key={key}>
+    //         <p>{val.first_name}</p>
+    //       </div>
+    //     );
+    //   })})

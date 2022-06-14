@@ -134,6 +134,7 @@ const rows = [
   createData('Gaucho ','22/01/2022','2.500',' done'),
 ];
  function HistoryListe() {
+   const [searchTerm, setSearchTerm] = useState("");
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
@@ -191,15 +192,23 @@ const rows = [
           </TableRow>
         </TableHead>
         <TableBody>
-          {(rowsPerPage > 0
-            ? rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-            : rows
-          ).map((row) => (
-            <StyledTableRow className="row" key={row.name}>
-              <StyledTableCell  width={"20%"} height={"5%"} component="th" scope="row" className="cellproduct"><input type="radio" name="fleet" className="radio"/>{row.name}</StyledTableCell>
-              <StyledTableCell className="cell" >{row.date}</StyledTableCell>
-              <StyledTableCell className="cell" >{row.total}</StyledTableCell>
-              <StyledTableCell className={`status ${row.status}`} >{row.status}</StyledTableCell>
+        {(rowsPerPage > 0
+              ? rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+              : rows
+            ).filter((val)=>{
+            if (searchTerm =="")
+            {
+              return val
+            }
+            else if(val.productName.toLowerCase().includes(searchTerm.toLowerCase())){
+              return val
+            }
+          }).map((val,key) => (
+            <StyledTableRow className="row" key={key}>
+              <StyledTableCell  width={"20%"} height={"5%"} component="th" scope="row" className="cellproduct"><input type="radio" name="fleet" className="radio"/>{val.name}</StyledTableCell>
+              <StyledTableCell className="cell" >{val.date}</StyledTableCell>
+              <StyledTableCell className="cell" >{val.total}</StyledTableCell>
+              <StyledTableCell className={`status ${val.status}`} >{val.status}</StyledTableCell>
              
             </StyledTableRow>
           ))}
