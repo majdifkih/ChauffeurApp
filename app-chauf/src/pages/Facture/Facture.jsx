@@ -1,10 +1,8 @@
 import "./Facture.scss";
 import * as React from 'react';
 import { useState } from 'react';
-import PropTypes from 'prop-types';
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
-import { useTheme } from '@mui/material/styles';
 import TableBody from '@mui/material/TableBody';
 import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
@@ -16,17 +14,9 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 import TableFooter from '@mui/material/TableFooter';
-import Box from '@mui/material/Box';
-import TablePagination from '@mui/material/TablePagination';
-import IconButton from '@mui/material/IconButton';
-import FirstPageIcon from '@mui/icons-material/FirstPage';
-import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
-import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
-import LastPageIcon from '@mui/icons-material/LastPage';
 import Popup from "../../components/Popup/Popup";
 import AddIcon from '@mui/icons-material/Add';
 import PopupAdd from "../../components/Popup/PopupAdd";
-import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 import StorefrontIcon from '@mui/icons-material/Storefront';
 import axios from 'axios';
 import { useEffect } from "react";
@@ -59,7 +49,6 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   const[searchTerm,setSearchTerm]=useState("");
 
   const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(3);
   const [rows, setrows] = React.useState([]);
   const [Pdata,setPdata] = useState([])
   const [subTotal,setsubTotal] = useState(0)
