@@ -29,23 +29,28 @@
       color: #8a8888;
     }
       input[type=Search]{
-        height:30px;
+        height:40px;
         border: 1px solid rgb(188, 188, 188);
-        padding-right: 30%;
+        width: 80%;
         border-radius: 5px;
         margin-top: 10%;
         background: #c3cad2;
+        font-size: 130%;
       }
       
         
         .input-icone{
           display: flex;
-          position:relative; }
+          position:relative; 
+        }
         .input-icone i{
           position:absolute; 
-          left: 85%; 
-          padding:25px 8px; 
-          color:#838481; }
+          left: 65%; 
+          padding:30px 8px; 
+          color:#838481; 
+      
+        
+        }
     
         input[type=Search]:hover {
         background: #f2f2f2; }
@@ -71,10 +76,10 @@
         display: flex;
         gap: 3%;
         cursor: pointer;
-        font-size: 100%;
+        font-size: 150%;
         color: #fff;
        
-        padding: 1% 3% 1% 5%;
+        padding: 1% 3% 1% 1%;
         background: #FF7A7A;
         border-radius: 5px;
         border: none;
@@ -99,19 +104,25 @@
     margin-right: 10%;
    
 
-  .radio{
-        margin-right:3%;    }
-  
-  
-  
-  .cell{
-    padding-left: 10%;
-    .cellinput{
-      width: 70%;
-      border: 1px solid black;
-    }
-  }
  
+  
+  
+  .cellprod{
+    font-size: 150%;
+    display: flex;
+    .radio{
+      margin-right:5%;    }
+  }
+  .cell{
+   
+    font-size: 150%;
+    
+  }
+  .icondel{
+    color: #676868;
+   font-size: 250%;
+   cursor: pointer;
+ }
   }
   
   .addorder{
@@ -119,14 +130,19 @@
     margin-left:20% ;
     cursor: pointer;
     width: 44%;
-    height: 10%;
-    font-size: 100%;
+
+    font-size: 150%;
     color: #fff;
-    padding: 2% 2% 2% 2%;
+    padding: 2% 2% 0% 2%;
     background: #747979;
     border-radius: 5px;
     border: none;
     align-items: center;
+   
+  }
+  .iconadd{
+    font-size: 200%;
+ 
   }
 .popinvet{
  z-index: 1;
@@ -138,12 +154,13 @@
   gap: 2%;
   border: 1px solid black;
   background-color: #fff;
-  width: 25%;
+  width: 35%;
   margin-top: 5%;
-  margin-left:60% ;
+  margin-left:50% ;
   padding: 2% 0% 2% 2%;
 .deviscont{
   font-weight: bold;
+  font-size: 150%;
 }
 }
 .confirmerorder{
@@ -152,7 +169,7 @@
     cursor: pointer;
     width: 65%;
     height: 10%;
-    font-size: 100%;
+    font-size: 200%;
     color: #fff;
     padding: 2% 2% 2% 2%;
     background: #037D87;

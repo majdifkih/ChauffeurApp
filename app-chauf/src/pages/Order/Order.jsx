@@ -166,7 +166,7 @@ const rows = [
           <Link to="/" style={{textDecoration:"none",color:"#8a8888"}}> Home</Link> <div>-</div> <div>AddOrder</div>
         </div> 
       <div class="input-icone"><input type="Search" placeholder="Search..." className="rech"/>
-      <i><SearchIcon/></i></div>
+      <i><SearchIcon sx={{ fontSize: 40 }}/></i></div>
 </div>
 <div className="buttonorder">
 
@@ -179,7 +179,7 @@ const rows = [
 
 <div className="delorder">
  
-                <button className="del" onClick={() => setButtonPopup(true)} ><DeleteIcon fontSize="small"/>Delete <div>selected</div></button>
+                <button className="del" onClick={() => setButtonPopup(true)} ><DeleteIcon sx={{ fontSize: 40 }} />Delete <div>selected</div></button>
 
 <Popup trigger={buttonPopup} setTrigger={setButtonPopup} className="popdel"/>
                 </div>
@@ -189,7 +189,7 @@ const rows = [
         <TableHead>
           <TableRow className="row" >
               
-            <StyledTableCell   ><input type="radio" name="fleet"/><label for="store">Product</label></StyledTableCell>
+            <StyledTableCell className="cellprod"  ><input type="radio" className="radio"/><label for="store">Product</label></StyledTableCell>
             <StyledTableCell className="cell" >Quantity</StyledTableCell>
             <StyledTableCell className="cell"  >Price</StyledTableCell>
             <StyledTableCell  className="cell">Total</StyledTableCell>
@@ -202,11 +202,11 @@ const rows = [
             : rows
           ).map((row) => (
             <StyledTableRow className="row" key={row.name}>
-              <StyledTableCell  width={"20%"} height={"5%"} component="th" scope="row" className="cellproduct"><input type="radio" name="fleet" className="radio"/>{row.name}</StyledTableCell>
-              <StyledTableCell className="cell" ><input type="number" className="cellinput"/></StyledTableCell>
-              <StyledTableCell className="cell" ><input type="number" className="cellinput"/></StyledTableCell>
-              <StyledTableCell className="cell" ><input type="number" className="cellinput"/></StyledTableCell>
-              <StyledTableCell  ><DeleteIcon/></StyledTableCell>
+              <StyledTableCell  width={"20%"} height={"5%"} component="th" scope="row"  className="cellprod"><input type="radio" className="radio"/>{row.name}</StyledTableCell>
+              <StyledTableCell className="cell" >{row.Quantity}</StyledTableCell>
+              <StyledTableCell className="cell" >{row.Price}</StyledTableCell>
+              <StyledTableCell className="cell" >{row.Total}</StyledTableCell> 
+              <StyledTableCell align="right" ><DeleteIcon className="icondel"/></StyledTableCell>
             </StyledTableRow>
           ))}
           
@@ -235,7 +235,7 @@ const rows = [
     </TableContainer>
   </div>
   
-  <button className="addorder" onClick={() => setAddPopuporder(true)}><AddIcon/></button>
+  <button className="addorder" onClick={() => setAddPopuporder(true)}><AddIcon sx={{ fontSize:50 }}/></button>
   <div className="popinvet">
 <PopupAdd trigger={addPopuporder} setTrigger={setAddPopuporder}/>
 </div>
