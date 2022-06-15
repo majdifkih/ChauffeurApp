@@ -167,7 +167,7 @@ const rows = [
           <Link to="/" style={{textDecoration:"none",color:"#8a8888"}}> Home</Link> <div>-</div> <div>Invoice</div> <div>History</div>
         </div> 
       <div class="input-icone"><input type="Search" placeholder="Search..." className="rech"/>
-      <i><SearchIcon/></i></div>
+      <i><SearchIcon sx={{ fontSize: 40 }}/></i></div>
 </div>
 <div className="buttonhistory">
 
