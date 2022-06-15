@@ -22,7 +22,7 @@ class Test extends Component {
   render(){
     const previewStyle = {
       height: 1240,
-      width: 980,
+      width: 990,
       
     }
 
