@@ -161,7 +161,7 @@ const handleChangeRowsPerPage = (event) => {
         </div>
       
       <div class="input-icone"><input type="Search" placeholder="Search..." className="rech"/>
-      <i><SearchIcon/></i></div>
+      <i><SearchIcon sx={{ fontSize: 40 }}/></i></div>
 </div>
 
 </div>

@@ -28,11 +28,14 @@
         color: #8a8888;
     }
       input[type=Search]{
-        height:30px;
+        height:40px;
+        width: 80%;
         border: 1px solid rgb(188, 188, 188);
         padding-right: 30%;
         border-radius: 5px;
         background: #c3cad2;
+        font-size: 130%;
+
       }
       
         
@@ -42,7 +45,7 @@
         padding: 10% 0% 10% 0%;}
         .input-icone i{
           position:absolute; 
-          left:85%; 
+          left:65%; 
           padding:4px 8px; 
           color:#838481; }
     

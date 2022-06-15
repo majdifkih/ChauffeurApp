@@ -170,7 +170,7 @@ const rows = [
       <div class="input-icone"><input type="Search" placeholder="Search..." className="rech" onChange={(event)=>{
           setSearchTerm(event.target.value);
         }}/>
-      <i><SearchIcon/></i></div>
+      <i><SearchIcon sx={{ fontSize: 40 }}/></i></div>
 </div>
 <div className="buttoninventory">
 
