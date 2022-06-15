@@ -21,8 +21,9 @@ class Test extends Component {
   }
   render(){
     const previewStyle = {
-      height: 240,
-      width: 320,
+      height: 1240,
+      width: 980,
+      
     }
 
     return(
@@ -38,3 +39,4 @@ class Test extends Component {
     )
   }
 }
+export default Test
