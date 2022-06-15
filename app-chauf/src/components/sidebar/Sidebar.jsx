@@ -13,7 +13,7 @@ import InventoryIcon from '@mui/icons-material/Inventory';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import CropFreeIcon from '@mui/icons-material/CropFree';
 import RestoreIcon from '@mui/icons-material/Restore';
-import {FaBars}from "react-icons/fa";
+// import {FaBars}from "react-icons/fa";
 import { NavLink } from 'react-router-dom';
 
 
@@ -67,7 +67,7 @@ const Sidebar = () => {
            <div style={{width: isOpen ? "400px" : "120px"}} className="sidebar">
                <div className="top_section" style={{paddingTop: isOpen ? "15%" : "53%"}}>
                <div style={{paddingLeft: isOpen ? "75%" : "15%"}} className="bars">
-                       <FaBars onClick={toggle}/>
+                       {/* <FaBars onClick={toggle}/> */}<i class="fa fa-bars" aria-hidden="true"  onClick={toggle}></i>
                    </div>
                    <div style={{display: isOpen ? "block" : "none"}} className="logo"><img
               src={log}
