@@ -125,7 +125,7 @@
         font-size: 150%;
         font-weight: bold;
         color: white;
-        padding-left: 5%;
+        
         &.done { 
          color: #29CC97;
         
@@ -135,17 +135,19 @@
             color: #f43434;
         }
     }
-  .radio{
-        margin-right:3%;    }
+  
   
         .cellproduct{
-          font-size: 200%;
+          font-size: 150%;
           color: #656662;
+          display: flex;
+          .radio{
+            margin-right:10%;    }
         }
   
   .cell{
-    padding-left: 5%;
-    font-size: 200%;
+    
+    font-size: 150%;
     color: #656662;
     
   }

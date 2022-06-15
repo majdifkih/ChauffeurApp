@@ -187,7 +187,7 @@ const rows = [
         <TableHead>
           <TableRow className="row" >
               
-            <StyledTableCell   ><input type="radio"  className="cellproduct"/>Product</StyledTableCell>
+            <StyledTableCell  className="cellproduct" ><input type="radio" className="radio"  />Product</StyledTableCell>
             <StyledTableCell className="cell" >Code</StyledTableCell>
             <StyledTableCell className="cell"  >Price</StyledTableCell>
             <StyledTableCell  className="cell">Quantity</StyledTableCell>
@@ -208,7 +208,7 @@ const rows = [
             }
           }).map((val,key) => (
             <StyledTableRow className="row" key={key}>
-              <StyledTableCell  width={"20%"} height={"5%"} component="th" scope="row" className="cellproduct"><input type="radio" name="fleet" className="radio"/>{val.name}</StyledTableCell>
+              <StyledTableCell  width={"20%"} height={"5%"} component="th" scope="row" className="cellproduct" ><input type="radio" name="fleet" className="radio"/>{val.name}</StyledTableCell>
               <StyledTableCell className="cell" >{val.code}</StyledTableCell>
               <StyledTableCell className="cell" >{val.price}</StyledTableCell>
               <StyledTableCell className="cell" >{val.quantity}</StyledTableCell>
