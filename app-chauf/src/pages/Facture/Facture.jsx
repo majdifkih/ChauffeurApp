@@ -91,7 +91,7 @@ console.log(items)
       <div class="input-icone"><input type="Search" placeholder="Search..." className="rech" onChange={(event)=>{
           setSearchTerm(event.target.value);
         }}/>
-      <i><SearchIcon/></i></div>
+      <i><SearchIcon sx={{ fontSize: 40 }}/></i></div>
 </div>
 <div className="buttonfacture">
 
@@ -106,7 +106,7 @@ console.log(items)
   <div className="chosestore">
 <div className="labelstore">Store</div>
 <div className="selectstore">
-<StorefrontIcon className="iconselect" fontSize="small"/>
+<StorefrontIcon className="iconselect" sx={{ fontSize: 40 }}/>
 <select id="select" className="select" onChange={(event)=> {
       setfactproduct(event.target.value);
     }} >
@@ -116,7 +116,7 @@ console.log(items)
                 </select>
                 </div>
                 </div>
-                <button className="del" onClick={() => setButtonPopup(true)} ><DeleteIcon fontSize="small"/>Delete <div>selected</div></button>
+                <button className="del" onClick={() => setButtonPopup(true)} ><DeleteIcon sx={{ fontSize: 40 }}/>Delete <div>selected</div></button>
 
 <Popup trigger={buttonPopup} setTrigger={setButtonPopup} className="popdel"/>
                 </div>
@@ -126,7 +126,7 @@ console.log(items)
         <TableHead>
           <TableRow className="row" >
               
-            <StyledTableCell   ><input type="radio" name="fleet"/><label for="store">Product</label></StyledTableCell>
+            <StyledTableCell className="cellprod"  ><input type="radio" className="radio"/><label for="store">Product</label></StyledTableCell>
             <StyledTableCell className="cell" >Quantity</StyledTableCell>
             <StyledTableCell className="cell"  >Price</StyledTableCell>
             <StyledTableCell  className="cell">Total</StyledTableCell>
@@ -144,7 +144,7 @@ console.log(items)
             }
           }).map((val,key) => (
             <StyledTableRow className="row" key={key}>
-              <StyledTableCell  width={"20%"} height={"5%"} component="th" scope="row" className="cellproduct"><input type="radio" name="fleet" className="radio"/>{val.name}</StyledTableCell>
+              <StyledTableCell  width={"20%"} height={"5%"} component="th" scope="row" className="cellprod"><input type="radio" name="fleet" className="radio"/>{val.name}</StyledTableCell>
               <StyledTableCell className="cell" ><input type="number" disabled="disabled" placeholder={val.quantity} className="cellinput"/></StyledTableCell>
               <StyledTableCell className="cell" ><input type="number"disabled="disabled" className="cellinput"/></StyledTableCell>
               <StyledTableCell className="cell" ><input type="number" disabled="disabled"className="cellinput" placeholder={val.price}/></StyledTableCell>
