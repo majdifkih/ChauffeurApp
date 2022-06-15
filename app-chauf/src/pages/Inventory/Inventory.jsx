@@ -187,7 +187,7 @@ const rows = [
         <TableHead>
           <TableRow className="row" >
               
-            <StyledTableCell   ><input type="radio" name="fleet"/>Product</StyledTableCell>
+            <StyledTableCell   ><input type="radio"  className="cellproduct"/>Product</StyledTableCell>
             <StyledTableCell className="cell" >Code</StyledTableCell>
             <StyledTableCell className="cell"  >Price</StyledTableCell>
             <StyledTableCell  className="cell">Quantity</StyledTableCell>

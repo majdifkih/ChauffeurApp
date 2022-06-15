@@ -172,7 +172,7 @@ const handleChangeRowsPerPage = (event) => {
           <TableHead>
             <TableRow className="row" >
                 
-              <StyledTableCell  align="left" ><label for="store">Stores</label></StyledTableCell>
+              <StyledTableCell  align="left" className ="cellname" ><label for="store">Stores</label></StyledTableCell>
               <StyledTableCell  className="circle" >Positions</StyledTableCell>
               <StyledTableCell align="center" className="stat">Status</StyledTableCell>
             </TableRow>
@@ -183,7 +183,7 @@ const handleChangeRowsPerPage = (event) => {
               : rows
             ).map((row) => (
               <StyledTableRow className="row" key={row.name}>
-                <StyledTableCell width={"20%"} height={"5%"} component="th" scope="row"><label for="name">{row.name}</label>
+                <StyledTableCell width={"20%"} height={"5%"} component="th" scope="row" className ="cellname"><label for="name">{row.name}</label>
                   
                 </StyledTableCell>
                 <StyledTableCell className ="circle">{row.position} </StyledTableCell>
