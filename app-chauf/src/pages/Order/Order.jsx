@@ -1,6 +1,6 @@
 import "./Order.scss";
 import * as React from 'react';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
@@ -28,8 +28,8 @@ import AddIcon from '@mui/icons-material/Add';
 import PopupAdd from "../../components/Popup/PopupAdd";
 import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 import StorefrontIcon from '@mui/icons-material/Storefront';
-import { Link } from "react-router-dom";
-
+import { Link, Navigate, useHref } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
     backgroundColor: theme.palette.common.white,
@@ -71,7 +71,7 @@ function TablePaginationActions(props) {
   const handleLastPageButtonClick = (event) => {
     onPageChange(event, Math.max(0, Math.ceil(count / rowsPerPage) - 1));
   };
-
+  
   return (
     <Box sx={{ flexShrink: 0, ml: 2.5 }}>
       <IconButton
@@ -136,6 +136,7 @@ const rows = [
  function OrderListe() {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(3);
+  const navigate = useNavigate();
 
   // Avoid a layout jump when reaching the last page with empty rows.
   const emptyRows =
@@ -152,7 +153,11 @@ const rows = [
   
   const [addPopuporder, setAddPopuporder] = useState(false);
   const [buttonPopup, setButtonPopup] = useState(false);
-  
+  useEffect(() => {
+    if (!localStorage.getItem('token')) {
+     navigate("/login")   
+    }
+},[])
   return (
 
   <div className="ordermain">

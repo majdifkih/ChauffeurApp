@@ -26,7 +26,7 @@ const Navbar = () => {
           </div>
           
           <div className="item">
-            <span>Majdi Fekih</span>
+            <span>{localStorage.getItem('user')}</span>
           </div>
           <div className="item">
             <img

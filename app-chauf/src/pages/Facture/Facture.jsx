@@ -1,6 +1,6 @@
 import "./Facture.scss";
 import * as React from 'react';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -19,8 +19,7 @@ import AddIcon from '@mui/icons-material/Add';
 import PopupAdd from "../../components/Popup/PopupAdd";
 import StorefrontIcon from '@mui/icons-material/Storefront';
 import axios from 'axios';
-import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link ,useNavigate} from "react-router-dom";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -53,7 +52,12 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   const [Pdata,setPdata] = useState([])
   const [subTotal,setsubTotal] = useState(0)
   const [total,settotal] = useState(0)
-  
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!localStorage.getItem('token')) {
+     navigate("/login")   
+    }
+},[])
   const getProduct=()=>{
     axios.get("http://localhost:3001/ProductAPI/products").then(res=>{
       if(res.data.success){

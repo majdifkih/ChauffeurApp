@@ -9,9 +9,12 @@ import RestoreIcon from '@mui/icons-material/Restore';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
-import { Link } from "react-router-dom";
+import { Link,useParams } from "react-router-dom";
+import axios from "axios";
+import { useEffect,useState } from "react";
+import { StyledEngineProvider } from "@mui/material";
 const Home = ( ) => {
-
+  
   return (
     <div className="homemain">
           <div className="side"><Sidebar/></div>

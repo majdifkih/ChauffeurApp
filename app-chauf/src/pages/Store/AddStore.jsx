@@ -7,10 +7,16 @@ import LocalOfferOutlinedIcon from '@mui/icons-material/LocalOfferOutlined';
 import AddLocationIcon from '@mui/icons-material/AddLocation';
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { color } from "@mui/system";
+import { useEffect } from "react";
 const AddStore = ( ) => {
-
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!localStorage.getItem('token')) {
+     navigate("/login")   
+    }
+},[])
   return (
     <div className="storemain">
           <div className="side"><Sidebar/></div>

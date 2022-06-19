@@ -1,5 +1,6 @@
 import "./InfoFacture.scss";
 import * as React from 'react';
+import { useEffect } from "react";
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -58,6 +59,12 @@ const rows = [
   createData('Gaucho ','231','4.000DT','2.500'),
 ];
  function InfoFacture() {
+
+  useEffect(() => {
+    if (!localStorage.getItem('token')) {
+     navigate("/login")   
+    }
+},[])
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(3);
   const navigate=useNavigate()
