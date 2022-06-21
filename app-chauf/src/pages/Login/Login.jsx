@@ -38,7 +38,7 @@ function Login() {
                   localStorage.setItem('vehicule', res.data.vehicule._id);
                 }
                 )
-                navigate(`/home/${res.data.details._id}`);
+                navigate(`/home`);
             } else {
                 alert('Invalid email or password');
             }
