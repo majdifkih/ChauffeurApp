@@ -8,7 +8,7 @@ function PopupAdd(props){
         if (q >= InventoryQ) {
             console.log("quantity is greater than the quantity limit");
         }else{
-        props.setData(current => [...current ,{name:r,price:p*q,quantity:q,id:id}])}}
+        props.setData(current => [...current ,{name:r,price:p*q,products:id,quantity:q}])}}
     const[factproduct,setfactproduct]=React.useState("");
     const[qproduct,setQproduct]=React.useState(false);
 
@@ -31,7 +31,7 @@ function PopupAdd(props){
       setfactproduct(event.target.value);
     }} >
                 <option selected>Choose Product</option>
-                <option>{row.productName}</option>
+                <option >{row.productName}</option>
               
                 </select>
                 

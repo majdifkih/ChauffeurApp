@@ -53,39 +53,73 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   const [subTotal,setsubTotal] = useState(0)
   const [total,settotal] = useState(0)
   const navigate = useNavigate();
+  const [rowstore,setRowstore] = useState([]);
+  const getStore=()=>{
+    axios.get("http://localhost:3001/StoreAPI/stores").then(res=>{
+      if(res.data.success){
+        setRowstore( res.data.existingPosts);
+        
+        console.log(rowstore)
+      }
+    })
+  } 
   useEffect(() => {
     if (!localStorage.getItem('token')) {
      navigate("/login")   
     }
 },[])
   const getProduct=()=>{
-    axios.get("http://localhost:3001/ProductAPI/products").then(res=>{
-      if(res.data.success){
+    let idv=localStorage.getItem('vehicule')
+    console.log(idv)
+    axios.get(`http://localhost:3001/VanAPI/vans?id=${idv}`).then(res=>{
+      if(res.data.success==true){
         setrows( res.data.existingPosts);
         
-        console.log(rows)
-      }
+       
+    }
+
     })
   } 
   useEffect(()=>{
+    getStore()
     getProduct() 
     setsubTotal((items.reduce((a,v) =>  a = a + v.price , 0 ))/1000)
     settotal(subTotal+subTotal*0.09)
+    console.log(items)
+
   }); 
 
   const [items, setItems] = useState([]);
   const [addPopupfacture, setAddPopupfacture] = useState(false);
   const [buttonPopup, setButtonPopup] = useState(false);
   const [factproduct, setfactproduct] = useState("");
+  const [factstore, setfactstore] = useState("");
   
-console.log(items)
+const addFacture=()=>{
+  let data={
+    store:factstore,
+    stock:items.map(({products, quantity}) => ({products, quantity})),
+    total:total.toFixed(2),
+    vehicule:localStorage.getItem('vehicule')
+  }
+  console.log(data)
+  axios.post("http://localhost:3001/FactureAPI/factures",data).then(res=>{
+    if(res.data.success){
+      console.log(res.data.invoice)
+    }}
+     
+    )
 
+}
   return (
 
   <div className="facturemain">
+    
     <div className="side"><Sidebar/></div>
+    
     <div className="facture">
     <Navbar/>
+   
 
 <div className="headfacture">
       <div className="titlefacture">
@@ -109,14 +143,16 @@ console.log(items)
 <div className="headincoive">
   <div className="chosestore">
 <div className="labelstore">Store</div>
+
 <div className="selectstore">
 <StorefrontIcon className="iconselect" sx={{ fontSize: 40 }}/>
 <select id="select" className="select" onChange={(event)=> {
-      setfactproduct(event.target.value);
+      setfactstore(event.target.value);
     }} >
                 <option selected>Choose Store</option>
-                <option>Reguler</option>
-                <option>NonReg</option>
+                {(rowstore).map((srow) => (
+                <option value={srow._id}>{srow.name}</option> 
+                ))}
                 </select>
                 </div>
                 </div>
@@ -152,7 +188,7 @@ console.log(items)
               <StyledTableCell className="cell" ><input type="number" disabled="disabled" placeholder={val.quantity} className="cellinput"/></StyledTableCell>
               <StyledTableCell className="cell" ><input type="number"disabled="disabled" className="cellinput"/></StyledTableCell>
               <StyledTableCell className="cell" ><input type="number" disabled="disabled"className="cellinput" placeholder={val.price}/></StyledTableCell>
-              <StyledTableCell  ><DeleteIcon/></StyledTableCell>
+              <StyledTableCell ><DeleteIcon /></StyledTableCell>
             </StyledTableRow>
           ))}
       
@@ -166,18 +202,18 @@ console.log(items)
     </TableContainer>
   </div>
   
-  <button className="addfacture" onClick={() => setAddPopupfacture(true)}><AddIcon/></button>
+  <button className="addfacture" onClick={() => (rows.length>0)? setAddPopupfacture(true) : alert('aucun produit')}><AddIcon/></button>
   <div className="popinvet">
 <PopupAdd trigger={addPopupfacture} setTrigger={setAddPopupfacture} setData={setItems} ro={rows}/>
 </div>
   <div className="devis">
     <div className="deviscont">Sub Total:{subTotal} DT </div>
     <div className="deviscont">TVA:9% </div>
-    <div className="deviscont">Total {total} DT</div>
+    <div className="deviscont">Total {total.toFixed(2)} DT</div>
   </div>
-  <button className="confirmerfacture" >Confirmer</button>
-  </div>
-  </div>
+  <button className="confirmerfacture" onClick={addFacture}>Confirmer</button>
+  </div> 
+</div>
   
   );
 }

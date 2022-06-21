@@ -32,13 +32,13 @@ function Login() {
                 localStorage.setItem('token', res.data.token);
                 localStorage.setItem('user', res.data.details.name);
                 localStorage.setItem('id', res.data.details._id);
-                navigate(`/home/${res.data.details._id}`);
+                
                 axios.get(`http://localhost:3001/VehiculeAPI/single?id=${res.data.details._id}`).then(res=>{
-                  console.log(res.data._id)
-                  localStorage.setItem('vehicule', res.data._id);
+                  console.log(res.data.vehicule._id)
+                  localStorage.setItem('vehicule', res.data.vehicule._id);
                 }
                 )
-
+                navigate(`/home/${res.data.details._id}`);
             } else {
                 alert('Invalid email or password');
             }
