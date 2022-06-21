@@ -1,0 +1,16 @@
+.scan{
+    width: 100%;
+    background-color: rgb(227, 222, 222);
+
+    .scan-section{
+        margin: 0% 2% 0% 2%;
+        text-align: center;
+
+        .scan-section-title{
+            font-size: 300%;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 10px;
+        }
+    }
+}

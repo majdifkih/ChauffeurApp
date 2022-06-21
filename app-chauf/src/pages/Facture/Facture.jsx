@@ -55,7 +55,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   const navigate = useNavigate();
   const [rowstore,setRowstore] = useState([]);
   const getStore=()=>{
-    axios.get("http://localhost:3001/StoreAPI/stores").then(res=>{
+    axios.get("https://appwebdriver.herokuapp.com/StoreAPI/stores").then(res=>{
       if(res.data.success){
         setRowstore( res.data.existingPosts);
         
@@ -71,7 +71,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   const getProduct=()=>{
     let idv=localStorage.getItem('vehicule')
     console.log(idv)
-    axios.get(`http://localhost:3001/VanAPI/vans?id=${idv}`).then(res=>{
+    axios.get(`https://appwebdriver.herokuapp.com/VanAPI/vans?id=${idv}`).then(res=>{
       if(res.data.success==true){
         setrows( res.data.existingPosts);
         
@@ -103,7 +103,7 @@ const addFacture=()=>{
     vehicule:localStorage.getItem('vehicule')
   }
   console.log(data)
-  axios.post("http://localhost:3001/FactureAPI/factures",data).then(res=>{
+  axios.post("https://appwebdriver.herokuapp.com/FactureAPI/factures",data).then(res=>{
     if(res.data.success){
       console.log(res.data.invoice)
     }}

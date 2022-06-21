@@ -9,7 +9,7 @@ import Login from "./pages/Login/Login";
 import OrderListe from "./pages/Order/Order";
 import InfoFacture from "./pages/Facture/InfoFacture";
 import Logout from "./pages/Login/logout";
-
+import Test from "./pages/ScanCode/ScanCode";
 function App() {
 
   return (
@@ -28,7 +28,8 @@ function App() {
            <Route path="order" element={<OrderListe/>}/>
            <Route path="infofacture/:id" element={<InfoFacture/>}/>
           <Route path="logout" element={<Logout/>}/>
-           
+        
+           <Route path="qrscanner" element={<Test/>}/>
             </Route>
         </Routes>
       </BrowserRouter>
