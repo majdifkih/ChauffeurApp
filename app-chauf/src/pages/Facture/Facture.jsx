@@ -13,7 +13,6 @@ import SearchIcon from '@mui/icons-material/Search';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
-import TableFooter from '@mui/material/TableFooter';
 import Popup from "../../components/Popup/Popup";
 import AddIcon from '@mui/icons-material/Add';
 import PopupAdd from "../../components/Popup/PopupAdd";
@@ -55,7 +54,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   const navigate = useNavigate();
   const [rowstore,setRowstore] = useState([]);
   const getStore=()=>{
-    axios.get("https://appwebdriver.herokuapp.com/StoreAPI/stores").then(res=>{
+    axios.get("https://qlogisticsapp.herokuapp.com/StoreAPI/stores").then(res=>{
       if(res.data.success){
         setRowstore( res.data.existingPosts);
         
@@ -71,7 +70,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   const getProduct=()=>{
     let idv=localStorage.getItem('vehicule')
     console.log(idv)
-    axios.get(`https://appwebdriver.herokuapp.com/VanAPI/vans?id=${idv}`).then(res=>{
+    axios.get(`https://qlogisticsapp.herokuapp.com/VanAPI/vans?id=${idv}`).then(res=>{
       if(res.data.success==true){
         setrows( res.data.existingPosts);
         
@@ -92,7 +91,6 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   const [items, setItems] = useState([]);
   const [addPopupfacture, setAddPopupfacture] = useState(false);
   const [buttonPopup, setButtonPopup] = useState(false);
-  const [factproduct, setfactproduct] = useState("");
   const [factstore, setfactstore] = useState("");
   
 const addFacture=()=>{
@@ -103,7 +101,7 @@ const addFacture=()=>{
     vehicule:localStorage.getItem('vehicule')
   }
   console.log(data)
-  axios.post("https://appwebdriver.herokuapp.com/FactureAPI/factures",data).then(res=>{
+  axios.post("https://qlogisticsapp.herokuapp.com/FactureAPI/factures",data).then(res=>{
     if(res.data.success){
       console.log(res.data.invoice)
     }}
@@ -124,7 +122,7 @@ const addFacture=()=>{
 <div className="headfacture">
       <div className="titlefacture">
       <div className="headfact">
-          <Link to="/" style={{textDecoration:"none",color:"#8a8888"}}> Home</Link> <div>-</div> <div>Invoice</div>
+          <Link to="/home" style={{textDecoration:"none",color:"#8a8888"}}> Home</Link> <div>-</div> <div>Invoice</div>
         </div> 
       <div class="input-icone"><input type="Search" placeholder="Search..." className="rech" onChange={(event)=>{
           setSearchTerm(event.target.value);
@@ -193,11 +191,7 @@ const addFacture=()=>{
           ))}
       
         </TableBody>
-        <TableFooter >
-          <TableRow>
-           
-          </TableRow>
-        </TableFooter>
+      
       </Table>
     </TableContainer>
   </div>

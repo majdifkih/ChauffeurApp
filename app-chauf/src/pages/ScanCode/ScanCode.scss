@@ -1,16 +1,62 @@
 .scan{
     width: 100%;
-    background-color: rgb(227, 222, 222);
-
+   display: flex;
+   gap: 20%;
+   margin-right: 5%;
+   .side{
+    z-index: 1;
+  }
     .scan-section{
+        display: flex;
+        flex-direction: column;
+        flex: 3;
         margin: 0% 2% 0% 2%;
         text-align: center;
-
+        .headscan{
+            display: flex;
+  font-size: 40px;
+  font-weight: bold;
+  color: #8a8888;
+        }
         .scan-section-title{
-            font-size: 300%;
+            font-size: 200%;
             font-weight: bold;
             color: #000;
-            margin-bottom: 10px;
+            margin: 50px 0px 20px 0px;
+        
         }
     }
 }
+table {
+    width: 740px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-top: 5%;
+  
+  th,
+  td {
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: rgb(15, 14, 14);
+  }
+  th {
+    text-align: left;
+  }
+  thead th {
+    background-color: #55608f;
+  }
+  tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  tbody td {
+    position: relative;
+  }
+  tbody td:hover:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -9999px;
+    bottom: -9999px;
+    background-color: rgba(255, 255, 255, 0.2);
+    z-index: -1;
+  }}

@@ -76,7 +76,7 @@ const rows = [
 <div className="headorder">
       <div className="titleorder">
       <div className="headord">
-          <Link to="/" style={{textDecoration:"none",color:"#8a8888"}}> Home</Link> <div>-</div> <div>AddOrder</div>
+          <Link to="/home" style={{textDecoration:"none",color:"#8a8888"}}> Home</Link> <div>-</div> <div>AddOrder</div>
         </div> 
       <div class="input-icone"><input type="Search" placeholder="Search..." className="rech"/>
       <i><SearchIcon sx={{ fontSize: 40 }}/></i></div>

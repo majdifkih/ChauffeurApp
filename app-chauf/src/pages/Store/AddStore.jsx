@@ -8,7 +8,6 @@ import AddLocationIcon from '@mui/icons-material/AddLocation';
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 import { Link, useNavigate } from "react-router-dom";
-import { color } from "@mui/system";
 import { useEffect } from "react";
 const AddStore = ( ) => {
   const navigate = useNavigate();
@@ -24,7 +23,7 @@ const AddStore = ( ) => {
         <Navbar/>
       <div className="inputs">
         <div className="headstore">
-          <Link to="/" style={{textDecoration:"none",color:"#8a8888"}}> Home</Link> <div>-</div> <div>Add</div> <div>Store</div>
+          <Link to="/home" style={{textDecoration:"none",color:"#8a8888"}}> Home</Link> <div>-</div> <div>Add</div> <div>Store</div>
         </div>
         <AddBusinessIcon sx={{ fontSize: 100 }} className="Iconhead"/>
         <div className="form">
@@ -62,7 +61,7 @@ const AddStore = ( ) => {
             
       </div>
       <div  className="btn">
-          <Link to="/" style={{textDecoration:"none"}}><button className="btncancel">Cancel</button></Link>
+          <Link to="/home" style={{textDecoration:"none"}}><button className="btncancel">Cancel</button></Link>
           <button className="btnadd">Add</button>
         
       </div>

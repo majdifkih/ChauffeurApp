@@ -23,7 +23,7 @@ function Login() {
   const navigate = useNavigate();
   const Auth = async() => {
     try {
-      await axios.post('https://appwebdriver.herokuapp.com/AuthAPI/loginD', {
+      await axios.post('https://qlogisticsapp.herokuapp.com/AuthAPI/loginD', {
             email: email,
             password: pwd
         }).then(res => {
@@ -33,7 +33,7 @@ function Login() {
                 localStorage.setItem('user', res.data.details.name);
                 localStorage.setItem('id', res.data.details._id);
                 
-                axios.get(`https://appwebdriver.herokuapp.com/VehiculeAPI/single?id=${res.data.details._id}`).then(res=>{
+                axios.get(`https://qlogisticsapp.herokuapp.com/VehiculeAPI/single?id=${res.data.details._id}`).then(res=>{
                   console.log(res.data.vehicule._id)
                   localStorage.setItem('vehicule', res.data.vehicule._id);
                 }

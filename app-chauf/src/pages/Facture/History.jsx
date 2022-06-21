@@ -52,66 +52,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
    
   },
 }));
-function TablePaginationActions(props) {
-  const theme = useTheme();
-  const { count, page, rowsPerPage, onPageChange } = props;
 
-  const handleFirstPageButtonClick = (event) => {
-    onPageChange(event, 0);
-  };
-
-  const handleBackButtonClick = (event) => {
-    onPageChange(event, page - 1);
-  };
-
-  const handleNextButtonClick = (event) => {
-    onPageChange(event, page + 1);
-  };
-
-  const handleLastPageButtonClick = (event) => {
-    onPageChange(event, Math.max(0, Math.ceil(count / rowsPerPage) - 1));
-  };
-
-  return (
-    <Box sx={{ flexShrink: 0, ml: 2.5 }}>
-      <IconButton
-        onClick={handleFirstPageButtonClick}
-        disabled={page === 0}
-        aria-label="first page"
-      >
-        {theme.direction === 'rtl' ? <LastPageIcon /> : <FirstPageIcon />}
-      </IconButton>
-      <IconButton
-        onClick={handleBackButtonClick}
-        disabled={page === 0}
-        aria-label="previous page"
-      >
-        {theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
-      </IconButton>
-      <IconButton
-        onClick={handleNextButtonClick}
-        disabled={page >= Math.ceil(count / rowsPerPage) - 1}
-        aria-label="next page"
-      >
-        {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
-      </IconButton>
-      <IconButton
-        onClick={handleLastPageButtonClick}
-        disabled={page >= Math.ceil(count / rowsPerPage) - 1}
-        aria-label="last page"
-      >
-        {theme.direction === 'rtl' ? <FirstPageIcon /> : <LastPageIcon />}
-      </IconButton>
-    </Box>
-  );
-}
-
-TablePaginationActions.propTypes = {
-  count: PropTypes.number.isRequired,
-  onPageChange: PropTypes.func.isRequired,
-  page: PropTypes.number.isRequired,
-  rowsPerPage: PropTypes.number.isRequired,
-};
 function createData(name, date, total, status) {
   return { name, date, total, status};
 }
@@ -143,22 +84,8 @@ const rows = [
      navigate("/login")   
     }
 },[])
-  // Avoid a layout jump when reaching the last page with empty rows.
-  const emptyRows =
-    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
-
-  const handleChangePage = (event, newPage) => {
-    setPage(newPage);
-  };
-
-  const handleChangeRowsPerPage = (event) => {
-    setRowsPerPage(parseInt(event.target.value, 10));
-    setPage(0);
-  };
   
-  const [addPopuphistory, setAddPopuphistory] = useState(false);
-  const [buttonPopup, setButtonPopup] = useState(false);
-  const [factproduct, setfactproduct] = useState("");
+  
   return (
 
   <div className="historymain">
@@ -169,7 +96,7 @@ const rows = [
 <div className="headhistory">
       <div className="titlehistory">
       <div className="headhist">
-          <Link to="/" style={{textDecoration:"none",color:"#8a8888"}}> Home</Link> <div>-</div> <div>Invoice</div> <div>History</div>
+          <Link to="/home" style={{textDecoration:"none",color:"#8a8888"}}> Home</Link> <div>-</div> <div>Invoice</div> <div>History</div>
         </div> 
       <div class="input-icone"><input type="Search" placeholder="Search..." className="rech"/>
       <i><SearchIcon sx={{ fontSize: 40 }}/></i></div>
@@ -189,7 +116,7 @@ const rows = [
         <TableHead>
           <TableRow className="row" >
               
-            <StyledTableCell   ><input type="radio" name="fleet"/>Store</StyledTableCell>
+            <StyledTableCell className="cellprod"   ><input type="radio" className="radio"/>Store</StyledTableCell>
             <StyledTableCell className="cell" >Date</StyledTableCell>
             <StyledTableCell className="cell"  >Total</StyledTableCell>
             <StyledTableCell  className="cell">Status</StyledTableCell>
@@ -210,35 +137,15 @@ const rows = [
             }
           }).map((val,key) => (
             <StyledTableRow className="row" key={key}>
-              <StyledTableCell  width={"20%"} height={"5%"} component="th" scope="row" className="cellproduct"><input type="radio" name="fleet" className="radio"/>{val.name}</StyledTableCell>
+              <StyledTableCell  width={"20%"} height={"5%"} component="th" scope="row" className="cellprod"><input type="radio" name="fleet" className="radio"/>{val.name}</StyledTableCell>
               <StyledTableCell className="cell" >{val.date}</StyledTableCell>
               <StyledTableCell className="cell" >{val.total}</StyledTableCell>
               <StyledTableCell className={`status ${val.status}`} >{val.status}</StyledTableCell>
-             
+              <StyledTableCell className="cell"><Link to="/infofacture"><i class="material-icons">info_outline</i></Link></StyledTableCell>
             </StyledTableRow>
           ))}
           
         </TableBody>
-        <TableFooter >
-          <TableRow>
-            <TablePagination
-              rowsPerPageOptions={[5, 10, 25, { label: 'All', value: -1 }]}
-              colSpan={7}
-              count={rows.length}
-              rowsPerPage={rowsPerPage}
-              page={page}
-              SelectProps={{
-                inputProps: {
-                  'aria-label': 'rows',
-                },
-                native: true,
-              }}
-              onPageChange={handleChangePage}
-              onRowsPerPageChange={handleChangeRowsPerPage}
-              ActionsComponent={TablePaginationActions}
-            />
-          </TableRow>
-        </TableFooter>
       </Table>
     </TableContainer>
   </div>

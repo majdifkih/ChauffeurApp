@@ -2,6 +2,9 @@ import React from 'react';
 import Html5QrcodePlugin from './qrscanner';
 import "./ScanCode.scss"
 import ResultContainerPlugin from './ResultContainerPlugin.jsx'
+import Sidebar from '../../components/sidebar/Sidebar';
+import Navbar from '../../components/navbar/Navbar';
+import { Link } from 'react-router-dom';
 
 
 class App extends React.Component {
@@ -18,11 +21,14 @@ class App extends React.Component {
   render() {
     return (
       <div className="scan">
+         <div className="side"><Sidebar/></div>
         <section className="scan-section">
+        <Navbar/>
+        <div className="headscan">
+          <Link to="/home" style={{textDecoration:"none",color:"#8a8888"}}> Home</Link> <div>-</div> <div>AddOrder</div>
+        </div> 
           <div className="scan-section-title"> Scanner Code</div>
-          <br />
-          <br />
-          <br />
+          
           <Html5QrcodePlugin 
             fps={10}
             qrbox={250}

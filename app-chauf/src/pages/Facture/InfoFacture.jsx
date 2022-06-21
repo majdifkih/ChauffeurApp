@@ -83,10 +83,10 @@ const rows = [
 <div className="headinfofacture">
       <div className="titleinfofacture">
       <div className="headfactureinfo">
-          <Link to="/" style={{textDecoration:"none",color:"#8a8888"}}> Home</Link> <div>-</div> <div>Invoice</div> <div>Details</div>
+          <Link to="/home" style={{textDecoration:"none",color:"#8a8888"}}> Home</Link> <div>-</div> <div>Invoice</div> <div>Details</div>
         </div>
       <div class="input-icone"><input type="Search" placeholder="Search..." className="rech"/>
-      <i><SearchIcon/></i></div>
+      <i><SearchIcon sx={{ fontSize: 40 }}/></i></div>
 </div>
 
 </div>
@@ -104,9 +104,9 @@ const rows = [
         <TableHead>
           <TableRow className="row" >
               
-            <StyledTableCell   ><input type="radio" name="fleet"/><label for="store">Product</label></StyledTableCell>
-            <StyledTableCell className="quantity" >Quantity</StyledTableCell>
-            <StyledTableCell  className="total">Total</StyledTableCell>
+            <StyledTableCell className="cellprod"><input type="radio" className="radio"/><label for="store">Product</label></StyledTableCell>
+            <StyledTableCell className="cell" >Quantity</StyledTableCell>
+            <StyledTableCell  className="cell">Total</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -115,12 +115,12 @@ const rows = [
             : rows
           ).map((row) => (
             <StyledTableRow className="row" key={row.name}>
-              <StyledTableCell  width={"20%"} height={"5%"} component="th" scope="row"><input type="radio" name="fleet" className="radio"/><label for="name">{row.name}</label>
+              <StyledTableCell  width={"20%"} height={"5%"} component="th" scope="row" className="cellprod"><input type="radio" className="radio"/><label for="name">{row.name}</label>
                 
               </StyledTableCell>
-              <StyledTableCell className="quantity" >{row.Quantity}</StyledTableCell>
+              <StyledTableCell className="cell" >{row.Quantity}</StyledTableCell>
 
-              <StyledTableCell className="total" >{row.Total}</StyledTableCell>
+              <StyledTableCell className="cell" >{row.Total}</StyledTableCell>
               
             </StyledTableRow>
           ))}

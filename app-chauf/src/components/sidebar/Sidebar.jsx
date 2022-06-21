@@ -24,56 +24,56 @@ const Sidebar = () => {
         {
             path:"/home",
             name:"Home",
-            icon:<HomeIcon className="iconlist" sx={{ fontSize: 60 }}/>
+            icon:<HomeIcon className="iconlist" sx={{ fontSize: 65 }}/>
         },
         {
             path:"/addstore",
             name:"Add Store",
-            icon:<AddBusinessIcon sx={{ fontSize: 60 }}/>
+            icon:<AddBusinessIcon sx={{ fontSize: 65 }}/>
         },
         {
             path:"/deliverylist",
             name:"Deliverys",
-            icon:<LocalShippingIcon sx={{ fontSize: 60 }}/>
+            icon:<LocalShippingIcon sx={{ fontSize: 65 }}/>
         },
         {
             path:"/inventory",
             name:"Inventory",
-            icon:<InventoryIcon sx={{ fontSize: 60 }}/>
+            icon:<InventoryIcon sx={{ fontSize: 65 }}/>
         },
         {
             path:"/order",
             name:"Add Order",
-            icon:<AddCircleOutlineIcon sx={{ fontSize: 60 }}/>
+            icon:<AddCircleOutlineIcon sx={{ fontSize: 65 }}/>
         },
         {
             path:"/history",
             name:"Invoice History",
-            icon:<RestoreIcon sx={{ fontSize: 60 }}/>
+            icon:<RestoreIcon sx={{ fontSize: 65 }}/>
         },
         {
-          path:"/deliverylist",
+          path:"/qrscanner",
           name:"Scan Code",
-          icon:<CropFreeIcon sx={{ fontSize: 60 }}/>
+          icon:<CropFreeIcon sx={{ fontSize: 65 }}/>
       },
       {
         path:"/logout",
         name:"Log out",
-        icon:<LogoutIcon sx={{ fontSize: 60 }}/>
+        icon:<LogoutIcon sx={{ fontSize: 65 }}/>
     }
     ]
     return (
         <div className="container">
-           <div style={{width: isOpen ? "400px" : "120px"}} className="sidebar">
+           <div style={{width: isOpen ? "500px" : "120px"}} className="sidebar">
                <div className="top_section" style={{paddingTop: isOpen ? "15%" : "53%"}}>
-               <div style={{paddingLeft: isOpen ? "75%" : "15%"}} className="bars">
+               <div style={{paddingLeft: isOpen ? "75%" : "20%"}} className="bars">
                        {/* <FaBars onClick={toggle}/> */}<i class="fa fa-bars" aria-hidden="true"  onClick={toggle}></i>
                    </div>
                    <div style={{display: isOpen ? "block" : "none"}} className="logo"><img
               src={log}
               className="circle"
-              width="350"
-              height="100"
+              width="400"
+              height="120"
               alt=""
             /></div>
                   
