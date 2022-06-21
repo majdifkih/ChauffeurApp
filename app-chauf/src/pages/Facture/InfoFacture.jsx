@@ -10,10 +10,12 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import SearchIcon from '@mui/icons-material/Search';
+
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate,useParams } from "react-router-dom";
+import axios from "axios";
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
     backgroundColor: theme.palette.common.white,
@@ -59,12 +61,24 @@ const rows = [
   createData('Gaucho ','231','4.000DT','2.500'),
 ];
  function InfoFacture() {
-
+const {id} = useParams()
+const [rows,setRows]= React.useState([])
+const getFacture = ()=> {
+  axios.get(`http://localhost:3001/FactureAPI/factures?id=${id}&type=store`).then(res=>{
+    if (res.data.success){
+      console.log("ok")
+      setRows(res.data.existingPosts)
+    }
+  })
+}
   useEffect(() => {
     if (!localStorage.getItem('token')) {
      navigate("/login")   
     }
 },[])
+useEffect(()=>{
+  getFacture()
+})
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(3);
   const navigate=useNavigate()

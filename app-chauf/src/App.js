@@ -26,8 +26,9 @@ function App() {
            <Route path="history" element={<HistoryListe/>}/>
            <Route path="inventory" element={<InventoryListe/>}/>
            <Route path="order" element={<OrderListe/>}/>
-           <Route path="infofacture" element={<InfoFacture/>}/>
-           <Route path="logout" element={<Logout/>}/>
+           <Route path="infofacture/:id" element={<InfoFacture/>}/>
+          <Route path="logout" element={<Logout/>}/>
+        
            <Route path="qrscanner" element={<Test/>}/>
             </Route>
         </Routes>
