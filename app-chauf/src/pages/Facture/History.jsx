@@ -113,7 +113,7 @@ const rows = [
         <TableHead>
           <TableRow className="row" >
               
-            <StyledTableCell   ><input type="radio" name="fleet"/>Store</StyledTableCell>
+            <StyledTableCell className="cellprod"><input type="radio" className="radio"/>Store</StyledTableCell>
             <StyledTableCell className="cell" >Date</StyledTableCell>
             <StyledTableCell className="cell"  >Total</StyledTableCell>
             <StyledTableCell  className="cell">Status</StyledTableCell>
@@ -134,11 +134,11 @@ const rows = [
             }
           }).map((val,key) => (
             <StyledTableRow className="row" key={key}>
-              <StyledTableCell  width={"20%"} height={"5%"} component="th" scope="row" className="cellproduct"><input type="radio" name="fleet" className="radio"/>{val.name}</StyledTableCell>
+              <StyledTableCell  width={"20%"} height={"5%"} component="th" scope="row" className="cellprod"><input type="radio" name="fleet" className="radio"/>{val.name}</StyledTableCell>
               <StyledTableCell className="cell" >{val.date}</StyledTableCell>
               <StyledTableCell className="cell" >{val.total}</StyledTableCell>
               <StyledTableCell className={`status ${val.status}`} onClick={()=>AddStat(val._id,val.status)} >{val.status}</StyledTableCell>
-             
+              <StyledTableCell className="cell"><Link to="/infofacture"><i class="material-icons">info_outline</i></Link></StyledTableCell>
             </StyledTableRow>
           ))}
           
