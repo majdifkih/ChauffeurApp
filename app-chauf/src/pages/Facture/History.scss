@@ -128,12 +128,12 @@
         font-weight: bold;
         color: white;
         padding-left: 5%;
-        &.done { 
+        &.paid { 
          color: #29CC97;
         
           
         }
-        &.undone {
+        &.unpaid {
             color: #f43434;
         }
     }

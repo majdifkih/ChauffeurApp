@@ -29,6 +29,7 @@ import PopupAdd from "../../components/Popup/PopupAdd";
 import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 import StorefrontIcon from '@mui/icons-material/Storefront';
 import { Link,useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -117,27 +118,40 @@ function createData(name, date, total, status) {
 }
 
 const rows = [
-  createData('Chocotom','22/01/2022','1.500','done'),
-  createData('SAFIA eau','22/01/2022',' 3.650','undone'),
-  createData('Saida biscuit','22/01/2022',' 7.500 ','done'),
-  createData('Maestro','22/01/2022',' 4000','undone'),
-  createData('Saida','22/01/2022',' 4.100','done'),
-  createData('Crostina','22/01/2022',' 2.700','undone'),
-  createData('Ice cream','22/01/2022',' 1.800','done'),
-  createData('Fidji','22/01/2022',' 800','undone'),
-  createData('Cupcake','22/01/2022',' 900','done'),
-  createData('Chocolat','22/01/2022','700',' undone'),
-  createData('Coca cola','22/01/2022','2000',' done'),
-  createData('Fanta','22/01/2022','1.100',' undone'),
-  createData('Apla','22/01/2022','5.500',' done'),
-  createData('kaki','22/01/2022','4.500 ','undone'),
-  createData('Gaucho ','22/01/2022','2.500',' done'),
+  createData('Chocotom','22/01/2022','1.500','paid'),
+  createData('SAFIA eau','22/01/2022',' 3.650','unpaid'),
+  createData('Saida biscuit','22/01/2022',' 7.500 ','paid'),
+  createData('Maestro','22/01/2022',' 4000','unpaid'),
+  createData('Saida','22/01/2022',' 4.100','paid'),
+  createData('Crostina','22/01/2022',' 2.700','unpaid'),
+  createData('Ice cream','22/01/2022',' 1.800','paid'),
+  createData('Fidji','22/01/2022',' 800','unpaid'),
+  createData('Cupcake','22/01/2022',' 900','paid'),
+  createData('Chocolat','22/01/2022','700',' unpaid'),
+  createData('Coca cola','22/01/2022','2000',' paid'),
+  createData('Fanta','22/01/2022','1.100',' unpaid'),
+  createData('Apla','22/01/2022','5.500',' paid'),
+  createData('kaki','22/01/2022','4.500 ','unpaid'),
+  createData('Gaucho ','22/01/2022','2.500',' paid'),
 ];
  function HistoryListe() {
    const [searchTerm, setSearchTerm] = useState("");
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
   const navigate = useNavigate();
+  const AddStat = (id,type)=>{
+    if (type==='unpaid') {
+     axios.get(`http://localhost:3001/FactureAPI/fstatus?id=${id}`).then(res=>{
+         if(res.data.success){
+             console.log(res.data.alerts);
+         }
+     }
+     )
+     window.location.href(`/infofacture/:${id}`)
+
+    }
+    
+ }
   useEffect(() => {
     if (!localStorage.getItem('token')) {
      navigate("/login")   
@@ -213,7 +227,7 @@ const rows = [
               <StyledTableCell  width={"20%"} height={"5%"} component="th" scope="row" className="cellproduct"><input type="radio" name="fleet" className="radio"/>{val.name}</StyledTableCell>
               <StyledTableCell className="cell" >{val.date}</StyledTableCell>
               <StyledTableCell className="cell" >{val.total}</StyledTableCell>
-              <StyledTableCell className={`status ${val.status}`} >{val.status}</StyledTableCell>
+              <StyledTableCell className={`status ${val.status}`} onClick={()=>AddStat(val._id,val.status)} >{val.status}</StyledTableCell>
              
             </StyledTableRow>
           ))}
