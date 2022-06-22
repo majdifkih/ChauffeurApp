@@ -42,8 +42,8 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 }));
 
 
-function createData(name, Quantity, Price, Total) {
-  return { name, Quantity, Price, Total};
+function createData(productName, Quantity, Price, Total) {
+  return { productName, Quantity, Price, Total};
 }
 
 const rows = [
@@ -56,7 +56,7 @@ const rows = [
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(3);
   const navigate = useNavigate();
-
+const [items,setItems] = useState([])
   // Avoid a layout jump when reaching the last page with empty rows.
   
   const [addPopuporder, setAddPopuporder] = useState(false);
@@ -131,7 +131,7 @@ const rows = [
   
   <button className="addorder" onClick={() => setAddPopuporder(true)}><AddIcon sx={{ fontSize:50 }}/></button>
   <div className="popinvet">
-<PopupAdd trigger={addPopuporder} setTrigger={setAddPopuporder}/>
+<PopupAdd trigger={addPopuporder} setTrigger={setAddPopuporder} ro={rows} setData={setItems}/>
 </div>
   <div className="devis">
     <div className="deviscont">Sub Total:7.000 DT </div>

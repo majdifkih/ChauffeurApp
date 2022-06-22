@@ -198,7 +198,7 @@ const addFacture=()=>{
   
   <button className="addfacture" onClick={() => (rows.length>0)? setAddPopupfacture(true) : alert('aucun produit')}><AddIcon/></button>
   <div className="popinvet">
-<PopupAdd trigger={addPopupfacture} setTrigger={setAddPopupfacture} setData={setItems} ro={rows}/>
+<PopupAdd trigger={addPopupfacture} setTrigger={setAddPopupfacture} setData={setItems} ro={rows} type="facture"/>
 </div>
   <div className="devis">
     <div className="deviscont">Sub Total:{subTotal} DT </div>
