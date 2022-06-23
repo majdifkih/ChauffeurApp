@@ -34,6 +34,7 @@ class App extends React.Component {
             qrbox={250}
             disableFlip={false}
             qrCodeSuccessCallback={this.onNewScanResult}/>
+            
           <ResultContainerPlugin results={this.state.decodedResults} />
          
         </section>

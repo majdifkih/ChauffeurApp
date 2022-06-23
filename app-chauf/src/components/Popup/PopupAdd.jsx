@@ -5,12 +5,15 @@ import InventoryIcon from '@mui/icons-material/Inventory';
 function PopupAdd(props){
 
     const addProduct = (r,p,q,InventoryQ,id) => {
+       
+        
         console.log(r,p,q,InventoryQ,id)
         console.log(factproduct)
-        if (q >= InventoryQ) {
+        if (q > InventoryQ) {
             console.log("quantity is greater than the quantity limit");
         }else{
         props.setData(current => [...current ,{name:r,price:p*q,products:id,quantity:q}])}}
+    
     const[factproduct,setfactproduct]=React.useState([]);
     const[qproduct,setQproduct]=React.useState(false);
 
@@ -31,13 +34,14 @@ function PopupAdd(props){
             <label for="nameclient"/>Product 
             <div className="formselect"><InventoryIcon className="iconproduct" fontSize="small"/><select  id="select" className="select" onChange={(event)=> {
                 console.log(props.ro)
-                const list = props.ro.filter((val)=>  val.productName == event.target.value)
                 
+                const list = props.ro.filter((val)=>  val.products._id == event.target.value)
+                console.log(list)
       setfactproduct(list);
     }} >
                 <option selected>Choose Product</option>
                 {(props.ro).map((row) => (
-                <option value={row._id} key={row._id}>{ row.productName}</option>
+                <option value={row.products._id} key={row.products._id}>{ row.products.productName}</option>
                 )
                 )}
                 </select>
@@ -51,7 +55,7 @@ function PopupAdd(props){
             <div className="form">
             <label for="nameclient"/>Quantity
             <div className="formicon">
-            <ProductionQuantityLimitsOutlinedIcon className="iconclient" fontSize="small"/><div className="formclient"><input type="text" placeholder="Enter Quantity" max={factproduct.productQuantity} onChange={(event)=> {setQproduct(event.target.value);}} /></div>
+            <ProductionQuantityLimitsOutlinedIcon className="iconclient" fontSize="small"/><div className="formclient"><input type="number" placeholder="Enter Quantity" max={factproduct.productQuantity} onChange={(event)=> {setQproduct(event.target.value);}} /></div>
             </div>
             </div>
             
@@ -60,7 +64,7 @@ function PopupAdd(props){
             </div>
                 <div className="buttonpopclient">
                 <button className="cancel-btn" onClick={() => props.setTrigger(false)}>Cancel </button>
-                <button className="btnaddclient" onClick={() => addProduct(factproduct[0].productName,factproduct[0].Price,qproduct,factproduct[0].Quantity,factproduct[0]._id)} >Add</button>
+                <button className="btnaddclient" onClick={() => addProduct(factproduct[0].products.productName,factproduct[0].products.productPrice,qproduct,factproduct[0].products.productQuantity,factproduct[0].products._id)} >Add</button>
                 
                 </div>
              

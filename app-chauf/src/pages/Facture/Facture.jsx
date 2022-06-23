@@ -72,7 +72,8 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
     console.log(idv)
     axios.get(`https://qlogisticsapp.herokuapp.com/VanAPI/vans?id=${idv}`).then(res=>{
       if(res.data.success==true){
-        setrows( res.data.existingPosts);
+        console.log(res.data.existingPosts[0].stock)
+        setrows(res.data.existingPosts[0].stock);
         
        
     }
@@ -94,6 +95,12 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   const [factstore, setfactstore] = useState("");
   
 const addFacture=()=>{
+  if (factstore==="" || items.length===0 ||total===0 || total===undefined) {
+    alert("Veuillez remplir tous les champs")
+              }
+              else{
+                
+
   let data={
     store:factstore,
     stock:items.map(({products, quantity}) => ({products, quantity})),
@@ -101,12 +108,13 @@ const addFacture=()=>{
     vehicule:localStorage.getItem('vehicule')
   }
   console.log(data)
+  
   axios.post("https://qlogisticsapp.herokuapp.com/FactureAPI/factures",data).then(res=>{
     if(res.data.success){
       console.log(res.data.invoice)
     }}
      
-    )
+    )  }
 
 }
   return (
