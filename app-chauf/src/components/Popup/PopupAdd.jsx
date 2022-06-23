@@ -26,20 +26,20 @@ function PopupAdd(props){
         
         <div className="popupclient">
             <div className="popup-innerclient" >
-            <h3>Add command</h3>
+            <h1>Add command</h1>
                 <div className="formulerclient">
                 <div className="formleft">
                 <div className="form">
             
             <label for="nameclient"/>Product 
-            <div className="formselect"><InventoryIcon className="iconproduct" fontSize="small"/><select  id="select" className="select" onChange={(event)=> {
+            <div className="formselect"><InventoryIcon className="iconproduct" sx={{ fontSize: 40 }}/><select  id="select" className="select" onChange={(event)=> {
                 console.log(props.ro)
                 
                 const list = props.ro.filter((val)=>  val.products._id == event.target.value)
                 console.log(list)
       setfactproduct(list);
     }} >
-                <option selected>Choose Product</option>
+                <option disabled selected>Choose Product</option>
                 {(props.ro).map((row) => (
                 <option value={row.products._id} key={row.products._id}>{ row.products.productName}</option>
                 )

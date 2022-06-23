@@ -112,7 +112,7 @@ const rows = [
                 </StyledTableCell>
                 <StyledTableCell className ="circle">{row.position} </StyledTableCell>
                 <StyledTableCell className="line"  >
-                 <div className={`reguliere ${row.status}`}>{row.status}</div><Link to="/facture"><i class="material-icons">info_outline</i></Link></StyledTableCell>
+                 <div className={`reguliere ${row.status}`}>{row.status}</div><i class="material-icons">pin_drop</i><Link to="/facture"><i class="material-icons">info_outline</i></Link></StyledTableCell>
                  </StyledTableRow>
             ))}
             

@@ -66,7 +66,7 @@ const rows = [
   const navigate = useNavigate();
   const AddStat = (id,type)=>{
     if (type==='unpaid') {
-     axios.get(`http://localhost:3001/FactureAPI/fstatus?id=${id}`).then(res=>{
+     axios.get(`https://qlogisticsapp.herokuapp.com/FactureAPI/fstatus?id=${id}`).then(res=>{
          if(res.data.success){
              console.log(res.data.alerts);
          }
@@ -138,7 +138,7 @@ const rows = [
               <StyledTableCell className="cell" >{val.date}</StyledTableCell>
               <StyledTableCell className="cell" >{val.total}</StyledTableCell>
               <StyledTableCell className={`status ${val.status}`} onClick={()=>AddStat(val._id,val.status)} >{val.status}</StyledTableCell>
-              <StyledTableCell className="cell"><Link to="/infofacture"><i class="material-icons">info_outline</i></Link></StyledTableCell>
+              <StyledTableCell className="cell"><Link to="/infofacture/:id"><i class="material-icons">info_outline</i></Link></StyledTableCell>
             </StyledTableRow>
           ))}
           
