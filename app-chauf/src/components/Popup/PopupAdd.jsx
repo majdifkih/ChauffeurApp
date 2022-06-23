@@ -23,19 +23,19 @@ function PopupAdd(props){
         
         <div className="popupclient">
             <div className="popup-innerclient" >
-            <h3>Add command</h3>
+            <h1>Add command</h1>
                 <div className="formulerclient">
                 <div className="formleft">
                 <div className="form">
             
             <label for="nameclient"/>Product 
-            <div className="formselect"><InventoryIcon className="iconproduct" fontSize="small"/><select  id="select" className="select" onChange={(event)=> {
+            <div className="formselect"><InventoryIcon className="iconproduct" sx={{ fontSize: 40 }}/><select  id="select" className="select" onChange={(event)=> {
                 console.log(props.ro)
                 const list = props.ro.filter((val)=>  val.productName == event.target.value)
                 
       setfactproduct(list);
     }} >
-                <option selected>Choose Product</option>
+                <option disabled selected>Choose Product</option>
                 {(props.ro).map((row) => (
                 <option value={row._id} key={row._id}>{ row.productName}</option>
                 )
@@ -51,7 +51,7 @@ function PopupAdd(props){
             <div className="form">
             <label for="nameclient"/>Quantity
             <div className="formicon">
-            <ProductionQuantityLimitsOutlinedIcon className="iconclient" fontSize="small"/><div className="formclient"><input type="text" placeholder="Enter Quantity" max={factproduct.productQuantity} onChange={(event)=> {setQproduct(event.target.value);}} /></div>
+            <ProductionQuantityLimitsOutlinedIcon className="iconclient" sx={{ fontSize: 40 }}/><div className="formclient"><input type="text" placeholder="Enter Quantity" max={factproduct.productQuantity} onChange={(event)=> {setQproduct(event.target.value);}} /></div>
             </div>
             </div>
             
