@@ -66,7 +66,7 @@ const rows = [
   const navigate = useNavigate();
   const AddStat = (id,type)=>{
     if (type==='unpaid') {
-     axios.get(`https://qlogisticsapp.herokuapp.com/FactureAPI/fstatus?id=${id}`).then(res=>{
+     axios.get(`http://localhost:3001/FactureAPI/fstatus?id=${id}`).then(res=>{
          if(res.data.success){
              console.log(res.data.alerts);
          }

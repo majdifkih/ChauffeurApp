@@ -54,7 +54,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   const navigate = useNavigate();
   const [rowstore,setRowstore] = useState([]);
   const getStore=()=>{
-    axios.get("https://qlogisticsapp.herokuapp.com/StoreAPI/stores").then(res=>{
+    axios.get("http://localhost:3001/StoreAPI/stores").then(res=>{
       if(res.data.success){
         setRowstore( res.data.existingPosts);
         
@@ -70,7 +70,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   const getProduct=()=>{
     let idv=localStorage.getItem('vehicule')
     console.log(idv)
-    axios.get(`https://qlogisticsapp.herokuapp.com/VanAPI/vans?id=${idv}`).then(res=>{
+    axios.get(`http://localhost:3001/VanAPI/vans?id=${idv}`).then(res=>{
       if(res.data.success==true){
         console.log(res.data.existingPosts[0].stock)
         setrows(res.data.existingPosts[0].stock);
@@ -109,8 +109,9 @@ const addFacture=()=>{
   }
   console.log(data)
   
-  axios.post("https://qlogisticsapp.herokuapp.com/FactureAPI/factures",data).then(res=>{
+  axios.post("http://localhost:3001/FactureAPI/factures",data).then(res=>{
     if(res.data.success){
+      alert("Facture ajoutée avec succès")
       console.log(res.data.invoice)
     }}
      
