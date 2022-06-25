@@ -5,7 +5,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import StoreIcon from '@mui/icons-material/Store';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import GroupIcon from '@mui/icons-material/Group';
-import GpsFixedIcon from '@mui/icons-material/GpsFixed';
+import DescriptionIcon from '@mui/icons-material/Description';
 import LogoutIcon from '@mui/icons-material/Logout';
 import AddBusinessIcon from '@mui/icons-material/AddBusiness';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
@@ -42,9 +42,9 @@ const Sidebar = () => {
             icon:<InventoryIcon sx={{ fontSize: 65 }}/>
         },
         {
-            path:"/order",
-            name:"Add Order",
-            icon:<AddCircleOutlineIcon sx={{ fontSize: 65 }}/>
+            path:"/facture",
+            name:"Invoice",
+            icon:<DescriptionIcon sx={{ fontSize: 65 }}/>
         },
         {
             path:"/history",
