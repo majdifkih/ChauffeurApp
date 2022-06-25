@@ -55,7 +55,7 @@ function PopupAdd(props){
             <div className="form">
             <label for="nameclient"/>Quantity
             <div className="formicon">
-            <ProductionQuantityLimitsOutlinedIcon className="iconclient" fontSize="small"/><div className="formclient"><input type="number" placeholder="Enter Quantity" max={factproduct.productQuantity} onChange={(event)=> {setQproduct(event.target.value);}} /></div>
+            <ProductionQuantityLimitsOutlinedIcon className="iconclient" sx={{ fontSize: 40 }}/><div className="formclient"><input type="number" placeholder="Enter Quantity" max={factproduct.productQuantity} onChange={(event)=> {setQproduct(event.target.value);}} /></div>
             </div>
             </div>
             

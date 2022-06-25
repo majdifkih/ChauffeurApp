@@ -163,9 +163,7 @@ const addFacture=()=>{
                 </select>
                 </div>
                 </div>
-                <button className="del" onClick={() => setButtonPopup(true)} ><DeleteIcon sx={{ fontSize: 40 }}/>Delete <div>selected</div></button>
-
-<Popup trigger={buttonPopup} setTrigger={setButtonPopup} className="popdel"/>
+                
                 </div>
   <div className="tabfacture">
   <TableContainer component={Paper}>
@@ -176,7 +174,7 @@ const addFacture=()=>{
             <StyledTableCell className="cellprod"  ><input type="radio" className="radio"/><label for="store">Product</label></StyledTableCell>
             <StyledTableCell className="cell" >Quantity</StyledTableCell>
             <StyledTableCell className="cell"  >Price</StyledTableCell>
-            <StyledTableCell  className="cell">Total</StyledTableCell>
+            <StyledTableCell className="cell" >Total</StyledTableCell>
        
           </TableRow>
         </TableHead>
@@ -192,9 +190,9 @@ const addFacture=()=>{
           }).map((val,key) => (
             <StyledTableRow className="row" key={key}>
               <StyledTableCell  width={"20%"} height={"5%"} component="th" scope="row" className="cellprod"><input type="radio" name="fleet" className="radio"/>{val.name}</StyledTableCell>
-              <StyledTableCell className="cell" ><input type="number" disabled="disabled" placeholder={val.quantity} className="cellinput"/></StyledTableCell>
-              <StyledTableCell className="cell" ><input type="number"disabled="disabled" className="cellinput"/></StyledTableCell>
-              <StyledTableCell className="cell" ><input type="number" disabled="disabled"className="cellinput" placeholder={val.price}/></StyledTableCell>
+              <StyledTableCell className="cell" >{val.quantity}</StyledTableCell>
+              <StyledTableCell className="cell" >{val.price}</StyledTableCell>
+              <StyledTableCell className="cell" ></StyledTableCell>
               <StyledTableCell ><DeleteIcon /></StyledTableCell>
             </StyledTableRow>
           ))}
