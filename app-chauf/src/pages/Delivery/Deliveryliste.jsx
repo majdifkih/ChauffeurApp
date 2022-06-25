@@ -1,6 +1,6 @@
 import "./Deliveryliste.scss";
 import * as React from 'react';
-
+import axios from "axios";
 import SearchIcon from '@mui/icons-material/Search';
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
@@ -59,7 +59,17 @@ const rows = [
   createData('Aotriya','Mahdia','Incomplete'),
 ];
  function DeliveryListe() {
-   
+   const GetDelivery = (id) => {
+    axios.get(`http://localhost:3001/DeliveryAPI/deliveries?id=${id}`).then(res=>{
+      console.log(res.data)
+    }
+    )
+  }
+  useEffect(()=>{
+    GetDelivery(localStorage.getItem("vehicule"))
+  }
+  )
+
 
   const navigate = useNavigate();
   useEffect(() => {
