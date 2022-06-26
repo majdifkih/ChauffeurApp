@@ -19,11 +19,7 @@ const Navbar = () => {
         <div className="items">
           
          
-          
-          <div className="item">
-            <NotificationsNoneOutlinedIcon className="icon" />
-            <div className="counter">1</div>
-          </div>
+     
           
           <div className="item">
             <span>{localStorage.getItem('user')}</span>

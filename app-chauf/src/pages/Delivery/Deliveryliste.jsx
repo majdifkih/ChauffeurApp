@@ -61,7 +61,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
  function DeliveryListe() {
    const[rows,setrows]=React.useState([]);
    const GetDelivery = (id) => {
-    axios.get(`http://localhost:3001/DeliveryAPI/vehicule?id=${id}`).then(res=>{
+    axios.get(`https://qlogisticsapp.herokuapp.com/DeliveryAPI/vehicule?id=${id}`).then(res=>{
       console.log(res.data)
       setrows(res.data.delivery)
     }
@@ -81,7 +81,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   })}
   useEffect(()=>{
     GetDelivery(localStorage.getItem("vehicule"))
-  }
+  },[]
   )
 
 
@@ -120,7 +120,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
           <TableHead>
             <TableRow className="row" >
                 
-              <StyledTableCell  align="left" className ="cellname" ><label for="store">Stores</label></StyledTableCell>
+              <StyledTableCell  align="left" className ="cellname" >Stores</StyledTableCell>
               <StyledTableCell  className="circle" >Positions</StyledTableCell>
               <StyledTableCell align="center" className="stat">Status</StyledTableCell>
             </TableRow>

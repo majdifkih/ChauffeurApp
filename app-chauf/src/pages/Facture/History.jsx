@@ -68,7 +68,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   const navigate = useNavigate();
   const AddStat = (id,type)=>{
     if (type==='unpaid') {
-     axios.get(`http://localhost:3001/FactureAPI/fstatus?id=${id}`).then(res=>{
+     axios.get(`https://qlogisticsapp.herokuapp.com/FactureAPI/fstatus?id=${id}`).then(res=>{
          if(res.data.success){
              alert("Status updated")
          }
@@ -80,7 +80,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
     
  }
  const GetFac = (id)=>{
-   axios.get(`http://localhost:3001/FactureAPI/factures?id=${id}`).then(res=>{
+   axios.get(`https://qlogisticsapp.herokuapp.com/FactureAPI/factures?id=${id}`).then(res=>{
         if(res.data.success){
             console.log(res.data);
             setRows(res.data.existingPosts);
@@ -131,7 +131,7 @@ const changeRoute = (id) => {
         <TableHead>
           <TableRow className="row" >
               
-            <StyledTableCell className="cellprod"><input type="radio" className="radio"/>Store</StyledTableCell>
+            <StyledTableCell className="cellprod">Store</StyledTableCell>
             <StyledTableCell className="cell" >Date</StyledTableCell>
             <StyledTableCell className="cell"  >Total</StyledTableCell>
             <StyledTableCell  className="cell">Status</StyledTableCell>
@@ -152,7 +152,7 @@ const changeRoute = (id) => {
             }
           }).map((val,key) => (
             <StyledTableRow className="row" key={key}>
-              <StyledTableCell  width={"20%"} height={"5%"} component="th" scope="row" className="cellprod"><input type="radio" name="fleet" className="radio"/>{val.store.name}</StyledTableCell>
+              <StyledTableCell  width={"20%"} height={"5%"} component="th" scope="row" className="cellprod">{val.store.name}</StyledTableCell>
               <StyledTableCell className="cell" >{moment(val.date).format('YYYY/MM/DD')}</StyledTableCell>
               <StyledTableCell className="cell" >{val.total}</StyledTableCell>
               <StyledTableCell className={`status ${val.status}`} onClick={()=>AddStat(val._id,val.status)} >{val.status}</StyledTableCell>

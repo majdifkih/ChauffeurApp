@@ -54,7 +54,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   const navigate = useNavigate();
   const [rowstore,setRowstore] = useState([]);
   const getStore=()=>{
-    axios.get("http://localhost:3001/StoreAPI/stores").then(res=>{
+    axios.get("https://qlogisticsapp.herokuapp.com/StoreAPI/stores").then(res=>{
       if(res.data.success){
         setRowstore( res.data.existingPosts);
         
@@ -70,7 +70,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   const getProduct=()=>{
     let idv=localStorage.getItem('vehicule')
     console.log(idv)
-    axios.get(`http://localhost:3001/VanAPI/vans?id=${idv}`).then(res=>{
+    axios.get(`https://qlogisticsapp.herokuapp.com/VanAPI/vans?id=${idv}`).then(res=>{
       if(res.data.success==true){
         console.log(res.data.existingPosts[0].stock)
         setrows(res.data.existingPosts[0].stock);
@@ -94,7 +94,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
     settotal(subTotal+subTotal*0.09)
     console.log(items)
 
-  }); 
+  },[]); 
 
   const [items, setItems] = useState([]);
   const [addPopupfacture, setAddPopupfacture] = useState(false);
@@ -116,7 +116,7 @@ const addFacture=()=>{
   }
   console.log(data)
   
-  axios.post("http://localhost:3001/FactureAPI/factures",data).then(res=>{
+  axios.post("https://qlogisticsapp.herokuapp.com/FactureAPI/factures",data).then(res=>{
     if(res.data.success){
       alert("Facture ajoutée avec succès")
       console.log(res.data.invoice)
@@ -178,7 +178,7 @@ const addFacture=()=>{
         <TableHead>
           <TableRow className="row" >
               
-            <StyledTableCell className="cellprod"  ><input type="radio" className="radio"/><label for="store">Product</label></StyledTableCell>
+            <StyledTableCell className="cellprod"  >Product</StyledTableCell>
             <StyledTableCell className="cell" >Quantity</StyledTableCell>
             <StyledTableCell className="cell"  >Price</StyledTableCell>
             <StyledTableCell className="cell" >Total</StyledTableCell>
@@ -196,7 +196,7 @@ const addFacture=()=>{
             }
           }).map((val,key) => (
             <StyledTableRow className="row" key={key}>
-              <StyledTableCell  width={"20%"} height={"5%"} component="th" scope="row" className="cellprod"><input type="radio" name="fleet" className="radio"/>{val.name}</StyledTableCell>
+              <StyledTableCell  width={"20%"} height={"5%"} component="th" scope="row" className="cellprod">{val.name}</StyledTableCell>
               <StyledTableCell className="cell" >{val.quantity}</StyledTableCell>
               <StyledTableCell className="cell" >{val.prix}</StyledTableCell>
               <StyledTableCell className="cell" >{val.price}</StyledTableCell>

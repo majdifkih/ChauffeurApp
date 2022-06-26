@@ -66,7 +66,7 @@ const [rows,setRows]= React.useState([])
 const [total,setTotal]= React.useState(0)
 const getFacture = ()=> {
   console.log(id)
-  axios.get(`http://localhost:3001/FactureAPI/factures?id=${id}&type=store`).then(res=>{
+  axios.get(`https://qlogisticsapp.herokuapp.com/FactureAPI/factures?id=${id}&type=store`).then(res=>{
     if (res.data.success){
       console.log("ok")
       console.log(res.data)
@@ -109,8 +109,6 @@ useEffect(()=>{
 
 </div>
 
-<button onClick={() => navigate(-1)} className="back"><ArrowBackIcon className="iconback"/></button>
-
 
 
 
@@ -122,7 +120,7 @@ useEffect(()=>{
         <TableHead>
           <TableRow className="row" >
               
-            <StyledTableCell className="cellprod"><input type="radio" className="radio"/><label for="store">Product</label></StyledTableCell>
+            <StyledTableCell className="cellprod">Product</StyledTableCell>
             <StyledTableCell className="cell" >Quantity</StyledTableCell>
             <StyledTableCell  className="cell">Total</StyledTableCell>
           </TableRow>
