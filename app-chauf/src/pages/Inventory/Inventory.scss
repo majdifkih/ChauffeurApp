@@ -130,12 +130,12 @@
         color: white;
      
         
-        &.done { 
+        &.GOOD { 
          color: #29CC97;
          
           
         }
-        &.undone {
+        &.LOW {
             color: #f43434;
         }
     }

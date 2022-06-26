@@ -63,11 +63,15 @@ const rows = [
  function InfoFacture() {
 const {id} = useParams()
 const [rows,setRows]= React.useState([])
+const [total,setTotal]= React.useState(0)
 const getFacture = ()=> {
+  console.log(id)
   axios.get(`http://localhost:3001/FactureAPI/factures?id=${id}&type=store`).then(res=>{
     if (res.data.success){
       console.log("ok")
-      setRows(res.data.existingPosts)
+      console.log(res.data)
+      setRows(res.data.facture.stock)
+      setTotal(res.data.facture.total)
     }
   })
 }
@@ -125,16 +129,16 @@ useEffect(()=>{
         </TableHead>
         <TableBody>
           {(rowsPerPage > 0
-            ? rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+            ? rows?.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
             : rows
           ).map((row) => (
-            <StyledTableRow className="row" key={row.name}>
-              <StyledTableCell  width={"20%"} height={"5%"} component="th" scope="row" className="cellprod"><input type="radio" className="radio"/><label for="name">{row.name}</label>
+            <StyledTableRow className="row" key={row._id}>
+              <StyledTableCell  width={"20%"} height={"5%"} component="th" scope="row" className="cellprod"><input type="radio" className="radio"/><label for="name">{row.products.productName}</label>
                 
               </StyledTableCell>
-              <StyledTableCell className="cell" >{row.Quantity}</StyledTableCell>
+              <StyledTableCell className="cell" >{row.quantity}</StyledTableCell>
 
-              <StyledTableCell className="cell" >{row.Total}</StyledTableCell>
+              <StyledTableCell className="cell" >{row.quantity*row.products.productPrice}</StyledTableCell>
               
             </StyledTableRow>
           ))}
@@ -147,9 +151,9 @@ useEffect(()=>{
   
   
   <div className="devis">
-    <div className="deviscont">Sub Total:7.000 DT </div>
-    <div className="deviscont">TVA:9% </div>
-    <div className="deviscont">Total 7.630 DT</div>
+    {/* <div className="deviscont">Sub Total:7.000 DT </div>
+    <div className="deviscont">TVA:9% </div> */}
+    <div className="deviscont">TOTAL:{total}</div>
   </div>
 
   </div>

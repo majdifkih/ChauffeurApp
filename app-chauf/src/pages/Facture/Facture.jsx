@@ -80,6 +80,13 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
     })
   } 
+  const delet = (id) => {
+    console.log(id)
+    
+      
+    setItems(items.filter(item => item.products !== id));
+  }
+
   useEffect(()=>{
     getStore()
     getProduct() 
@@ -191,9 +198,9 @@ const addFacture=()=>{
             <StyledTableRow className="row" key={key}>
               <StyledTableCell  width={"20%"} height={"5%"} component="th" scope="row" className="cellprod"><input type="radio" name="fleet" className="radio"/>{val.name}</StyledTableCell>
               <StyledTableCell className="cell" >{val.quantity}</StyledTableCell>
+              <StyledTableCell className="cell" >{val.prix}</StyledTableCell>
               <StyledTableCell className="cell" >{val.price}</StyledTableCell>
-              <StyledTableCell className="cell" ></StyledTableCell>
-              <StyledTableCell ><DeleteIcon /></StyledTableCell>
+              <StyledTableCell ><DeleteIcon onClick={()=>delet(val.products)} /></StyledTableCell>
             </StyledTableRow>
           ))}
       

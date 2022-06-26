@@ -37,34 +37,48 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-function createData(name,position, status) {
-  return { name,position, status };
-}
+// function createData(name,position, status) {
+//   return { name,position, status };
+// }
 
-const rows = [
-  createData('Baraka','Mahdia','Incomplete'),
-  createData('Hanout','Rcharcha','Done'),
-  createData('Carrefour','Ksour Essef','Done'),
-  createData('Mahida shop','Maloulech','Done'),
-  createData('Aotriya','Souasi','Incomplete'),
-  createData('Hanout lhoma','Monastir','Incomplete'),
-  createData('Magasin','Sousse','Done'),
-  createData('Store','Sfax','Done'),
-  createData('Drugstore','Rajich','Done'),
-  createData('Magasin','Mahdia','Incomplete'),
-  createData('Mahida drugstore','Monastir','Incomplete'),
-  createData('Store','Rajich','Done'),
-  createData('Mahida shop','Sousse','Done'),
-  createData('Hanout','Mahdia','Done'),
-  createData('Aotriya','Mahdia','Incomplete'),
-];
+// const rows = [
+//   createData('Baraka','Mahdia','Incomplete'),
+//   createData('Hanout','Rcharcha','Done'),
+//   createData('Carrefour','Ksour Essef','Done'),
+//   createData('Mahida shop','Maloulech','Done'),
+//   createData('Aotriya','Souasi','Incomplete'),
+//   createData('Hanout lhoma','Monastir','Incomplete'),
+//   createData('Magasin','Sousse','Done'),
+//   createData('Store','Sfax','Done'),
+//   createData('Drugstore','Rajich','Done'),
+//   createData('Magasin','Mahdia','Incomplete'),
+//   createData('Mahida drugstore','Monastir','Incomplete'),
+//   createData('Store','Rajich','Done'),
+//   createData('Mahida shop','Sousse','Done'),
+//   createData('Hanout','Mahdia','Done'),
+//   createData('Aotriya','Mahdia','Incomplete'),
+// ];
  function DeliveryListe() {
+   const[rows,setrows]=React.useState([]);
    const GetDelivery = (id) => {
-    axios.get(`http://localhost:3001/DeliveryAPI/deliveries?id=${id}`).then(res=>{
+    axios.get(`http://localhost:3001/DeliveryAPI/vehicule?id=${id}`).then(res=>{
       console.log(res.data)
+      setrows(res.data.delivery)
     }
     )
   }
+  const getMaps = (lat,lon) => {
+    window.open(`https://www.google.com/maps/search/?api=1&query=${lat},${lon}`)
+  }
+  
+
+  const [theAddress,setTheAddress] = React.useState("");
+  const address= (lat,lon) => {
+    axios.get(`http://api.positionstack.com/v1/reverse?access_key=e7b7c50f25c942f3c3bf52e1cf825d3b&query=${lat},${lon}`).then(res => {
+      setTheAddress(res.data.data[0].county);
+      
+      console.log(res.data.data[0].county);
+  })}
   useEffect(()=>{
     GetDelivery(localStorage.getItem("vehicule"))
   }
@@ -116,13 +130,13 @@ const rows = [
               ? rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               : rows
             ).map((row) => (
-              <StyledTableRow className="row" key={row.name}>
-                <StyledTableCell width={"20%"} height={"5%"} component="th" scope="row" className ="cellname"><label for="name">{row.name}</label>
+              <StyledTableRow className="row" key={row.id}>
+                <StyledTableCell width={"20%"} height={"5%"} component="th" scope="row" className ="cellname"><label for="name">{row.store?.name}</label>
                   
                 </StyledTableCell>
-                <StyledTableCell className ="circle">{row.position} </StyledTableCell>
+                <StyledTableCell className ="circle" value={address(row.store.positionStore.latitude,row.store.positionStore.longitude)}>{theAddress} </StyledTableCell>
                 <StyledTableCell className="line"  >
-                 <div className={`reguliere ${row.status}`}>{row.status}</div><i class="material-icons">pin_drop</i><Link to="/facture"></Link></StyledTableCell>
+                 <div className={`reguliere ${row.status}`}>{row.status}</div><i class="material-icons" onClick={()=>getMaps(row.store.positionStore.latitude,row.store.positionStore.longitude)}>pin_drop</i></StyledTableCell>
                  </StyledTableRow>
             ))}
             

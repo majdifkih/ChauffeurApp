@@ -91,12 +91,12 @@
     font-weight: bold;
     color: white;
     font-size: 100%;
-    &.Done { 
+    &.done { 
       background: #29CC97;
       padding: 5% 8% 0% 8%;
       
     }
-    &.Incomplete {
+    &.undone {
       background: #FEC400;
       padding: 5% 1% 0% 1%;
     }

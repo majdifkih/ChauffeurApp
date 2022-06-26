@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
 import { useTheme } from '@mui/material/styles';
+import axios from "axios";
 import TableBody from '@mui/material/TableBody';
 import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
@@ -75,6 +76,20 @@ const rows = [
   createData('Gaucho ','111111','2.500','300',' done'),
 ];
  function InventoryListe() {
+   const [rows,setrows] = useState([]);
+  const getProduct=()=>{
+    let idv=localStorage.getItem('vehicule')
+    console.log(idv)
+    axios.get(`http://localhost:3001/VanAPI/vans?id=${idv}`).then(res=>{
+      if(res.data.success==true){
+        console.log(res.data.existingPosts[0].stock)
+        setrows(res.data.existingPosts[0].stock);
+        
+       
+    }
+
+    })
+  } 
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
   const[searchTerm,setSearchTerm]=useState("");
@@ -83,6 +98,7 @@ const rows = [
     if (!localStorage.getItem('token')) {
      navigate("/login")   
     }
+    getProduct();
 },[])
 
   return (
@@ -133,14 +149,14 @@ const rows = [
             {
               return val
             }
-            else if(val.productName.toLowerCase().includes(searchTerm.toLowerCase())){
+            else if(val.products.productName.toLowerCase().includes(searchTerm.toLowerCase())){
               return val
             }
           }).map((val,key) => (
             <StyledTableRow className="row" key={key}>
-              <StyledTableCell  width={"20%"} height={"5%"} component="th" scope="row" className="cellproduct" ><input type="radio" name="fleet" className="radio"/>{val.name}</StyledTableCell>
-              <StyledTableCell className="cell" >{val.code}</StyledTableCell>
-              <StyledTableCell className="cell" >{val.price}</StyledTableCell>
+              <StyledTableCell  width={"20%"} height={"5%"} component="th" scope="row" className="cellproduct" ><input type="radio" name="fleet" className="radio"/>{val.products.productName}</StyledTableCell>
+              <StyledTableCell className="cell" >{val.products.barCode}</StyledTableCell>
+              <StyledTableCell className="cell" >{val.products.productPrice}</StyledTableCell>
               <StyledTableCell className="cell" >{val.quantity}</StyledTableCell>
               <StyledTableCell className={`status ${val.status}`} >{val.status}</StyledTableCell>
              
