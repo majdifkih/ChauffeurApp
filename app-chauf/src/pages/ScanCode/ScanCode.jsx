@@ -46,7 +46,7 @@ class App extends React.Component {
   onNewScanResult(decodedText, decodedResult) {
 
     console.log(decodedText)
-    axios.get(`http://localhost:3001/DeliveryAPI/delivery/confirm?store=${decodedText}`).then(res=>{
+    axios.get(`https://qlogisticsapp.herokuapp.com/DeliveryAPI/delivery/confirm?store=${decodedText}`).then(res=>{
       if(res.data.success){
         alert("Delivery confirmed")
         console.log(res.data.existingPosts)

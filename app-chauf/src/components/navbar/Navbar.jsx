@@ -2,8 +2,7 @@ import "./navbar.scss";
 
 import img from "./photo.jpg"
 
-import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
-
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 
 const Navbar = () => {
@@ -25,11 +24,7 @@ const Navbar = () => {
             <span>{localStorage.getItem('user')}</span>
           </div>
           <div className="item">
-            <img
-              src={img}
-              alt=""
-              className="avatar"
-            />
+         <AccountCircleIcon  sx={{ fontSize: 40 }}/>
           </div>
         </div>
       </div>
