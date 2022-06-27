@@ -66,7 +66,7 @@ const [rows,setRows]= React.useState([])
 const [total,setTotal]= React.useState(0)
 const getFacture = ()=> {
   console.log(id)
-  axios.get(`http://localhost:3001/FactureAPI/factures?id=${id}&type=One`).then(res=>{
+  axios.get(`https://qlogisticsapp.herokuapp.com/FactureAPI/factures?id=${id}&type=One`).then(res=>{
     if (res.data.success){
       console.log("ok")
       console.log(res.data)

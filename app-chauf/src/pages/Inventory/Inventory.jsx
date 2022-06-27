@@ -136,8 +136,8 @@ const rows = [
             <StyledTableCell  className="cellproduct" >Product</StyledTableCell>
             <StyledTableCell className="cell" >Code</StyledTableCell>
             <StyledTableCell className="cell"  >Price</StyledTableCell>
-            <StyledTableCell  className="cell">Quantity</StyledTableCell>
-            <StyledTableCell  className="cell">Status</StyledTableCell>
+            <StyledTableCell  className="cell" align="center">Quantity</StyledTableCell>
+  
           </TableRow>
         </TableHead>
         <TableBody>
@@ -157,8 +157,8 @@ const rows = [
               <StyledTableCell  width={"20%"} height={"5%"} component="th" scope="row" className="cellproduct" >{val.products.productName}</StyledTableCell>
               <StyledTableCell className="cell" >{val.products.barCode}</StyledTableCell>
               <StyledTableCell className="cell" >{val.products.productPrice}</StyledTableCell>
-              <StyledTableCell className="cell" >{val.quantity}</StyledTableCell>
-              <StyledTableCell className={`status ${val.status}`} >{val.status}</StyledTableCell>
+              <StyledTableCell className="cell" align="center">{val.quantity}</StyledTableCell>
+           
              
             </StyledTableRow>
           ))}
