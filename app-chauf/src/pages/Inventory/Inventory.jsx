@@ -80,7 +80,7 @@ const rows = [
   const getProduct=()=>{
     let idv=localStorage.getItem('vehicule')
     console.log(idv)
-    axios.get(`http://localhost:3001/VanAPI/vans?id=${idv}`).then(res=>{
+    axios.get(`https://qlogisticsapp.herokuapp.com/VanAPI/vans?id=${idv}`).then(res=>{
       if(res.data.success==true){
         console.log(res.data.existingPosts[0].stock)
         setrows(res.data.existingPosts[0].stock);
@@ -133,7 +133,7 @@ const rows = [
         <TableHead>
           <TableRow className="row" >
               
-            <StyledTableCell  className="cellproduct" ><input type="radio" className="radio"  />Product</StyledTableCell>
+            <StyledTableCell  className="cellproduct" >Product</StyledTableCell>
             <StyledTableCell className="cell" >Code</StyledTableCell>
             <StyledTableCell className="cell"  >Price</StyledTableCell>
             <StyledTableCell  className="cell">Quantity</StyledTableCell>
@@ -154,7 +154,7 @@ const rows = [
             }
           }).map((val,key) => (
             <StyledTableRow className="row" key={key}>
-              <StyledTableCell  width={"20%"} height={"5%"} component="th" scope="row" className="cellproduct" ><input type="radio" name="fleet" className="radio"/>{val.products.productName}</StyledTableCell>
+              <StyledTableCell  width={"20%"} height={"5%"} component="th" scope="row" className="cellproduct" >{val.products.productName}</StyledTableCell>
               <StyledTableCell className="cell" >{val.products.barCode}</StyledTableCell>
               <StyledTableCell className="cell" >{val.products.productPrice}</StyledTableCell>
               <StyledTableCell className="cell" >{val.quantity}</StyledTableCell>

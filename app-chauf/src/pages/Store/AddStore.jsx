@@ -13,7 +13,7 @@ import axios from "axios";
 const AddStore = ( ) => {
 const GetPos=(id)=>{
 console.log(id,"idVehicule")
-  axios.get(`http://localhost:3001/PositionAPI/positions?id=${id}`).then(res=>{
+  axios.get(`https://qlogisticsapp.herokuapp.com/PositionAPI/positions?id=${id}`).then(res=>{
     if(res.data.success){
       console.log(res.data.existingPositions);
       setIdP(res.data.existingPositions._id);
@@ -31,7 +31,7 @@ const addStore=()=>{
     positionStore:idP,
   }
   console.log(data)
-  axios.post("http://localhost:3001/StoreAPI/stores",data).then(res=>{
+  axios.post("https://qlogisticsapp.herokuapp.com/StoreAPI/stores",data).then(res=>{
     if(res.data.success){
       alert("Store added")
       navigate("/home")
