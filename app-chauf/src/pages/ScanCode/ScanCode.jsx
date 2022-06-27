@@ -5,6 +5,7 @@ import ResultContainerPlugin from './ResultContainerPlugin.jsx'
 import Sidebar from '../../components/sidebar/Sidebar';
 import Navbar from '../../components/navbar/Navbar';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 
 class App extends React.Component {
@@ -43,6 +44,15 @@ class App extends React.Component {
   }
 
   onNewScanResult(decodedText, decodedResult) {
+
+    console.log(decodedText)
+    axios.get(`http://localhost:3001/DeliveryAPI/delivery/confirm?store=${decodedText}`).then(res=>{
+      if(res.data.success){
+        alert("Delivery confirmed")
+      }
+    }
+    )
+
     console.log(
       "App [result]", decodedResult);
 

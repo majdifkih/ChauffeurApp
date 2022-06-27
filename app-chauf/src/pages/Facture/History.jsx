@@ -80,7 +80,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
     
  }
  const GetFac = (id)=>{
-   axios.get(`http://localhost:3001/FactureAPI/factures?id=${id}`).then(res=>{
+   axios.get(`http://localhost:3001/FactureAPI/factures?id=${id}&type=vehicule`).then(res=>{
         if(res.data.success){
             console.log(res.data);
             setRows(res.data.existingPosts);

@@ -39,34 +39,34 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-function createData(name, Quantity, Price, Total) {
-  return { name, Quantity, Price, Total};
-}
+// function createData(name, Quantity, Price, Total) {
+//   return { name, Quantity, Price, Total};
+// }
 
-const rows = [
-  createData('Chocotom','111','4.000DT','1.500'),
-  createData('SAFIA eau','386','4.000DT','3.650'),
-  createData('Saida biscuit','696','4.000DT','7.500'),
-  createData('Maestro','672','4.000DT','4000'),
-  createData('Saida','226','4.000DT','4.100'),
-  createData('Crostina','172','4.000DT','2.700'),
-  createData('Ice cream','147','4.000DT','1.800'),
-  createData('Fidji','391','4.000DT','800'),
-  createData('Cupcake','973','4.000DT','900'),
-  createData('Chocolat','537','4.000DT','700'),
-  createData('Coca cola','876','4.000DT','2000'),
-  createData('Fanta','314','4.000DT','1.100'),
-  createData('Apla','555','4.000DT','5.500'),
-  createData('kaki','222','4.000DT','4.500'),
-  createData('Gaucho ','231','4.000DT','2.500'),
-];
+// const rows = [
+//   createData('Chocotom','111','4.000DT','1.500'),
+//   createData('SAFIA eau','386','4.000DT','3.650'),
+//   createData('Saida biscuit','696','4.000DT','7.500'),
+//   createData('Maestro','672','4.000DT','4000'),
+//   createData('Saida','226','4.000DT','4.100'),
+//   createData('Crostina','172','4.000DT','2.700'),
+//   createData('Ice cream','147','4.000DT','1.800'),
+//   createData('Fidji','391','4.000DT','800'),
+//   createData('Cupcake','973','4.000DT','900'),
+//   createData('Chocolat','537','4.000DT','700'),
+//   createData('Coca cola','876','4.000DT','2000'),
+//   createData('Fanta','314','4.000DT','1.100'),
+//   createData('Apla','555','4.000DT','5.500'),
+//   createData('kaki','222','4.000DT','4.500'),
+//   createData('Gaucho ','231','4.000DT','2.500'),
+// ];
  function InfoFacture() {
 const {id} = useParams()
 const [rows,setRows]= React.useState([])
 const [total,setTotal]= React.useState(0)
 const getFacture = ()=> {
   console.log(id)
-  axios.get(`http://localhost:3001/FactureAPI/factures?id=${id}&type=store`).then(res=>{
+  axios.get(`http://localhost:3001/FactureAPI/factures?id=${id}&type=One`).then(res=>{
     if (res.data.success){
       console.log("ok")
       console.log(res.data)
