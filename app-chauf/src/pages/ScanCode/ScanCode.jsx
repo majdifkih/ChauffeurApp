@@ -49,6 +49,7 @@ class App extends React.Component {
     axios.get(`http://localhost:3001/DeliveryAPI/delivery/confirm?store=${decodedText}`).then(res=>{
       if(res.data.success){
         alert("Delivery confirmed")
+        console.log(res.data.existingPosts)
       }
     }
     )
